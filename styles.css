@@ -1,6 +1,35 @@
+/* Resets */
+
+hr {
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
 }
+
+/* Utilities */
+
+.col {
+  padding: 55px;
+}
+
+.col-condensed {
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-33 {
+  width: 33%;
+}
+
+/* Main */
 
 html {
   background: #1c3d36;
@@ -27,19 +56,23 @@ header {
 }
 
 h1,
-h2 {
+h2,
+.h1,
+.h2 {
   font-family: "Barlow Condensed", sans-serif;
 }
 
 h1 {
-  letter-spacing: 8px;
+  letter-spacing: 10px;
   margin-bottom: 48px;
 }
 
-h2 {
+h2,
+.h2 {
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 2px;
+  margin-bottom: 7px;
 }
 
 .menu-items {
@@ -50,14 +83,36 @@ h2 {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-left: 166px;
 }
 
-.coldbrew-menu-items > img {
-  width: 240px;
+.divider {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.item {
+.questions {
+  text-align: center;
+}
+
+.espress-coffee-modifiers {
+  display: flex;
+}
+
+.item:not(:last-child) {
   margin-bottom: 36px;
+}
+
+.item-with-image {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.item-image img {
+  width: 160px;
+  margin-bottom: -18px;
 }
 
 .title {
@@ -68,18 +123,23 @@ h2 {
 .subtitle {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 300;
-  text-transform: uppercase;
   font-size: 22px;
   letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.modifier-description {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  font-weight: 400;
+}
+
+.modifier-details {
+  font-weight: 300;
 }
 
 .espresso-section,
 .coldbrew-section {
   width: 50%;
-}
-
-.col-1,
-.col-2 {
-  width: 50%;
-  padding: 55px;
 }
