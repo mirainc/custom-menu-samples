@@ -8,27 +8,6 @@ hr {
   box-sizing: border-box;
 }
 
-/* Utilities */
-
-.col {
-  padding: 55px;
-}
-
-.col-condensed {
-  padding-left: 55px;
-  padding-right: 55px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.col-50 {
-  width: 50%;
-}
-
-.col-33 {
-  width: 33%;
-}
-
 /* Main */
 
 html {
@@ -44,10 +23,19 @@ body {
   height: 100vh;
 }
 
-main {
-  display: flex;
-  padding: 72px;
-  height: 100%;
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.espresso-and-coffee-menu-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.espresso-and-coffee-modifiers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 header {
@@ -73,10 +61,6 @@ h2,
   font-weight: 500;
   letter-spacing: 2px;
   margin-bottom: 7px;
-}
-
-.menu-items {
-  display: flex;
 }
 
 .coldbrew-menu-items {
@@ -137,9 +121,4 @@ h2,
 
 .modifier-details {
   font-weight: 300;
-}
-
-.espresso-section,
-.coldbrew-section {
-  width: 50%;
 }

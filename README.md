@@ -1,4 +1,4 @@
-# Sample Custom Menus
+# Custom Menu Sample Apps
 
 ## Getting start
 
