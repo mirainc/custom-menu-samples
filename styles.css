@@ -1,10 +1,15 @@
 /* Variables */
 :root {
   --spacing-unit: 16px;
+  --bg: #1c3d36;
+  --text-primary: #fff;
+  --font-size-base: 22px;
+  --font-size-1: 14px;
+  --font-size-2: 18px;
+  --font-size-3: 20px;
 }
 
 /* Resets */
-
 hr {
   margin: 0;
 }
@@ -15,28 +20,6 @@ h2,
 }
 
 /* Common */
-
-.subheading {
-  letter-spacing: 4px;
-}
-
-.title {
-  margin-bottom: 7px;
-  letter-spacing: 1.2px;
-}
-
-.subtitle {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 300;
-  font-size: 22px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
-
-header {
-  text-align: center;
-  margin-bottom: calc(var(--spacing-unit) * 0.75);
-}
 
 h1,
 h2,
@@ -52,9 +35,31 @@ h1 {
 
 h2,
 .h2 {
-  font-size: 22px;
+  font-size: var(--font-size-base);
   font-weight: 500;
   letter-spacing: 2px;
+}
+
+.subheading {
+  letter-spacing: 4px;
+}
+
+.title {
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+  letter-spacing: 1.2px;
+}
+
+.subtitle {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+  font-size: var(--font-size-3);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+header {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-unit) * 0.75);
 }
 
 /* Main */
@@ -64,10 +69,10 @@ h2,
 }
 
 html {
-  background: #1c3d36;
-  color: white;
   -webkit-font-smoothing: antialiased;
-  font-size: 22px;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
   font-family: "Nunito", sans-serif;
 }
 
@@ -116,11 +121,6 @@ body {
   margin-left: calc(var(--spacing-unit) * 10.375);
 }
 
-.divider {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .questions {
   text-align: center;
 }
@@ -140,7 +140,7 @@ body {
 
 .footnote {
   font-weight: 300;
-  font-size: 14px;
+  font-size: var(--font-size-1);
 }
 
 .item:not(:last-child) {
@@ -155,15 +155,15 @@ body {
 }
 
 .item-with-image:not(:last-child) {
-  margin-bottom: calc(var(--spacing-unit) * 3.125);
+  margin-bottom: calc(var(--spacing-unit) * 3.5);
 }
 
-.item-image {
+.item-image-container {
   width: 170px;
   margin-right: calc(var(--spacing-unit) * 5.875);
 }
 
-.item-image img {
+.item-image-container img {
   width: 170px;
   margin-bottom: -18px;
 }
@@ -174,7 +174,7 @@ body {
 
 .modifier-description {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 18px;
+  font-size: var(--font-size-2);
   letter-spacing: 1.2px;
   font-weight: 400;
 }
