@@ -1,5 +1,7 @@
 # Custom Menu Sample Apps
 
-## Getting start
+## Getting started
 
 1. Open the `index.html` file
+
+## <TODO: Connecting to API>
