@@ -6,13 +6,18 @@ module.exports = {
   theme: {
     colors: {
       white: "#FFFFFF",
-      turquoise: "#24C5BE",
-      darkGray: "#363636",
+      turquoise: "#38bdb7",
+      darkGray: "#292929",
     },
     fontFamily: {
       "vesper-libre": '"Libre Baskerville"',
+      "open-sans": '"Open Sans"',
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        "9xl": "8.5rem",
+      },
+    },
   },
   plugins: [],
 };
