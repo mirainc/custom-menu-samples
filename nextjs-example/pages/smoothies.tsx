@@ -5,92 +5,95 @@ const data = {
   groups: [
     {
       id: "smoothies",
-      title: "Smoothies",
+      name: "Smoothies",
       description: "description for smoothie menu group",
       price: "$7",
       items: [
         {
           id: "berry-green",
-          title: "Berry Green",
+          name: "Berry Green",
           description: "Kale, Strawberries, Blueberries, Banana, Coconut Water",
           calories: 400,
         },
         {
           id: "very-berry",
-          title: "Very Berry",
+          name: "Very Berry",
           description: "Strawberries, Blueberries, Banana, Coconut Water",
           calories: 460,
         },
         {
           id: "lean-green-protein",
-          title: "Lean Green Protein",
+          name: "Lean Green Protein",
           description:
             "Kale, Spinach, Banana, Rolled Oats, Cinnamon, Coconut Water",
           calories: 600,
         },
         {
           id: "tropical-green-mango",
-          title: "Tropical Green Mango",
+          name: "Tropical Green Mango",
           description: "Kale, Spinach, Mango, Pineapple, Coconut Water",
           calories: 260,
         },
         {
           id: "strawberry-banana",
-          title: "Strawberry Banana",
+          name: "Strawberry Banana",
           description: "Strawberries, Coconut Water, Banana",
           calories: 310,
         },
         {
           id: "green-dream",
-          title: "Green Dream",
+          name: "Green Dream",
           description: "Kale, Spinach, Pineapple, Apple",
           calories: 300,
         },
         {
           id: "red-dragon",
-          title: "Red Dragon",
+          name: "Red Dragon",
           description:
             "Strawberries, Blueberries, Pineapple, Beets, Banana, Ginger, Coconut Water",
           calories: 530,
         },
         {
           id: "Kalicious",
-          title: "Kalicious",
+          name: "Kalicious",
           description: "Kale, Apple, Banana, Spinach, Lemon",
           calories: 500,
         },
       ],
       modifierGroups: [
         {
-          title: "Healthy Boost Powders",
+          id: "healthy-boost-powders",
+          name: "Healthy Boost Powders",
           price: "$1.50",
           items: [
-            { title: "Probiotics", calories: 0 },
-            { title: "Cacao Powder", calories: 15 },
-            { title: "Raw Protein Meal", calories: 80 },
-            { title: "Spiruline", calories: 10 },
+            { id: "probiotics", name: "Probiotics", calories: 0 },
+            { id: "cacao-powder", name: "Cacao Powder", calories: 15 },
+            { id: "raw-protein-meal", name: "Raw Protein Meal", calories: 80 },
+            { id: "spirulina", name: "Spirulina", calories: 10 },
           ],
         },
         {
-          title: "Shots",
+          id: "shots",
+          name: "Shots",
           price: "$2.50",
           items: [
-            { title: "Probiotics", calories: 45 },
-            { title: "Tumeric", calories: 60 },
-            { title: "Wheatgrass", calories: 5 },
+            { id: "ginger", name: "Ginger", calories: 45 },
+            { id: "tumeric", name: "Tumeric", calories: 60 },
+            { id: "wheatgrass", name: "Wheatgrass", calories: 5 },
           ],
         },
         {
-          title: "Add-Ons",
+          id: "add-ons",
+          name: "Add-Ons",
           price: "$1",
           items: [
-            { title: "Beets", calories: 40 },
-            { title: "Cucumber", calories: 20 },
-            { title: "Kale", calories: 15 },
-            { title: "Lemon", calories: 10 },
-            { title: "Spinach", calories: 15 },
-            { title: "Celery", calories: 40 },
-            { title: "Extra Fruit", calories: "10-60" },
+            { id: "beets", name: "Beets", calories: 40 },
+            { id: "cucumber", name: "Cucumber", calories: 20 },
+            { id: "kale", name: "Kale", calories: 15 },
+            { id: "lemon", name: "Lemon", calories: 10 },
+            { id: "spinach", name: "Spinach", calories: 15 },
+            { id: "celery", name: "Celery", calories: 40 },
+            { id: "extra-fruit", name: "Extra Fruit", calories: "10-60" },
           ],
         },
       ],
@@ -102,12 +105,12 @@ const Home: NextPage = () => {
   const smoothieData = data.groups.find(({ id }) => id === "smoothies");
   if (!smoothieData) return null;
 
-  const { title, price, items } = smoothieData;
+  const { name, price, items, modifierGroups } = smoothieData;
 
   return (
     <div className="bg-darkGray text-white h-screen font-vesper-libre">
       <Head>
-        <title>Custom Menu</title>
+        <title>{name}</title>
         <meta name="description" content="Custom NextJS Menu App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -116,9 +119,9 @@ const Home: NextPage = () => {
         <section className="w-2/3 mb-12">
           <header className="flex items-end font-bold px-10 mt-2">
             <h1 className="text-9xl mr-2">
-              {title} {price}
+              {name} {price}
             </h1>
-            <div className="text-turquoise text-3xl font-open-sans mb-[46px]">
+            <div className="text-turquoise text-3xl font-open-sans mb-[52px]">
               EA
               <br />
               16 OZ
@@ -128,7 +131,7 @@ const Home: NextPage = () => {
             {items.map((x) => (
               <div key={x.id} className="w-1/2 my-5 px-10 overflow-hidden">
                 <div className="text-turquoise text-4xl mb-2">
-                  {x.title}{" "}
+                  {x.name}{" "}
                   {x.calories && (
                     <span className="text-2xl">{x.calories} CAL</span>
                   )}
@@ -148,7 +151,24 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className="w-1/3 p-12">test</section>
+        <section className="w-1/3 p-12">
+          <h2 className="text-7xl mr-2 text-turquoise mb-6">Extras</h2>
+          {modifierGroups.map((x) => (
+            <div key={x.id} className="mb-10 last:mb-0">
+              <h3 className="text-4xl mb-4">
+                {x.name} {x.price}
+              </h3>
+              {x.items.map((x) => (
+                <div
+                  className="text-3xl text-turquoise mb-3 last:mb-0"
+                  key={x.id}
+                >
+                  {x.name} adds {x.calories} Cal
+                </div>
+              ))}
+            </div>
+          ))}
+        </section>
       </main>
     </div>
   );
