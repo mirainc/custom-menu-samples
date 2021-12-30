@@ -1,0 +1,100 @@
+{
+  "menus": [
+    {
+      "id": "main-menu",
+      "groups": [
+        {
+          "id": "espresso-and-coffee",
+          "title": "Espresso & Coffee",
+          "items": [
+            {
+              "title": "Iced Caramel Macchiato",
+              "price": "4.99",
+              "calories": 180
+            },
+            {
+              "title": "Iced Cinnamon Macchiato",
+              "price": "4.99",
+              "calories": 180
+            },
+            {
+              "title": "Iced White Chocolate Mocha",
+              "price": "4.99",
+              "calories": 180
+            },
+            {
+              "title": "Vanilla Sweet Cream with Cold Brew",
+              "price": "4.99",
+              "calories": 180
+            },
+            {
+              "title": "Cold Brew with Cold Foam",
+              "price": "4.99",
+              "calories": 180
+            },
+            {
+              "title": "Iced Coffee",
+              "price": "4.99",
+              "calories": 180
+            },
+            {
+              "title": "Caffe Latte",
+              "price": "4.99",
+              "calories": 180
+            },
+            {
+              "title": "Cappuccino",
+              "price": "4.99",
+              "calories": 180
+            },
+            {
+              "title": "Freshly Brewed Coffee",
+              "price": "4.99",
+              "calories": 180
+            }
+          ],
+          "modifierGroups": [
+            {
+              "title": "Espresso",
+              "price": "$1.00",
+              "calories": "5",
+              "items": [{ "title": "Espresso A" }, { "title": "Espresso B" }]
+            },
+            {
+              "title": "Flavours",
+              "price": "$1.00",
+              "calories": "0-25",
+              "items": [{ "title": "Regular" }, { "title": "Sugar-Free" }]
+            },
+            {
+              "title": "Non-dairy",
+              "price": "$1.00",
+              "items": [
+                { "title": "Coconutmilk" },
+                { "title": "Organic Soymilk" },
+                { "title": "Almondmilk" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "iced-coldbrew",
+          "title": "Iced Cold Brew",
+          "items": [
+            { "title": "Cold Brew", "price": "4.99", "calories": 5 },
+            {
+              "title": "Cold Brew with Salted Cream Cold Foam",
+              "price": "6.99",
+              "calories": 230
+            },
+            {
+              "title": "Cold Brew with Cascara Cold Foam",
+              "price": "5.99",
+              "calories": 80
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

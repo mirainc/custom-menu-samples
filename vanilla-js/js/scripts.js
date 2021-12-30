@@ -73,94 +73,23 @@ const renderIcedColdbrewMenuItems = (data) => {
     icedColdbrewContent;
 };
 
-(function () {
-  const data = {
-    groups: [
-      {
-        id: "espresso-and-coffee",
-        title: "Espresso & Coffee",
-        items: [
-          { title: "Iced Caramel Macchiato", price: "4.99", calories: 180 },
-          { title: "Iced Cinnamon Macchiato", price: "4.99", calories: 180 },
-          { title: "Iced White Chocolate Mocha", price: "4.99", calories: 180 },
-          {
-            title: "Vanilla Sweet Cream with Cold Brew",
-            price: "4.99",
-            calories: 180,
-          },
-          {
-            title: "Cold Brew with Cold Foam",
-            price: "4.99",
-            calories: 180,
-          },
-          {
-            title: "Iced Coffee",
-            price: "4.99",
-            calories: 180,
-          },
-          {
-            title: "Caffe Latte",
-            price: "4.99",
-            calories: 180,
-          },
-          {
-            title: "Cappuccino",
-            price: "4.99",
-            calories: 180,
-          },
-          {
-            title: "Freshly Brewed Coffee",
-            price: "4.99",
-            calories: 180,
-          },
-        ],
-        modifierGroups: [
-          {
-            title: "Espresso",
-            price: "$1.00",
-            calories: "5",
-            items: [{ title: "Espresso A" }, { title: "Espresso B" }],
-          },
-          {
-            title: "Flavours",
-            price: "$1.00",
-            calories: "0-25",
-            items: [{ title: "Regular" }, { title: "Sugar-Free" }],
-          },
-          {
-            title: "Non-dairy",
-            price: "$1.00",
-            items: [
-              { title: "Coconutmilk" },
-              { title: "Organic Soymilk" },
-              { title: "Almondmilk" },
-            ],
-          },
-        ],
-      },
-      {
-        id: "iced-coldbrew",
-        title: "Iced Cold Brew",
-        items: [
-          { title: "Cold Brew", price: "4.99", calories: 5 },
-          {
-            title: "Cold Brew with Salted Cream Cold Foam",
-            price: "6.99",
-            calories: 230,
-          },
-          {
-            title: "Cold Brew with Cascara Cold Foam",
-            price: "5.99",
-            calories: 80,
-          },
-        ],
-      },
-    ],
-  };
+const getData = async (menuId) => {
+  const response = await fetch(`http://localhost:3000/menus/${menuId}`);
+  const data = await response.json();
+  return data;
+};
 
-  const espressoAndCoffeeData = data.groups.find(
-    (x) => x.id === "espresso-and-coffee"
-  );
+const main = async () => {
+  const menuId = "main-menu";
+  const groupId = "espresso-and-coffee";
+
+  const data = await getData(menuId);
+  console.log(data);
+
+  if (!data) return;
+
+  const espressoAndCoffeeData = data.groups.find((x) => x.id === groupId);
+
   document.querySelector("#espresso-and-coffee-heading").innerHTML =
     espressoAndCoffeeData.title;
   renderEspressoAndCoffeeMenuItems(espressoAndCoffeeData.items);
@@ -170,4 +99,6 @@ const renderIcedColdbrewMenuItems = (data) => {
   document.querySelector("#iced-coldbrew-heading").innerHTML =
     icedColdbrewData.title;
   renderIcedColdbrewMenuItems(icedColdbrewData.items);
-})();
+};
+
+main();
