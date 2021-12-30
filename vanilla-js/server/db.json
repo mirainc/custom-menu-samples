@@ -1,10 +1,10 @@
 {
   "menus": [
     {
-      "id": "main-menu",
+      "id": "main-menu-guid",
       "groups": [
         {
-          "id": "espresso-and-coffee",
+          "id": "espresso-and-coffee-guid",
           "title": "Espresso & Coffee",
           "items": [
             {
@@ -78,7 +78,7 @@
           ]
         },
         {
-          "id": "iced-coldbrew",
+          "id": "iced-coldbrew-guid",
           "title": "Iced Cold Brew",
           "items": [
             { "title": "Cold Brew", "price": "4.99", "calories": 5 },

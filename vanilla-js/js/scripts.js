@@ -58,8 +58,6 @@ const renderIcedColdbrewMenuItems = (data) => {
     <div class="subtitle">${price} | ${calories} CAL</div>
   </div>
 </div>
-
-
   `;
 
   const icedColdbrewContent = data
@@ -73,29 +71,30 @@ const renderIcedColdbrewMenuItems = (data) => {
     icedColdbrewContent;
 };
 
-const getData = async (menuId) => {
+const fetchData = async (menuId) => {
   const response = await fetch(`http://localhost:3000/menus/${menuId}`);
   const data = await response.json();
   return data;
 };
 
 const main = async () => {
-  const menuId = "main-menu";
-  const groupId = "espresso-and-coffee";
-
-  const data = await getData(menuId);
-  console.log(data);
-
+  const menuId = "main-menu-guid";
+  const espressoAndCoffeeGroupId = "espresso-and-coffee-guid";
+  const icedColdbrewGroupId = "iced-coldbrew-guid";
+  const data = await fetchData(menuId);
   if (!data) return;
 
-  const espressoAndCoffeeData = data.groups.find((x) => x.id === groupId);
-
+  const espressoAndCoffeeData = data.groups.find(
+    (x) => x.id === espressoAndCoffeeGroupId
+  );
   document.querySelector("#espresso-and-coffee-heading").innerHTML =
     espressoAndCoffeeData.title;
   renderEspressoAndCoffeeMenuItems(espressoAndCoffeeData.items);
   renderEspressoAndCoffeeModifiers(espressoAndCoffeeData.modifierGroups);
 
-  const icedColdbrewData = data.groups.find((x) => x.id === "iced-coldbrew");
+  const icedColdbrewData = data.groups.find(
+    (x) => x.id === icedColdbrewGroupId
+  );
   document.querySelector("#iced-coldbrew-heading").innerHTML =
     icedColdbrewData.title;
   renderIcedColdbrewMenuItems(icedColdbrewData.items);
