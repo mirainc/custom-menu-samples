@@ -1,7 +1,14 @@
-# Custom Menu Sample Apps
+# Sample Custom Menu - Vanilla Example
 
 ## Getting started
 
 1. Open the `index.html` file
+
+## Notes
+
+This sample custom menu app provides an unopinionated example on how to create a custom menu.
+In production, it's strongly encouraged to utilise a bundler to concatenate and minify third-party dependencies.
+
+For more opinionated production ready examples see the other two examples in this repository.
 
 ## <TODO: Connecting to API>
