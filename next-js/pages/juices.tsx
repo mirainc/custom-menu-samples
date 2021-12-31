@@ -101,7 +101,6 @@ const Home: NextPage = () => {
       <Head>
         <title>{name}</title>
         <meta name="description" content="Custom NextJS Menu App" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex">
