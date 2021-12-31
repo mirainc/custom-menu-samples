@@ -6,8 +6,8 @@
 
 ## Notes
 
-This sample custom menu app provides an unopinionated example of how to create a custom menu.
-In production, it's strongly encouraged to utilise a bundler to concatenate and minify third-party dependencies.
+This sample custom menu app provides an unopinionated example of how to create a custom menu with vanilla JS and without frameworks.
+In production, it's strongly recommended to utilise a bundler to concatenate and minify third-party dependencies.
 
 For more opinionated production-ready examples see the other two examples in this repository.
 

@@ -4,9 +4,10 @@
   --bg: #1c3d36;
   --text-primary: #fff;
   --font-size-base: 22px;
-  --font-size-1: 14px;
-  --font-size-2: 18px;
-  --font-size-3: 20px;
+  --font-size-xs: 14px;
+  --font-size-sm: 18px;
+  --font-size-md: 20px;
+  --font-size-lg: 44px;
 }
 
 /* Resets */
@@ -32,6 +33,7 @@ h2,
 }
 
 h1 {
+  font-size: var(--font-size-lg);
   letter-spacing: 10px;
   margin-bottom: calc(var(--spacing-unit) * 2.625);
 }
@@ -55,7 +57,7 @@ h2,
 .subtitle {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 300;
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-md);
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
@@ -135,7 +137,7 @@ body {
 
 .modifier-description {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: var(--font-size-2);
+  font-size: var(--font-size-sm);
   letter-spacing: 1.2px;
   font-weight: 400;
 }
@@ -144,18 +146,18 @@ body {
   font-weight: 300;
 }
 
-.bottom-heading-container {
+.ask-about-favourites-container {
   padding-bottom: calc(var(--spacing-unit) * 2.75);
 }
 
-.bottom-heading {
+.ask-about-favourites {
   margin-top: 0;
   text-align: center;
 }
 
 .footnote {
   font-weight: 300;
-  font-size: var(--font-size-1);
+  font-size: var(--font-size-xs);
 }
 
 .item:not(:last-child) {
