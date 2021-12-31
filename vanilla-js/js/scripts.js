@@ -81,6 +81,7 @@ const main = async () => {
   const menuId = "main-menu-guid";
   const espressoAndCoffeeGroupId = "espresso-and-coffee-guid";
   const icedColdbrewGroupId = "iced-coldbrew-guid";
+
   const data = await fetchData(menuId);
   if (!data) return;
 
