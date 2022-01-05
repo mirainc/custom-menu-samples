@@ -4,8 +4,10 @@ const renderEspressoAndCoffeeMenuItems = (data) => {
     <div class="subtitle">LARGE | ${price} | ${calories} CAL</div>
   </div>`;
 
+  const minColumn1Items = 0;
+  const maxColumn1Items = 4;
   const espressoMenuColumn1Content = data
-    .slice(0, 4)
+    .slice(minColumn1Items, maxColumn1Items)
     .map(({ title, price, calories }) => {
       return renderMenuItem(title, price, calories);
     })
@@ -14,8 +16,10 @@ const renderEspressoAndCoffeeMenuItems = (data) => {
   document.querySelector("#espresso-menu-column-1").innerHTML =
     espressoMenuColumn1Content;
 
+  const minColumn2Items = 4;
+  const maxColumn2Items = 9;
   const espressoMenuColumn2Content = data
-    .slice(4, 9)
+    .slice(minColumn2Items, maxColumn2Items)
     .map(({ title, price, calories }) => {
       return renderMenuItem(title, price, calories);
     })
@@ -72,7 +76,7 @@ const renderIcedColdbrewMenuItems = (data) => {
 };
 
 const fetchData = async (menuId) => {
-  const response = await fetch(`http://localhost:3000/menus/${menuId}`);
+  const response = await fetch(`http://localhost:3001/menus/${menuId}`);
   const data = await response.json();
   return data;
 };

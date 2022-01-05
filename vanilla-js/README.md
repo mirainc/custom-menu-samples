@@ -2,7 +2,8 @@
 
 ## Getting started
 
-1. Open the `index.html` file
+1. Run `yarn start:mock-server` // TODO: Replace with actual API
+1. Run `npx serve .`
 
 ## Notes
 
