@@ -1,0 +1,12 @@
+{
+  "name": "vanilla-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.17.0"
+  },
+  "scripts": {
+    "start:mock-server": "json-server --watch -p 3001 server/db.json"
+  }
+}
