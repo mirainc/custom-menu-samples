@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start:mock-server": "json-server --watch server/db.json"
+    "start:mock-server": "json-server --watch -p 3002 server/db.json"
   },
   "dependencies": {
     "next": "12.0.7",
