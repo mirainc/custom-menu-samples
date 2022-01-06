@@ -7,7 +7,7 @@ export interface JuicesProps {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("http://localhost:3000/menus/main-menu-guid");
+  const response = await fetch("http://localhost:3002/menus/main-menu-guid");
   const data = await response.json();
 
   return {
