@@ -15,7 +15,7 @@ export interface SmoothiesProps {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("http://localhost:3002/menus/main-menu-guid");
+  // const response = await fetch("http://localhost:3002/menus/main-menu-guid");
   let data;
   // data = await response.json();
   data = {
