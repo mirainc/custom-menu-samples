@@ -5,7 +5,7 @@ import MenuItemDescription from "../../components/MenuItemDescription";
 import MenuItemHeading from "../../components/MenuItemHeading";
 import Subheading from "../../components/Subheading";
 import Heading2 from "../../components/Heading2";
-import { MenuData } from "./types";
+import { MenuData } from "../../types";
 import Heading3 from "../../components/Heading3";
 import ExtraItem from "../../components/ExtraItem";
 import Footnote from "../../components/Footnote";

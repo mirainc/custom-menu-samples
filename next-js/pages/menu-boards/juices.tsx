@@ -8,7 +8,7 @@ import Heading3 from "../../components/Heading3";
 import MenuItemDescription from "../../components/MenuItemDescription";
 import MenuItemHeading from "../../components/MenuItemHeading";
 import Subheading from "../../components/Subheading";
-import { MenuData } from "./types";
+import { MenuData } from "../../types";
 
 export interface JuicesProps {
   data: MenuData;
