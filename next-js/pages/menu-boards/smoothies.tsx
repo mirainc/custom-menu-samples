@@ -1,6 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Heading from "../../components/Heading";
+import MenuItemDescription from "../../components/MenuItemDescription";
+import MenuItemHeading from "../../components/MenuItemHeading";
+import Subheading from "../../components/Subheading";
+import Heading2 from "../../components/Heading2";
 import { MenuData } from "./types";
+import Heading3 from "../../components/Heading3";
+import ExtraItem from "../../components/ExtraItem";
+import Footnote from "../../components/Footnote";
 
 export interface SmoothiesProps {
   data: MenuData;
@@ -24,7 +32,7 @@ const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
   const { name, price, items, modifierGroups } = smoothieData;
 
   return (
-    <div className="bg-darkGray text-white h-screen font-vesper-libre">
+    <>
       <Head>
         <title>{name}</title>
         <meta name="description" content="Custom NextJS Menu App" />
@@ -32,60 +40,59 @@ const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
 
       <main className="flex">
         <section className="w-2/3 mb-12">
-          <header className="flex items-end font-bold px-10 mt-2">
-            <h1 className="text-9xl mr-2">
+          <header className="flex items-end px-10 mt-2">
+            <Heading>
               {name} {price}
-            </h1>
-            <div className="text-turquoise text-3xl font-open-sans mb-[52px]">
-              EA
-              <br />
-              16 OZ
+            </Heading>
+            <div className="mb-[52px]">
+              <Subheading>
+                EA
+                <br />
+                16 OZ
+              </Subheading>
             </div>
           </header>
           <div className="flex flex-wrap overflow-hidden mb-14">
             {items.map((x) => (
               <div key={x.id} className="w-1/2 my-5 px-10 overflow-hidden">
-                <div className="text-turquoise text-4xl mb-2">
+                <MenuItemHeading>
                   {x.name}{" "}
                   {x.calories && (
                     <span className="text-2xl">{x.calories} CAL</span>
                   )}
-                </div>
-                <div className="text-2xl font-open-sans uppercase tracking-wide">
-                  {x.description}
-                </div>
+                </MenuItemHeading>
+                <MenuItemDescription>{x.description}</MenuItemDescription>
               </div>
             ))}
           </div>
           <div className="absolute bottom-0 left-0 w-2/3">
-            <p className="text-turquoise px-12 py-8 text-4xl">
+            <Footnote>
               Additional nutrition information available upon request. <br />{" "}
               2,000 calories a day is used for general nutrition advice, but
               calorie needs vary.
-            </p>
+            </Footnote>
           </div>
         </section>
 
         <section className="w-1/3 p-12">
-          <h2 className="text-7xl mr-2 text-turquoise mb-6">Extras</h2>
+          <Heading2>Extras</Heading2>
           {modifierGroups.map((x) => (
             <div key={x.id} className="mb-10 last:mb-0">
-              <h3 className="text-4xl mb-4">
+              <Heading3>
                 {x.name} {x.price}
-              </h3>
+              </Heading3>
               {x.items.map((x) => (
-                <div
-                  className="text-3xl text-turquoise mb-3 last:mb-0"
-                  key={x.id}
-                >
-                  {x.name} adds {x.calories} Cal
+                <div className="mb-3 last:mb-0" key={x.id}>
+                  <ExtraItem>
+                    {x.name} adds {x.calories} Cal
+                  </ExtraItem>
                 </div>
               ))}
             </div>
           ))}
         </section>
       </main>
-    </div>
+    </>
   );
 };
 
