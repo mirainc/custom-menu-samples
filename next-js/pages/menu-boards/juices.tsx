@@ -235,7 +235,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Juices: NextPage<JuicesProps> = ({ data, ...rest }) => {
+const Juices: NextPage<JuicesProps> = ({ data }) => {
   const juiceData = data.groups.find(({ id }) => id === "fresh-juices");
   if (!juiceData) return null;
 
