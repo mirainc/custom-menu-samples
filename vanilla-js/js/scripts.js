@@ -81,6 +81,12 @@ const fetchData = async (menuId) => {
   return data;
 };
 
+const getQueryParams = () => {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
+  return params;
+};
+
 const main = async () => {
   const menuId = "main-menu-guid";
   const espressoAndCoffeeGroupId = "espresso-and-coffee-guid";
@@ -201,6 +207,23 @@ const main = async () => {
   document.querySelector("#iced-coldbrew-heading").innerHTML =
     icedColdbrewData.title;
   renderIcedColdbrewMenuItems(icedColdbrewData.items);
+
+  const { footnote, espressoAndCoffeeSubheading, espressoAndCoffeeBottomText } =
+    getQueryParams();
+
+  if (footnote) {
+    document.querySelector("#footnote").innerHTML = footnote;
+  }
+
+  if (espressoAndCoffeeSubheading) {
+    document.querySelector("#espresso-and-coffee-subheading").innerHTML =
+      espressoAndCoffeeSubheading;
+  }
+
+  if (espressoAndCoffeeBottomText) {
+    document.querySelector("#espresso-and-coffee-bottom-text").innerHTML =
+      espressoAndCoffeeBottomText;
+  }
 };
 
 main();
