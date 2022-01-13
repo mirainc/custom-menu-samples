@@ -146,11 +146,12 @@ body {
   font-weight: 300;
 }
 
-.ask-about-favourites-container {
+.espresso-and-coffee-bottom-text-container {
   padding-bottom: calc(var(--spacing-unit) * 2.75);
 }
 
-.ask-about-favourites {
+.espresso-and-coffee-bottom-text {
+  text-transform: uppercase;
   margin-top: 0;
   text-align: center;
 }
