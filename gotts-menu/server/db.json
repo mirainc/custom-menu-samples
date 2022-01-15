@@ -143,7 +143,23 @@
               ]
             }
           ]
-        }
+        },
+        {
+          "id": "wine-and-beer",
+          "name": "Wine & Beer",
+          "groups": [
+            {
+              "id": "sparkling",
+              "name": "sparkling",
+              "price": 33,
+              "items": [
+                {
+                  "id": "blanc-de-blancs",
+                  "name": "Blanc de Blancs"
+                },
+              ]
+            },
+        },
       ]
     }
   ]
