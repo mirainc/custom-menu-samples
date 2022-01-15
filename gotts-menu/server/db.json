@@ -24,7 +24,7 @@
         {
           "id": "shakes",
           "name": "Shakes",
-          "price": "$6.99",
+          "price": 6.99,
           "items": [
             {
               "id": "chocolate-shake",
@@ -32,8 +32,8 @@
               "name": "Chocolate Shake"
             },
             {
-              "id": "Vanilla Shake",
-              "name": "Just Celery",
+              "id": "vanilla-shake",
+              "name": "Vanilla Shake",
               "description": "Hand spun with organic vanilla ice cream & milk."
             }
           ]
@@ -109,7 +109,7 @@
                 },
                 {
                   "id": "coke",
-                  "name": "coke"
+                  "name": "Coke"
                 },
                 {
                   "id": "mr-pibb",
@@ -135,7 +135,8 @@
             {
               "id": "revive-kombucha",
               "name": "Revive Kombucha",
-              "item": [
+              "price": 5.99,
+              "items": [
                 { "id": "original-cola", "name": "Original Cola" },
                 { "id": "ginger-lime", "name": "Ginger Lime" },
                 { "id": "hibiscus-refresher", "name": "Hibiscus Refresher" }
