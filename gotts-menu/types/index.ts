@@ -4,6 +4,7 @@ export interface MenuData {
 }
 
 export interface Group {
+  sizes: Size[];
   id: string;
   name: string;
   description: string;
@@ -19,6 +20,13 @@ export interface Item {
   description: string;
   price: string;
   calories: string;
+  sizes: Size[];
+}
+
+export interface Size {
+  id: string;
+  name: string;
+  price: string;
 }
 
 export interface ModifierGroup {

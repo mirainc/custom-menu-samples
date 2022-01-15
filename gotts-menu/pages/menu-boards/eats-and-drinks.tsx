@@ -78,12 +78,18 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
                 Add flavors:
                 {fountainSoda.modifierGroups[0].items.map((x) => {
                   return <div key={x.id}>{x.name}</div>;
-                })}
+                })}{" "}
+                {fountainSoda.modifierGroups[0].price}
               </small>
 
               <small>
                 {fountainSoda.sizes.map((x) => {
-                  return <div key={x.id}>{x.name}</div>;
+                  return (
+                    <div key={x.id}>
+                      <div>{x.name}</div>
+                      <div>{x.price}</div>
+                    </div>
+                  );
                 })}
               </small>
             </div>
@@ -91,7 +97,12 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
             {beverages.items.slice(0, 4).map((x) => (
               <div key={x.id}>
                 <h3>{x.name}</h3>
-                <div>{x.description}</div>
+                {x.sizes.map((x) => (
+                  <div key={x.id}>
+                    <div>{x.name}</div>
+                    <div>{x.price}</div>
+                  </div>
+                ))}
                 <div>{x.price}</div>
               </div>
             ))}
@@ -101,10 +112,17 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
               {reviveKombucha.items.map((x) => (
                 <div key={x.id}>
                   <div>{x.name}</div>
-                  <div>{reviveKombucha.price}</div>
                 </div>
               ))}
+              <div>{reviveKombucha.price}</div>
             </div>
+
+            {beverages.items.slice(4, beverages.items.length).map((x) => (
+              <div key={x.id}>
+                <h3>{x.name}</h3>
+                <div>{x.price}</div>
+              </div>
+            ))}
           </section>
         </div>
       </main>
