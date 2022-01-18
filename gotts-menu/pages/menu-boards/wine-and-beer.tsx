@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { MenuData } from "../../types";
+import { Group, MenuData } from "../../types";
 
 export interface JuicesProps {
   data: MenuData;
@@ -25,6 +25,32 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
 
   console.log(wine, beer);
 
+  const renderMenuGroup = (x: Group) => {
+    return (
+      <div key={x.id}>
+        <h3>{x.name}</h3>
+        <div>
+          {x.price ? (
+            <div>
+              {x.items.map((y) => (
+                <div key={y.id}>
+                  <div>{y.name}</div>
+                  <div>{x.price}</div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              {x.items.map((x) => (
+                <div key={x.id}>{x.name}</div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <Head>
@@ -39,26 +65,14 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
         <div className="w-1/2">
           <section>
             <h2>Wine</h2>
-            {wine.groups.map((x) => (
-              <div key={x.id}>
-                <h3>{x.name}</h3>
-                <div>{x.description}</div>
-                <div>{x.price}</div>
-              </div>
-            ))}
+            {wine.groups.map(renderMenuGroup)}
           </section>
         </div>
 
         <div className="w-1/2 ">
           <section>
             <h2>Beer</h2>
-
-            {beer.groups.map((x) => (
-              <div key={x.id}>
-                <h3>{x.name}</h3>
-                <div>{x.price}</div>
-              </div>
-            ))}
+            {beer.groups.map(renderMenuGroup)}
           </section>
         </div>
       </main>
