@@ -145,6 +145,205 @@
           ]
         },
         {
+          "id": "wine",
+          "name": "Wine & Beer",
+          "groups": [
+            {
+              "id": "sparkling",
+              "name": "sparkling",
+              "price": 33,
+              "items": [
+                {
+                  "id": "blanc-de-blancs",
+                  "name": "Blanc de Blancs",
+                  "winery": "Schrambsberg",
+                  "location": "Napa Valley"
+                }
+              ]
+            },
+            {
+              "id": "rosé",
+              "name": "Rosé",
+              "sizes": [
+                { "id": "glass", "name": "Glass", "price": "8" },
+                { "id": "bottle", "name": "Bottle", "price": "32" }
+              ],
+              "items": [
+                {
+                  "id": "rosé",
+                  "name": "Rosé",
+                  "winery": "Bieler Père et Fils",
+                  "location": "Provence, France"
+                }
+              ]
+            },
+            {
+              "id": "white",
+              "name": "White",
+              "items": [
+                {
+                  "id": "pinot-grigio",
+                  "name": "Pinot Grigio",
+                  "winery": "Seaglass",
+                  "location": "Santa Barbara County",
+                  "sizes": [
+                    { "id": "glass", "name": "Glass", "price": "7" },
+                    { "id": "bottle", "name": "Bottle", "price": "28" }
+                  ]
+                },
+                {
+                  "id": "sauvignon-blanc",
+                  "name": "Sauvignon Blanc",
+                  "winery": "Daisy",
+                  "location": "California",
+                  "sizes": [
+                    { "id": "glass", "name": "Glass", "price": "8" },
+                    { "id": "bottle", "name": "Bottle", "price": "32" }
+                  ]
+                },
+                {
+                  "id": "chardonnay",
+                  "name": "Chardonnay",
+                  "winery": "Napa Cellars",
+                  "location": "Napa Valley",
+                  "sizes": [
+                    { "id": "glass", "name": "Glass", "price": "8" },
+                    { "id": "bottle", "name": "Bottle", "price": "36" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "white-half-bottles",
+              "name": "White Half Bottles",
+              "items": [
+                {
+                  "id": "sauvignon-blanc-1",
+                  "name": "Sauvignon Blanc",
+                  "winery": "Round Pond",
+                  "location": "Napa Valley",
+                  "price": "23"
+                },
+                {
+                  "id": "sauvignon-blanc-2",
+                  "name": "Sauvignon Blanc",
+                  "winery": "Frog's Leap",
+                  "location": "Napa Valley",
+                  "price": "23"
+                },
+                {
+                  "id": "sauvignon-blanc-3",
+                  "name": "Sauvignon Blanc",
+                  "winery": "Duckhorn",
+                  "location": "Napa Valley",
+                  "price": "25"
+                },
+                {
+                  "id": "chardonnay",
+                  "name": "Chardonnay",
+                  "winery": "Rombauer",
+                  "location": "Napa Valley",
+                  "price": "30"
+                },
+                {
+                  "id": "chardonnay",
+                  "name": "Chardonnay",
+                  "winery": "Cakebread",
+                  "location": "Napa Valley",
+                  "price": "35"
+                }
+              ]
+            },
+            {
+              "id": "red",
+              "name": "Red",
+              "items": [
+                {
+                  "id": "pinot-noir",
+                  "name": "Pinot Noir",
+                  "winery": "The Pinot Project",
+                  "location": "California",
+                  "sizes": [
+                    { "id": "glass", "name": "Glass", "price": "9" },
+                    { "id": "bottle", "name": "Bottle", "price": "36" }
+                  ]
+                },
+                {
+                  "id": "cabernet-blend",
+                  "name": "Cabernet Blend",
+                  "winery": "Charles & Charles",
+                  "location": "Washington",
+                  "sizes": [
+                    { "id": "glass", "name": "Glass", "price": "8" },
+                    { "id": "bottle", "name": "Bottle", "price": "32" }
+                  ]
+                },
+                {
+                  "id": "cabernet-sauvignon",
+                  "name": "Cabernet Sauvignon",
+                  "winery": "Raymond Vineyard",
+                  "location": "Napa Valley",
+                  "sizes": [
+                    { "id": "glass", "name": "Glass", "price": "12" },
+                    { "id": "bottle", "name": "Bottle", "price": "48" }
+                  ]
+                },
+                {
+                  "id": "zinfandel",
+                  "name": "Zinfandel",
+                  "winery": "Turley",
+                  "location": "California",
+                  "sizes": [
+                    { "id": "glass", "name": "Glass", "price": "13" },
+                    { "id": "bottle", "name": "Bottle", "price": "52" }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "red-half-bottle",
+              "name": "Red Half Bottle",
+              "items": [
+                {
+                  "id": "zinfandel",
+                  "name": "Zinfandel",
+                  "winery": "Seghesio",
+                  "location": "Sonoma Country",
+                  "price": 23
+                },
+                {
+                  "id": "cabernet-franc",
+                  "name": "Cabernet Franc",
+                  "winery": "Lang & Reed",
+                  "location": "North Coast",
+                  "price": 23
+                },
+                {
+                  "id": "pinot-noir",
+                  "name": "Pinot Noir",
+                  "winery": "Melville",
+                  "location": "Santa Rita Hills",
+                  "price": 42
+                },
+                {
+                  "id": "cabernet-sauvigno-1",
+                  "name": "Cabernet Sauvignon",
+                  "winery": "Long Meadow Ranch",
+                  "location": "Napa Valley",
+                  "price": 42
+                },
+                {
+                  "id": "cabernet-sauvignon-2",
+                  "name": "Cabernet Sauvignon",
+                  "winery": "Shafer",
+                  "location": "Napa Valley",
+                  "price": 79
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "beer",
           "name": "Beer",
           "groups": [

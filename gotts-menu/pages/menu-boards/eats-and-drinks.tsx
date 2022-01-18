@@ -24,12 +24,9 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
   if (!grabAndGo || !shakes || !beverages) return null;
 
   const fountainSoda = beverages.groups[0];
-  console.log(fountainSoda);
   const reviveKombucha = beverages.groups[1];
 
   if (!fountainSoda) return null;
-
-  console.log({ grabAndGo, shakes, beverages });
 
   return (
     <>
