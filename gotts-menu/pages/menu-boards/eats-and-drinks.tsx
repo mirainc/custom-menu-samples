@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Box, Grid, Heading, Text } from "theme-ui";
 import { MenuData } from "../../types";
 
 export interface JuicesProps {
@@ -34,95 +35,90 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
         <meta name="description" content="Custom NextJS Menu App" />
       </Head>
 
-      <main className="flex">
-        <header className="flex items-end px-10 mt-2">
-          <h1>Eats & Drinks</h1>
-        </header>
+      <header>
+        <Heading as="h1">Eats & Drinks</Heading>
+      </header>
 
-        <div className="w-1/2">
+      <Grid columns={2} gap={2}>
+        <Box>
           <section>
-            <h2>{grabAndGo.name}</h2>
+            <Heading>{grabAndGo.name}</Heading>
             {grabAndGo.items.map((x) => (
               <div key={x.id}>
-                <h3>{x.name}</h3>
-                <div>{x.description}</div>
-                <div>{x.price}</div>
+                <Heading as="h3">{x.name}</Heading>
+                <Text>{x.description}</Text>
+                <Text>{x.price}</Text>
               </div>
             ))}
           </section>
           <section>
-            <h2>{shakes.name}</h2>
+            <Heading>{shakes.name}</Heading>
             {shakes.items.map((x) => (
               <div key={x.id}>
-                <h3>{x.name}</h3>
-                <div>{x.description}</div>
-                <div>{shakes.price}</div>
+                <Heading as="h3">{x.name}</Heading>
+                <Text>{x.description}</Text>
+                <Text>{shakes.price}</Text>
               </div>
             ))}
           </section>
-        </div>
+        </Box>
 
-        <div className="w-1/2 ">
+        {/* <Box>
           <section>
-            <h2>{beverages.name}</h2>
+            <Heading as="h2">{beverages.name}</Heading>
 
             <div>
-              <h3>{fountainSoda.name}</h3>
+              <Heading as="h3">{fountainSoda.name}</Heading>
               {fountainSoda.items.map((x) => {
                 return <div key={x.id}>{x.name}</div>;
               })}
-              <small>
-                Add flavors:
-                {fountainSoda.modifierGroups[0].items.map((x) => {
-                  return <div key={x.id}>{x.name}</div>;
-                })}{" "}
-                {fountainSoda.modifierGroups[0].price}
-              </small>
-
-              <small>
-                {fountainSoda.sizes.map((x) => {
-                  return (
-                    <div key={x.id}>
-                      <div>{x.name}</div>
-                      <div>{x.price}</div>
-                    </div>
-                  );
-                })}
-              </small>
+              Add flavors:
+              {fountainSoda.modifierGroups[0].items.map((x) => {
+                return <div key={x.id}>{x.name}</div>;
+              })}{" "}
+              {fountainSoda.modifierGroups[0].price}
+              {fountainSoda.sizes.map((x) => {
+                return (
+                  <div key={x.id}>
+                    <Text>{x.name}</Text>
+                    <Text>{x.price}</Text>
+                  </div>
+                );
+              })}
             </div>
 
             {beverages.items.slice(0, 4).map((x) => (
               <div key={x.id}>
-                <h3>{x.name}</h3>
+                <Heading as="h3">{x.name}</Heading>
                 {x.sizes.map((x) => (
                   <div key={x.id}>
-                    <div>{x.name}</div>
-                    <div>{x.price}</div>
+                    <Text>{x.name}</Text>
+                    <Text>{x.price}</Text>
                   </div>
                 ))}
-                <div>{x.price}</div>
+                <Text>{x.price}</Text>
               </div>
             ))}
 
             <div>
-              <h3>{reviveKombucha.name}</h3>
+              <Heading as="h3">{reviveKombucha.name}</Heading>
               {reviveKombucha.items.map((x) => (
                 <div key={x.id}>
-                  <div>{x.name}</div>
+                  <Text>{x.name}</Text>
                 </div>
               ))}
-              <div>{reviveKombucha.price}</div>
+              <Text>{reviveKombucha.price}</Text>
             </div>
 
             {beverages.items.slice(4, beverages.items.length).map((x) => (
               <div key={x.id}>
-                <h3>{x.name}</h3>
-                <div>{x.price}</div>
+                <Heading as="h3">{x.name}</Heading>
+                <Text>{x.price}</Text>
               </div>
             ))}
           </section>
-        </div>
-      </main>
+        </Box> */}
+      </Grid>
     </>
   );
 };

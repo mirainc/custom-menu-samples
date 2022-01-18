@@ -7,16 +7,7 @@ import type { AppProps } from "next/app";
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <main
-        sx={{
-          border: "1px solid",
-          borderColor: "text",
-          padding: 3,
-          borderRadius: 1,
-          maxWidth: 768,
-          mx: "auto",
-        }}
-      >
+      <main>
         <Component {...pageProps} />
       </main>
     </ThemeProvider>
