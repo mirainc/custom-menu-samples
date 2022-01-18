@@ -145,21 +145,166 @@
           ]
         },
         {
-          "id": "wine-and-beer",
-          "name": "Wine & Beer",
+          "id": "beer",
+          "name": "Beer",
           "groups": [
             {
-              "id": "sparkling",
-              "name": "sparkling",
-              "price": 33,
+              "id": "draft-beers",
+              "name": "Draft Beers",
               "items": [
                 {
-                  "id": "blanc-de-blancs",
-                  "name": "Blanc de Blancs"
+                  "id": "pliny-the-older",
+                  "name": "Pliny the Elder",
+                  "alcohol-percentage": 8,
+                  "price": "10"
                 },
+                {
+                  "id": "dogfish-head-90-minute-ipa",
+                  "name": "Dogfish Head 90 Minute IPA",
+                  "alcohol-percentage": 9,
+                  "price": 9
+                },
+                {
+                  "id": "bear-republic-thru-the-haze-ipa",
+                  "name": "Bear Republic Thru the Haza IPA",
+                  "alcohol-percentage": 6.4,
+                  "price": 8
+                },
+                {
+                  "id": "fort-point-KSA",
+                  "name": "Fort Point KSA",
+                  "alcohol-percentage": 4.6,
+                  "price": 8
+                },
+                {
+                  "id": "lagunitas-ipa",
+                  "name": "Lagunitas IPA",
+                  "alcohol-percentage": 6.2,
+                  "price": 7
+                },
+                {
+                  "id": "anchor-steam",
+                  "name": "Anchor Steam",
+                  "alcohol-percentage": 4.9,
+                  "price": 7
+                },
+                {
+                  "id": "trumer-pilsner",
+                  "name": "Trumer Pilsner",
+                  "alcohol-percentage": 4.9,
+                  "price": 7
+                },
+                {
+                  "id": "modelo-especial",
+                  "name": "Modelo Especial",
+                  "alcohol-percentage": 4.6,
+                  "price": 6
+                },
+                {
+                  "id": "manager-selection",
+                  "name": "Manager Selection",
+                  "price": "A.Q."
+                }
               ]
             },
-        },
+            {
+              "id": "bottled-beers",
+              "name": "Bottled Beers",
+              "items": [
+                {
+                  "id": "miller-lite",
+                  "name": "Miller Lite",
+                  "alcohol-percentage": 4.2,
+                  "price": 4.5
+                },
+                {
+                  "id": "corona",
+                  "name": "Corona",
+                  "alcohol-percentage": 4.6,
+                  "price": 5
+                },
+                {
+                  "id": "fat-tire-amber-ale",
+                  "name": "Fat Tire Amber Ale",
+                  "alcohol-percentage": 5.2,
+                  "price": 5.5
+                },
+                {
+                  "id": "stone-delicious-gluten-reduced-IPA",
+                  "name": "Stone Delicious Gluten-Reduced IPA",
+                  "alcohol-percentage": 7.7,
+                  "price": 5.5
+                },
+                {
+                  "id": "einstök-icelandic-white-ale",
+                  "name": "Einstök Icelandic White Ale",
+                  "alcohol-percentage": 7.7,
+                  "price": 5.5
+                }
+              ]
+            },
+            {
+              "id": "canned-beers-hard-seltzer-and-cider",
+              "name": "Canned Beers, Hard Seltzer & Cider",
+              "items": [
+                {
+                  "id": "pabst-blue-ribbon",
+                  "name": "Pabst Blue Ribbon",
+                  "alcohol-percentage": 4.7,
+                  "price": 4
+                },
+                {
+                  "id": "blue-moon-belgian-style-wheat-ale",
+                  "name": "Blue Moon Belgian-Style Wheat Ale",
+                  "alcohol-percentage": 5.4,
+                  "price": 5
+                },
+                {
+                  "id": "firestone-walker-805-blonde-ale",
+                  "name": "Blue Moon Belgian-Style Wheat Ale",
+                  "alcohol-percentage": 5.4,
+                  "price": 5
+                },
+                {
+                  "id": "sierra-nevada-pale-ale",
+                  "name": "Sierra Nevada Pale Ale",
+                  "alcohol-percentage": 5.6,
+                  "price": 5
+                },
+                {
+                  "id": "montucky-cold-snack",
+                  "name": "Montucky Cold Snack, 16 oz.",
+                  "alcohol-percentage": 4.1,
+                  "price": 6
+                },
+                {
+                  "id": "montucky-cold-snack",
+                  "name": "Montucky Cold Snack, 16 oz.",
+                  "alcohol-percentage": 4.1,
+                  "price": 6
+                },
+                {
+                  "id": "white-claw-hard-seltzer",
+                  "name": "White Claw Hard Seltzer",
+                  "alcohol-percentage": 5.0,
+                  "price": 6
+                },
+                {
+                  "id": "athletic-brewing-company-upside-dawn",
+                  "name": "Athletic Brewing Company Upside Dawn",
+                  "alcohol-percentage": "(Non-Alcoholic)",
+                  "price": 6
+                },
+                {
+                  "id": "golden-state-cider-mighty-dry",
+                  "name": "Athletic Brewing Company Upside Dawn",
+                  "alcohol-percentage": "(Non-Alcoholic)",
+                  "price": 7.5
+                }
+              ]
+            }
+          ]
+        }
       ]
     }
   ]
