@@ -1,8 +1,24 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+/** @jsxImportSource theme-ui */
+import { ThemeProvider } from "theme-ui";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { theme } from "../lib/theme";
+import type { AppProps } from "next/app";
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeProvider theme={theme}>
+      <main
+        sx={{
+          border: "1px solid",
+          borderColor: "text",
+          padding: 3,
+          borderRadius: 1,
+          maxWidth: 768,
+          mx: "auto",
+        }}
+      >
+        <Component {...pageProps} />
+      </main>
+    </ThemeProvider>
+  );
 }
-
-export default MyApp

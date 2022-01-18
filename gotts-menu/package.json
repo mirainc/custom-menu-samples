@@ -9,9 +9,13 @@
     "start:mock-server": "json-server --watch -p 3002 server/db.json"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mdx-js/react": "^1.6.22",
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "theme-ui": "^0.13.1"
   },
   "devDependencies": {
     "@types/node": "17.0.8",

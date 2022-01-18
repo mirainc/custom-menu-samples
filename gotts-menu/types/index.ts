@@ -18,6 +18,8 @@ export interface Item {
   id: string;
   name: string;
   description: string;
+  winery: string;
+  location: string;
   price: string;
   calories: string;
   sizes: Size[];

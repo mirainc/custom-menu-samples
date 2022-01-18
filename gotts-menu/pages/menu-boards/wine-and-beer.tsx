@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import MenuItem from "../../components/MenuItem";
 import { Group, MenuData } from "../../types";
 
 export interface JuicesProps {
@@ -25,24 +26,31 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
 
   console.log(wine, beer);
 
-  const renderMenuGroup = (x: Group) => {
+  const renderMenuGroup = (g: Group) => {
     return (
-      <div key={x.id}>
-        <h3>{x.name}</h3>
+      <div key={g.id}>
+        <h3>{g.name}</h3>
         <div>
-          {x.price ? (
+          {g.price ? (
             <div>
-              {x.items.map((y) => (
-                <div key={y.id}>
-                  <div>{y.name}</div>
-                  <div>{x.price}</div>
-                </div>
+              {g.items.map((i) => (
+                <MenuItem
+                  key={i.id}
+                  name={i.name}
+                  winery={i.winery}
+                  location={i.location}
+                  price={i.price}
+                />
               ))}
             </div>
           ) : (
             <div>
-              {x.items.map((x) => (
-                <div key={x.id}>{x.name}</div>
+              {g.items.map((x) => (
+                <div key={x.id}>
+                  <div>{x.name}</div>
+                  <div>{x.winery}</div>
+                  <div>({x.location})</div>
+                </div>
               ))}
             </div>
           )}
