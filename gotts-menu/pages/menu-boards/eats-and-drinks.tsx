@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Box, Grid, Heading, Text } from "theme-ui";
+import { Box, Grid, Heading, Text, Divider } from "theme-ui";
+
 import MenuItem1 from "../../components/MenuItem1";
 import { MenuData } from "../../types";
 
@@ -42,9 +43,15 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
         </Heading>
       </header>
 
-      <Grid columns={2} gap={4}>
-        <Box>
-          <Box as="section" sx={{ mb: 5 }}>
+      <Grid columns={2} gap={5}>
+        <Box
+          css={{
+            borderRight: "1px solid #DEDEDE",
+            marginRight: -32,
+            paddingRight: 32,
+          }}
+        >
+          <Box as="section" mb={5} mx={2}>
             <Heading variant="h2">{grabAndGo.name}</Heading>
             {grabAndGo.items.map(({ id, name, description, price }) => (
               <MenuItem1
@@ -55,7 +62,10 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
               />
             ))}
           </Box>
-          <Box as="section">
+
+          <Divider mb={5} />
+
+          <Box as="section" mx={2}>
             <Heading variant="h2">{shakes.name}</Heading>
             {shakes.items.map(({ id, name, description, price }) => (
               <MenuItem1
@@ -68,7 +78,7 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
           </Box>
         </Box>
 
-        <Box>
+        <Box mx={1}>
           <section>
             <Heading variant="h2">{beverages.name}</Heading>
 

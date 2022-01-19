@@ -33,6 +33,7 @@ export const theme = makeTheme({
     primary: "#07c",
     secondary: "#30c",
     muted: "#f6f6f6",
+    border: "#dedede",
   },
   text: {
     h1: {
@@ -57,6 +58,9 @@ export const theme = makeTheme({
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
+    },
+    hr: {
+      color: "border",
     },
   },
 });
