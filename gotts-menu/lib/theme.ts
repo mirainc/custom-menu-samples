@@ -38,7 +38,7 @@ export const theme = makeTheme({
   text: {
     h1: {
       ...heading,
-      mb: 5,
+      mb: 6,
       fontSize: 8,
     },
     h2: {
@@ -49,7 +49,6 @@ export const theme = makeTheme({
     },
     h3: {
       ...heading,
-      mb: 1,
       fontSize: 4,
     },
   },
@@ -61,6 +60,9 @@ export const theme = makeTheme({
     },
     hr: {
       color: "border",
+    },
+    ul: {
+      padding: 0,
     },
   },
 });

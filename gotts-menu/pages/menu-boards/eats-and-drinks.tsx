@@ -1,8 +1,10 @@
+/** @jsxImportSource theme-ui */
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Box, Grid, Heading, Text, Divider } from "theme-ui";
+import { Box, Grid, Heading, Text, Divider, Flex } from "theme-ui";
 
 import MenuItem1 from "../../components/MenuItem1";
+import MenuItem2 from "../../components/MenuItem2";
 import { MenuData } from "../../types";
 
 export interface JuicesProps {
@@ -45,13 +47,14 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
 
       <Grid columns={2} gap={5}>
         <Box
-          css={{
-            borderRight: "1px solid #DEDEDE",
+          sx={{
+            borderRight: "1px solid",
+            borderColor: "border",
             marginRight: -32,
             paddingRight: 32,
           }}
         >
-          <Box as="section" mb={5} mx={2}>
+          <Box as="section" mb={4} mx={2}>
             <Heading variant="h2">{grabAndGo.name}</Heading>
             {grabAndGo.items.map(({ id, name, description, price }) => (
               <MenuItem1
@@ -63,16 +66,16 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
             ))}
           </Box>
 
-          <Divider mb={5} />
+          <Divider mb={4} />
 
           <Box as="section" mx={2}>
             <Heading variant="h2">{shakes.name}</Heading>
-            {shakes.items.map(({ id, name, description, price }) => (
+            {shakes.items.map(({ id, name, description }) => (
               <MenuItem1
                 key={id}
                 name={name}
                 description={description}
-                price={price}
+                price={shakes.price}
               />
             ))}
           </Box>
@@ -83,38 +86,34 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
             <Heading variant="h2">{beverages.name}</Heading>
 
             <Grid columns={2}>
+              <MenuItem2
+                name={fountainSoda.name}
+                items={fountainSoda.items}
+                modifierGroups={fountainSoda.modifierGroups}
+              />
               <Box>
-                <Heading variant="h3">{fountainSoda.name}</Heading>
-                <ul style={{ columns: 2 }}>
-                  {fountainSoda.items.map((x) => {
-                    return <li key={x.id}>{x.name}</li>;
-                  })}
-                </ul>
-                <Text>
-                  Add flavors:
-                  {fountainSoda.modifierGroups[0].items.map((x) => {
-                    return <Text key={x.id}>{x.name}</Text>;
-                  })}{" "}
-                  <Text sx={{ fontWeight: "bold", fontFamily: "heading" }}>
-                    {fountainSoda.modifierGroups[0].price}
-                  </Text>
-                </Text>
-              </Box>
-              <Box>
-                <ul>
+                <Flex as="ul" sx={{ listStylePosition: "inside", padding: 0 }}>
                   {fountainSoda.sizes.map((x) => {
                     return (
-                      <li key={x.id}>
+                      <li
+                        key={x.id}
+                        sx={{
+                          marginRight: 3,
+                          ":first-child": {
+                            display: "block",
+                          },
+                        }}
+                      >
                         <Text
                           sx={{ fontWeight: "bold", fontFamily: "heading" }}
                         >
                           {x.price}
                         </Text>{" "}
-                        <Text>{x.name}</Text>
+                        <Text sx={{ fontSize: 0 }}>{x.name}</Text>
                       </li>
                     );
                   })}
-                </ul>
+                </Flex>
               </Box>
             </Grid>
 

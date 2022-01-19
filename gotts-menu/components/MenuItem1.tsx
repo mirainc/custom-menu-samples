@@ -10,8 +10,10 @@ const MenuItem1: React.FC<MenuItem1> = ({ name, description, price }) => {
   return (
     <Box mb={3}>
       <Heading variant="h3">{name}</Heading>
-      <Text>{description}</Text>{" "}
-      <Text sx={{ fontWeight: "bold", fontFamily: "heading" }}>{price}</Text>
+      <Text sx={{ fontSize: 0 }}>{description}</Text>{" "}
+      <Text sx={{ fontWeight: "bold", fontFamily: "heading", fontSize: 0 }}>
+        {price}
+      </Text>
     </Box>
   );
 };
