@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Box, Grid, Heading, Text } from "theme-ui";
-import MenuItem from "../../components/MenuItem";
+import MenuItem1 from "../../components/MenuItem1";
 import { MenuData } from "../../types";
 
 export interface JuicesProps {
@@ -42,32 +42,30 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
         </Heading>
       </header>
 
-      <Grid columns={2} gap={2}>
+      <Grid columns={2} gap={4}>
         <Box>
-          <section>
+          <Box as="section" sx={{ mb: 5 }}>
             <Heading variant="h2">{grabAndGo.name}</Heading>
-            {grabAndGo.items.map((x) => (
-              <div key={x.id}>
-                <Heading variant="h3">{x.name}</Heading>
-                <Text>{x.description}</Text>{" "}
-                <Text sx={{ fontWeight: "bold", fontFamily: "heading" }}>
-                  {x.price}
-                </Text>
-              </div>
+            {grabAndGo.items.map(({ id, name, description, price }) => (
+              <MenuItem1
+                key={id}
+                name={name}
+                description={description}
+                price={price}
+              />
             ))}
-          </section>
-          <section>
+          </Box>
+          <Box as="section">
             <Heading variant="h2">{shakes.name}</Heading>
-            {shakes.items.map((x) => (
-              <div key={x.id}>
-                <Heading variant="h3">{x.name}</Heading>
-                <Text>{x.description}</Text>{" "}
-                <Text sx={{ fontWeight: "bold", fontFamily: "heading" }}>
-                  {shakes.price}
-                </Text>
-              </div>
+            {shakes.items.map(({ id, name, description, price }) => (
+              <MenuItem1
+                key={id}
+                name={name}
+                description={description}
+                price={price}
+              />
             ))}
-          </section>
+          </Box>
         </Box>
 
         <Box>
@@ -97,12 +95,12 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
                   {fountainSoda.sizes.map((x) => {
                     return (
                       <li key={x.id}>
-                        <Text>{x.name}</Text>{" "}
                         <Text
                           sx={{ fontWeight: "bold", fontFamily: "heading" }}
                         >
                           {x.price}
-                        </Text>
+                        </Text>{" "}
+                        <Text>{x.name}</Text>
                       </li>
                     );
                   })}
@@ -116,32 +114,47 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
                   <Heading variant="h3">{x.name}</Heading>
                 </Box>
                 <Box>
-                  {x.sizes.map((x) => (
-                    <ul key={x.id}>
-                      <li>
-                        <Text>{x.price}</Text> <Text>{x.name}</Text>
+                  <ul key={x.id}>
+                    {x.sizes.map((x) => (
+                      <li key={x.id}>
+                        <Text
+                          sx={{ fontWeight: "bold", fontFamily: "heading" }}
+                        >
+                          {x.price}
+                        </Text>{" "}
+                        <Text>{x.name}</Text>
                       </li>
-                    </ul>
-                  ))}
+                    ))}
+                  </ul>
                 </Box>
               </Grid>
             ))}
 
-            <div>
-              <Heading variant="h3">{reviveKombucha.name}</Heading>
-              {reviveKombucha.items.map((x) => (
-                <div key={x.id}>
-                  <Text>{x.name}</Text>
-                </div>
-              ))}
-              <Text>{reviveKombucha.price}</Text>
-            </div>
+            <Grid columns={2}>
+              <Box>
+                <Heading variant="h3">{reviveKombucha.name}</Heading>
+                <ul>
+                  {reviveKombucha.items.map((x) => (
+                    <li key={x.id}>
+                      <Text>{x.name}</Text>
+                    </li>
+                  ))}
+                </ul>
+              </Box>
+              <Box>
+                <Text>{reviveKombucha.price}</Text>
+              </Box>
+            </Grid>
 
             {beverages.items.slice(4, beverages.items.length).map((x) => (
-              <div key={x.id}>
-                <Heading as="h3">{x.name}</Heading>
-                <Text>{x.price}</Text>
-              </div>
+              <Grid key={x.id} columns={2}>
+                <Box>
+                  <Heading variant="h3">{x.name}</Heading>
+                </Box>
+                <Box>
+                  <Text>{x.price}</Text>
+                </Box>
+              </Grid>
             ))}
           </section>
         </Box>

@@ -37,15 +37,18 @@ export const theme = makeTheme({
   text: {
     h1: {
       ...heading,
-      fontSize: 6,
+      mb: 5,
+      fontSize: 8,
     },
     h2: {
       ...heading,
+      mb: 2,
       color: "textPrimary",
-      fontSize: 5,
+      fontSize: 6,
     },
     h3: {
       ...heading,
+      mb: 1,
       fontSize: 4,
     },
   },
