@@ -1,10 +1,19 @@
 import { makeTheme } from "@theme-ui/css/utils";
+import { Property } from "csstype";
+
+const heading = {
+  color: "text",
+  fontFamily: "heading",
+  lineHeight: "heading",
+  fontWeight: "heading",
+  textTransform: "uppercase" as Property.TextTransform,
+};
 
 export const theme = makeTheme({
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "inherit",
+    body: "Sanchez, serif",
+    heading: "Manrope, sans-serif",
     monospace: "Menlo, monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
@@ -25,10 +34,17 @@ export const theme = makeTheme({
     muted: "#f6f6f6",
   },
   text: {
-    heading: {
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "heading",
+    h1: {
+      ...heading,
+      fontSize: 6,
+    },
+    h2: {
+      ...heading,
+      fontSize: 5,
+    },
+    h3: {
+      ...heading,
+      fontSize: 4,
     },
   },
   styles: {
@@ -36,54 +52,6 @@ export const theme = makeTheme({
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
-    },
-    h1: {
-      variant: "text.heading",
-      fontSize: 5,
-    },
-    h2: {
-      variant: "text.heading",
-      fontSize: 4,
-    },
-    h3: {
-      variant: "text.heading",
-      fontSize: 3,
-    },
-    h4: {
-      variant: "text.heading",
-      fontSize: 2,
-    },
-    h5: {
-      variant: "text.heading",
-      fontSize: 1,
-    },
-    h6: {
-      variant: "text.heading",
-      fontSize: 0,
-    },
-    pre: {
-      fontFamily: "monospace",
-      overflowX: "auto",
-      code: {
-        color: "inherit",
-      },
-    },
-    code: {
-      fontFamily: "monospace",
-      fontSize: "inherit",
-    },
-    table: {
-      width: "100%",
-      borderCollapse: "separate",
-      borderSpacing: 0,
-    },
-    th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
-    td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
     },
   },
 });
