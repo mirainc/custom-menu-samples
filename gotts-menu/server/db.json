@@ -112,6 +112,10 @@
                   "name": "Coke"
                 },
                 {
+                  "id": "sprite",
+                  "name": "Sprite"
+                },
+                {
                   "id": "mr-pibb",
                   "name": "Mr. Pibb"
                 },

@@ -28,6 +28,7 @@ export const theme = makeTheme({
   },
   colors: {
     text: "#000",
+    textPrimary: "#ba0c2f",
     background: "#fff",
     primary: "#07c",
     secondary: "#30c",
@@ -40,6 +41,7 @@ export const theme = makeTheme({
     },
     h2: {
       ...heading,
+      color: "textPrimary",
       fontSize: 5,
     },
     h3: {

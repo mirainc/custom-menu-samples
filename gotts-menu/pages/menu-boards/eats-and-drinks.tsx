@@ -37,7 +37,9 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
       </Head>
 
       <header>
-        <Heading variant="h1">Eats & Drinks</Heading>
+        <Heading variant="h1">
+          Eats <Text color="textPrimary">&</Text> Drinks
+        </Heading>
       </header>
 
       <Grid columns={2} gap={2}>
@@ -47,8 +49,10 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
             {grabAndGo.items.map((x) => (
               <div key={x.id}>
                 <Heading variant="h3">{x.name}</Heading>
-                <Text>{x.description}</Text>
-                <Text>{x.price}</Text>
+                <Text>{x.description}</Text>{" "}
+                <Text sx={{ fontWeight: "bold", fontFamily: "heading" }}>
+                  {x.price}
+                </Text>
               </div>
             ))}
           </section>
@@ -57,52 +61,74 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
             {shakes.items.map((x) => (
               <div key={x.id}>
                 <Heading variant="h3">{x.name}</Heading>
-                <Text>{x.description}</Text>
-                <Text>{shakes.price}</Text>
+                <Text>{x.description}</Text>{" "}
+                <Text sx={{ fontWeight: "bold", fontFamily: "heading" }}>
+                  {shakes.price}
+                </Text>
               </div>
             ))}
           </section>
         </Box>
 
-        {/* <Box>
+        <Box>
           <section>
-            <Heading as="h2">{beverages.name}</Heading>
+            <Heading variant="h2">{beverages.name}</Heading>
 
-            <div>
-              <Heading as="h3">{fountainSoda.name}</Heading>
-              {fountainSoda.items.map((x) => {
-                return <div key={x.id}>{x.name}</div>;
-              })}
-              Add flavors:
-              {fountainSoda.modifierGroups[0].items.map((x) => {
-                return <div key={x.id}>{x.name}</div>;
-              })}{" "}
-              {fountainSoda.modifierGroups[0].price}
-              {fountainSoda.sizes.map((x) => {
-                return (
-                  <div key={x.id}>
-                    <Text>{x.name}</Text>
-                    <Text>{x.price}</Text>
-                  </div>
-                );
-              })}
-            </div>
+            <Grid columns={2}>
+              <Box>
+                <Heading variant="h3">{fountainSoda.name}</Heading>
+                <ul style={{ columns: 2 }}>
+                  {fountainSoda.items.map((x) => {
+                    return <li key={x.id}>{x.name}</li>;
+                  })}
+                </ul>
+                <Text>
+                  Add flavors:
+                  {fountainSoda.modifierGroups[0].items.map((x) => {
+                    return <Text key={x.id}>{x.name}</Text>;
+                  })}{" "}
+                  <Text sx={{ fontWeight: "bold", fontFamily: "heading" }}>
+                    {fountainSoda.modifierGroups[0].price}
+                  </Text>
+                </Text>
+              </Box>
+              <Box>
+                <ul>
+                  {fountainSoda.sizes.map((x) => {
+                    return (
+                      <li key={x.id}>
+                        <Text>{x.name}</Text>{" "}
+                        <Text
+                          sx={{ fontWeight: "bold", fontFamily: "heading" }}
+                        >
+                          {x.price}
+                        </Text>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </Box>
+            </Grid>
 
             {beverages.items.slice(0, 4).map((x) => (
-              <div key={x.id}>
-                <Heading as="h3">{x.name}</Heading>
-                {x.sizes.map((x) => (
-                  <div key={x.id}>
-                    <Text>{x.name}</Text>
-                    <Text>{x.price}</Text>
-                  </div>
-                ))}
-                <Text>{x.price}</Text>
-              </div>
+              <Grid columns={2} key={x.id}>
+                <Box>
+                  <Heading variant="h3">{x.name}</Heading>
+                </Box>
+                <Box>
+                  {x.sizes.map((x) => (
+                    <ul key={x.id}>
+                      <li>
+                        <Text>{x.price}</Text> <Text>{x.name}</Text>
+                      </li>
+                    </ul>
+                  ))}
+                </Box>
+              </Grid>
             ))}
 
             <div>
-              <Heading as="h3">{reviveKombucha.name}</Heading>
+              <Heading variant="h3">{reviveKombucha.name}</Heading>
               {reviveKombucha.items.map((x) => (
                 <div key={x.id}>
                   <Text>{x.name}</Text>
@@ -118,7 +144,7 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
               </div>
             ))}
           </section>
-        </Box> */}
+        </Box>
       </Grid>
     </>
   );
