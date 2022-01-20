@@ -54,8 +54,8 @@
               "id": "arnold-palmer",
               "name": "Arnold Palmer",
               "sizes": [
-                { "id": "16oz", "name": "16oz", "price": "2.69" },
-                { "id": "24oz", "name": "24oz", "price": "2.99" }
+                { "id": "16oz", "name": "16oz", "price": "2.99" },
+                { "id": "24oz", "name": "24oz", "price": "3.29" }
               ]
             },
             {

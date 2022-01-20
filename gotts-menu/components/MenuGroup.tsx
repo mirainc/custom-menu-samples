@@ -1,15 +1,23 @@
 /** @jsxImportSource theme-ui */
 import { Box, Flex, Grid, Heading, Text } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
+import Sizes from "./Sizes";
 
 interface MenuGroup {
   name: string;
   items: Item[];
   modifiers?: Modifier[];
   sizes: Size[];
+  price?: string;
 }
 
-const MenuGroup: React.FC<MenuGroup> = ({ name, items, modifiers, sizes }) => {
+const MenuGroup: React.FC<MenuGroup> = ({
+  name,
+  items,
+  modifiers,
+  sizes,
+  price,
+}) => {
   const maxItemsPerColumn = 3;
   const itemColumns = items.length > maxItemsPerColumn ? 2 : 1;
 
@@ -51,36 +59,21 @@ const MenuGroup: React.FC<MenuGroup> = ({ name, items, modifiers, sizes }) => {
           </Text>
         )}
       </Box>
-      {sizes && (
-        <Box>
-          <Flex as="ul" sx={{ listStylePosition: "inside", padding: 0 }}>
-            {sizes.map((x) => {
-              return (
-                <li
-                  key={x.id}
-                  sx={{
-                    marginRight: 3,
-                    ":first-child": {
-                      display: "block",
-                    },
-                  }}
-                >
-                  <Text
-                    sx={{
-                      fontWeight: "bold",
-                      fontFamily: "heading",
-                      fontSize: 1,
-                    }}
-                  >
-                    {x.price}
-                  </Text>{" "}
-                  <Text sx={{ fontSize: 0 }}>{x.name}</Text>
-                </li>
-              );
-            })}
-          </Flex>
-        </Box>
-      )}
+
+      <Box>
+        {sizes && <Sizes sizes={sizes} />}
+        {price && (
+          <Text
+            sx={{
+              fontWeight: "bold",
+              fontFamily: "heading",
+              fontSize: 0,
+            }}
+          >
+            {price}
+          </Text>
+        )}
+      </Box>
     </Grid>
   );
 };

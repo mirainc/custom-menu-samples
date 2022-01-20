@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Box, Flex, Grid, Heading, Text } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
+import Sizes from "./Sizes";
 
 interface MenuItem2 {
   name: string;
@@ -64,42 +65,15 @@ const MenuItem2: React.FC<MenuItem2> = ({
           </Text>
         )}
       </Box>
-      {sizes && (
-        <Box>
-          <Flex as="ul" sx={{ listStylePosition: "inside", padding: 0 }}>
-            {sizes.map((x) => {
-              return (
-                <li
-                  key={x.id}
-                  sx={{
-                    marginRight: 3,
-                    ":first-child": {
-                      display: "block",
-                    },
-                  }}
-                >
-                  <Text
-                    sx={{
-                      fontWeight: "bold",
-                      fontFamily: "heading",
-                      fontSize: 1,
-                    }}
-                  >
-                    {x.price}
-                  </Text>{" "}
-                  <Text sx={{ fontSize: 0 }}>{x.name}</Text>
-                </li>
-              );
-            })}
-          </Flex>
-        </Box>
-      )}
+      <Box>
+        {sizes && <Sizes sizes={sizes} />}
 
-      {price && (
-        <Text sx={{ fontWeight: "bold", fontFamily: "heading", fontSize: 1 }}>
-          {price}
-        </Text>
-      )}
+        {price && (
+          <Text sx={{ fontWeight: "bold", fontFamily: "heading", fontSize: 0 }}>
+            {price}
+          </Text>
+        )}
+      </Box>
     </Grid>
   );
 };

@@ -80,15 +80,18 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
         <Box mx={1}>
           <section>
             <Heading variant="h2">{beverages.name}</Heading>
-            {beverages.groups.map(({ id, name, modifiers, items, sizes }) => (
-              <MenuGroup
-                key={id}
-                name={name}
-                items={items}
-                modifiers={modifiers}
-                sizes={sizes}
-              />
-            ))}
+            {beverages.groups.map(
+              ({ id, name, modifiers, items, sizes, price }) => (
+                <MenuGroup
+                  key={id}
+                  name={name}
+                  items={items}
+                  modifiers={modifiers}
+                  sizes={sizes}
+                  price={price}
+                />
+              )
+            )}
 
             {beverages.items.map(({ id, name, sizes, price }) => (
               <MenuItem2 key={id} name={name} sizes={sizes} price={price} />
