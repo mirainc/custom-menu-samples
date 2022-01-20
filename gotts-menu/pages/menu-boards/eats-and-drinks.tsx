@@ -4,8 +4,9 @@ import Head from "next/head";
 import { Box, Grid, Heading, Text, Divider } from "theme-ui";
 
 import MenuItem1 from "../../components/MenuItem1";
-import MenuItem2 from "../../components/MenuItem2";
+import MenuGroup from "../../components/MenuGroup";
 import { MenuData } from "../../types";
+import MenuItem2 from "../../components/MenuItem2";
 
 export interface JuicesProps {
   data: MenuData;
@@ -80,7 +81,7 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
           <section>
             <Heading variant="h2">{beverages.name}</Heading>
             {beverages.groups.map(({ id, name, modifiers, items, sizes }) => (
-              <MenuItem2
+              <MenuGroup
                 key={id}
                 name={name}
                 items={items}
@@ -89,37 +90,8 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
               />
             ))}
 
-            {beverages.items.slice(0, 4).map((x) => (
-              <Grid columns={2} key={x.id}>
-                <Box>
-                  <Heading variant="h3">{x.name}</Heading>
-                </Box>
-                <Box>
-                  <ul key={x.id}>
-                    {x.sizes.map((x) => (
-                      <li key={x.id}>
-                        <Text
-                          sx={{ fontWeight: "bold", fontFamily: "heading" }}
-                        >
-                          {x.price}
-                        </Text>{" "}
-                        <Text>{x.name}</Text>
-                      </li>
-                    ))}
-                  </ul>
-                </Box>
-              </Grid>
-            ))}
-
-            {beverages.items.slice(4, beverages.items.length).map((x) => (
-              <Grid key={x.id} columns={2}>
-                <Box>
-                  <Heading variant="h3">{x.name}</Heading>
-                </Box>
-                <Box>
-                  <Text>{x.price}</Text>
-                </Box>
-              </Grid>
+            {beverages.items.map(({ id, name, sizes, price }) => (
+              <MenuItem2 key={id} name={name} sizes={sizes} price={price} />
             ))}
           </section>
         </Box>

@@ -2,50 +2,37 @@
 import { Box, Flex, Grid, Heading, Text } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
 
-interface MenuItem2 {
+interface MenuGroup {
   name: string;
-  items?: Item[];
+  items: Item[];
   modifiers?: Modifier[];
-  sizes?: Size[];
-  price: string;
+  sizes: Size[];
 }
 
-const MenuItem2: React.FC<MenuItem2> = ({
-  name,
-  items,
-  modifiers,
-  sizes,
-  price,
-}) => {
+const MenuGroup: React.FC<MenuGroup> = ({ name, items, modifiers, sizes }) => {
   const maxItemsPerColumn = 3;
-
-  const getItemColumns = (items: Item[]) => {
-    return items.length > maxItemsPerColumn ? 2 : 1;
-  };
+  const itemColumns = items.length > maxItemsPerColumn ? 2 : 1;
 
   return (
     <Grid columns={2} sx={{ alignItems: "baseline" }} mb={3}>
       <Box>
         <Heading variant="h3">{name}</Heading>
-        {items && (
-          <ul
-            sx={{
-              columns: getItemColumns(items),
-              padding: 0,
-              listStyle: "inside",
-              margin: 0,
-            }}
-          >
-            {items.map((x) => {
-              return (
-                <li key={x.id}>
-                  <Text sx={{ fontSize: 1 }}>{x.name}</Text>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-
+        <ul
+          sx={{
+            columns: itemColumns,
+            padding: 0,
+            listStyle: "inside",
+            margin: 0,
+          }}
+        >
+          {items.map((x) => {
+            return (
+              <li key={x.id}>
+                <Text sx={{ fontSize: 1 }}>{x.name}</Text>
+              </li>
+            );
+          })}
+        </ul>
         {modifiers && (
           <Text sx={{ fontSize: 0 }}>
             Add flavors:{" "}
@@ -58,9 +45,9 @@ const MenuItem2: React.FC<MenuItem2> = ({
                 </span>
               );
             })}
-            <span sx={{ fontWeight: "bold", fontFamily: "heading" }}>
+            <Text sx={{ fontWeight: "bold", fontFamily: "heading" }}>
               {modifiers[0].price}
-            </span>
+            </Text>
           </Text>
         )}
       </Box>
@@ -94,14 +81,8 @@ const MenuItem2: React.FC<MenuItem2> = ({
           </Flex>
         </Box>
       )}
-
-      {price && (
-        <Text sx={{ fontWeight: "bold", fontFamily: "heading", fontSize: 1 }}>
-          {price}
-        </Text>
-      )}
     </Grid>
   );
 };
 
-export default MenuItem2;
+export default MenuGroup;

@@ -22,7 +22,7 @@ export interface Item {
   location: string;
   price: string;
   calories: string;
-  sizes: Size[];
+  sizes?: Size[];
 }
 
 export interface Size {
