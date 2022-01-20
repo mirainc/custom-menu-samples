@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Box, Grid, Heading, Text, Divider, Flex } from "theme-ui";
+import { Box, Grid, Heading, Text, Divider } from "theme-ui";
 
 import MenuItem1 from "../../components/MenuItem1";
 import MenuItem2 from "../../components/MenuItem2";
@@ -27,11 +27,6 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
   const beverages = data.groups.find(({ id }) => id === "beverages");
 
   if (!grabAndGo || !shakes || !beverages) return null;
-
-  const fountainSoda = beverages.groups[0];
-  const reviveKombucha = beverages.groups[1];
-
-  if (!fountainSoda) return null;
 
   return (
     <>
@@ -84,38 +79,15 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
         <Box mx={1}>
           <section>
             <Heading variant="h2">{beverages.name}</Heading>
-
-            <Grid columns={2}>
+            {beverages.groups.map(({ id, name, modifiers, items, sizes }) => (
               <MenuItem2
-                name={fountainSoda.name}
-                items={fountainSoda.items}
-                modifierGroups={fountainSoda.modifierGroups}
+                key={id}
+                name={name}
+                items={items}
+                modifiers={modifiers}
+                sizes={sizes}
               />
-              <Box>
-                <Flex as="ul" sx={{ listStylePosition: "inside", padding: 0 }}>
-                  {fountainSoda.sizes.map((x) => {
-                    return (
-                      <li
-                        key={x.id}
-                        sx={{
-                          marginRight: 3,
-                          ":first-child": {
-                            display: "block",
-                          },
-                        }}
-                      >
-                        <Text
-                          sx={{ fontWeight: "bold", fontFamily: "heading" }}
-                        >
-                          {x.price}
-                        </Text>{" "}
-                        <Text sx={{ fontSize: 0 }}>{x.name}</Text>
-                      </li>
-                    );
-                  })}
-                </Flex>
-              </Box>
-            </Grid>
+            ))}
 
             {beverages.items.slice(0, 4).map((x) => (
               <Grid columns={2} key={x.id}>
@@ -138,22 +110,6 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
                 </Box>
               </Grid>
             ))}
-
-            <Grid columns={2}>
-              <Box>
-                <Heading variant="h3">{reviveKombucha.name}</Heading>
-                <ul>
-                  {reviveKombucha.items.map((x) => (
-                    <li key={x.id}>
-                      <Text>{x.name}</Text>
-                    </li>
-                  ))}
-                </ul>
-              </Box>
-              <Box>
-                <Text>{reviveKombucha.price}</Text>
-              </Box>
-            </Grid>
 
             {beverages.items.slice(4, beverages.items.length).map((x) => (
               <Grid key={x.id} columns={2}>

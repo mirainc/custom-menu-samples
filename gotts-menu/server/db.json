@@ -99,41 +99,13 @@
                 { "id": "24oz", "name": "24oz", "price": "2.99" }
               ],
               "items": [
-                {
-                  "id": "root-beer",
-                  "name": "Root Beer"
-                },
-                {
-                  "id": "diet-coke",
-                  "name": "Diet Coke"
-                },
-                {
-                  "id": "coke",
-                  "name": "Coke"
-                },
-                {
-                  "id": "sprite",
-                  "name": "Sprite"
-                },
-                {
-                  "id": "mr-pibb",
-                  "name": "Mr. Pibb"
-                },
-                {
-                  "id": "orange",
-                  "name": "Orange"
-                }
+                { "id": "original-cola", "name": "Original Cola" },
+                { "id": "ginger-lime", "name": "Ginger Lime" },
+                { "id": "hibiscus-refresher", "name": "Hibiscus Refresher" }
               ],
-              "modifierGroups": [
-                {
-                  "id": "flavors",
-                  "name": "Flavors",
-                  "price": 0.99,
-                  "items": [
-                    { "id": "vanilla", "name": "Vanilla" },
-                    { "id": "cherry", "name": "Cherry" }
-                  ]
-                }
+              "modifiers": [
+                { "id": "vanilla", "name": "Vanilla", "price": "0.99" },
+                { "id": "cherry", "name": "Cherry", "price": "0.99" }
               ]
             },
             {

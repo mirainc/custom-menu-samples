@@ -10,7 +10,7 @@ export interface Group {
   description: string;
   price: string;
   items: Item[];
-  modifierGroups: ModifierGroup[];
+  modifiers: Modifier[];
   groups: Group[];
 }
 
@@ -38,3 +38,5 @@ export interface ModifierGroup {
   price: string;
   items: Item[];
 }
+
+export type Modifier = Item;

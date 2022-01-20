@@ -49,6 +49,7 @@ export const theme = makeTheme({
     },
     h3: {
       ...heading,
+      mb: 1,
       fontSize: 4,
     },
   },
