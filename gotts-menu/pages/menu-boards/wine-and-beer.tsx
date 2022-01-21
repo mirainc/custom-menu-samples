@@ -4,7 +4,7 @@ import { Grid, Text } from "theme-ui";
 import Column from "../../components/Column";
 import Group from "../../components/Group";
 import Heading1 from "../../components/Heading1";
-import Group2 from "../../components/SubGroup2";
+import SubGroup2 from "../../components/SubGroup2";
 import * as T from "../../types";
 
 export interface JuicesProps {
@@ -43,15 +43,15 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
       <Grid columns={2} gap={5}>
         <Column>
           <Group heading={wine.name}>
-            {wine.groups.map(({ id, name }) => (
-              <Group2 key={id} name={name} />
+            {wine.groups.map(({ id, name, items }) => (
+              <SubGroup2 key={id} name={name} items={items} />
             ))}
           </Group>
         </Column>
         <Column>
           <Group heading={beer.name}>
-            {wine.groups.map(({ id, name }) => (
-              <Group2 key={id} name={name} />
+            {wine.groups.map(({ id, name, items }) => (
+              <SubGroup2 key={id} name={name} items={items} />
             ))}
           </Group>
         </Column>
