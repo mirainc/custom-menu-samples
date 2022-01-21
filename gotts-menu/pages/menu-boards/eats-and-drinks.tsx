@@ -4,9 +4,11 @@ import Head from "next/head";
 import { Box, Grid, Heading, Text, Divider } from "theme-ui";
 
 import MenuItem1 from "../../components/MenuItem1";
-import MenuGroup from "../../components/MenuGroup";
+import SubGroup from "../../components/SubGroup";
 import { MenuData } from "../../types";
 import MenuItem2 from "../../components/MenuItem2";
+import Column from "../../components/Column";
+import Group from "../../components/Group";
 
 export interface JuicesProps {
   data: MenuData;
@@ -42,16 +44,8 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
       </header>
 
       <Grid columns={2} gap={5}>
-        <Box
-          sx={{
-            borderRight: "1px solid",
-            borderColor: "border",
-            marginRight: -32,
-            paddingRight: 32,
-          }}
-        >
-          <Box as="section" mb={4} mx={2}>
-            <Heading variant="h2">{grabAndGo.name}</Heading>
+        <Column>
+          <Group heading={grabAndGo.name}>
             {grabAndGo.items.map(({ id, name, description, price }) => (
               <MenuItem1
                 key={id}
@@ -60,12 +54,11 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
                 price={price}
               />
             ))}
-          </Box>
+          </Group>
 
           <Divider mb={4} />
 
-          <Box as="section" mx={2}>
-            <Heading variant="h2">{shakes.name}</Heading>
+          <Group heading={shakes.name}>
             {shakes.items.map(({ id, name, description }) => (
               <MenuItem1
                 key={id}
@@ -74,15 +67,14 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
                 price={shakes.price}
               />
             ))}
-          </Box>
-        </Box>
+          </Group>
+        </Column>
 
-        <Box mx={1}>
-          <section>
-            <Heading variant="h2">{beverages.name}</Heading>
+        <Column>
+          <Group heading={beverages.name}>
             {beverages.groups.map(
               ({ id, name, modifiers, items, sizes, price }) => (
-                <MenuGroup
+                <SubGroup
                   key={id}
                   name={name}
                   items={items}
@@ -96,8 +88,10 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
             {beverages.items.map(({ id, name, sizes, price }) => (
               <MenuItem2 key={id} name={name} sizes={sizes} price={price} />
             ))}
-          </section>
-        </Box>
+          </Group>
+
+          <Divider mb={4} />
+        </Column>
       </Grid>
     </>
   );

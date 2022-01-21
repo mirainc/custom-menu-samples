@@ -3,7 +3,7 @@ import { Box, Flex, Grid, Heading, Text } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
 import Sizes from "./Sizes";
 
-interface MenuGroup {
+interface SubGroup {
   name: string;
   items: Item[];
   modifiers?: Modifier[];
@@ -11,7 +11,7 @@ interface MenuGroup {
   price?: string;
 }
 
-const MenuGroup: React.FC<MenuGroup> = ({
+const SubGroup: React.FC<SubGroup> = ({
   name,
   items,
   modifiers,
@@ -78,4 +78,4 @@ const MenuGroup: React.FC<MenuGroup> = ({
   );
 };
 
-export default MenuGroup;
+export default SubGroup;
