@@ -1,10 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import MenuItem from "../../components/MenuItem";
-import { Group, MenuData } from "../../types";
+import { Grid, Text } from "theme-ui";
+import Column from "../../components/Column";
+import Group from "../../components/Group";
+import Heading1 from "../../components/Heading1";
+import Group2 from "../../components/SubGroup2";
+import * as T from "../../types";
 
 export interface JuicesProps {
-  data: MenuData;
+  data: T.MenuData;
 }
 
 export const getStaticProps = async () => {
@@ -24,66 +28,34 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
 
   if (!wine || !beer) return null;
 
-  console.log(wine, beer);
-
-  const renderMenuGroup = (g: Group) => {
-    return (
-      <div key={g.id}>
-        <h3>{g.name}</h3>
-        <div>
-          {g.price ? (
-            <div>
-              {g.items.map((i) => (
-                <MenuItem
-                  key={i.id}
-                  name={i.name}
-                  winery={i.winery}
-                  location={i.location}
-                  price={i.price}
-                />
-              ))}
-            </div>
-          ) : (
-            <div>
-              {g.items.map((x) => (
-                <div key={x.id}>
-                  <div>{x.name}</div>
-                  <div>{x.winery}</div>
-                  <div>({x.location})</div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  };
-
   return (
     <>
       <Head>
         <meta name="description" content="Custom NextJS Menu App" />
       </Head>
 
-      <main className="flex">
-        <header className="flex items-end px-10 mt-2">
-          <h1>Wine & Beer</h1>
-        </header>
+      <header>
+        <Heading1>
+          Wine <Text color="textPrimary">&</Text> Beer
+        </Heading1>
+      </header>
 
-        <div className="w-1/2">
-          <section>
-            <h2>Wine</h2>
-            {wine.groups.map(renderMenuGroup)}
-          </section>
-        </div>
-
-        <div className="w-1/2 ">
-          <section>
-            <h2>Beer</h2>
-            {beer.groups.map(renderMenuGroup)}
-          </section>
-        </div>
-      </main>
+      <Grid columns={2} gap={5}>
+        <Column>
+          <Group heading={wine.name}>
+            {wine.groups.map(({ id, name }) => (
+              <Group2 key={id} name={name} />
+            ))}
+          </Group>
+        </Column>
+        <Column>
+          <Group heading={beer.name}>
+            {wine.groups.map(({ id, name }) => (
+              <Group2 key={id} name={name} />
+            ))}
+          </Group>
+        </Column>
+      </Grid>
     </>
   );
 };

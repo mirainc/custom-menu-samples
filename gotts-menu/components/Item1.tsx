@@ -1,12 +1,12 @@
 import { Box, Heading, Text } from "theme-ui";
 
-interface MenuItem1 {
+interface Item1 {
   name: string;
   description: string;
   price: string;
 }
 
-const MenuItem1: React.FC<MenuItem1> = ({ name, description, price }) => {
+const Item1: React.FC<Item1> = ({ name, description, price }) => {
   return (
     <Box mb={3}>
       <Heading variant="h3">{name}</Heading>
@@ -18,4 +18,4 @@ const MenuItem1: React.FC<MenuItem1> = ({ name, description, price }) => {
   );
 };
 
-export default MenuItem1;
+export default Item1;

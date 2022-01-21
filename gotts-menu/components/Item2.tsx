@@ -1,9 +1,9 @@
 /** @jsxImportSource theme-ui */
-import { Box, Flex, Grid, Heading, Text } from "theme-ui";
+import { Box, Grid, Heading, Text } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
 import Sizes from "./Sizes";
 
-interface MenuItem2 {
+interface Item2 {
   name: string;
   items?: Item[];
   modifiers?: Modifier[];
@@ -11,13 +11,7 @@ interface MenuItem2 {
   price: string;
 }
 
-const MenuItem2: React.FC<MenuItem2> = ({
-  name,
-  items,
-  modifiers,
-  sizes,
-  price,
-}) => {
+const Item2: React.FC<Item2> = ({ name, items, modifiers, sizes, price }) => {
   const maxItemsPerColumn = 3;
 
   const getItemColumns = (items: Item[]) => {
@@ -78,4 +72,4 @@ const MenuItem2: React.FC<MenuItem2> = ({
   );
 };
 
-export default MenuItem2;
+export default Item2;
