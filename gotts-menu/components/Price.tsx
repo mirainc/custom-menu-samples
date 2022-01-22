@@ -1,7 +1,11 @@
 /** @jsxImportSource theme-ui */
 import { Text } from "theme-ui";
 
-const Price: React.FC = ({ children }) => {
+interface PriceProps {
+  value: number;
+}
+
+const Price: React.FC<PriceProps> = ({ value }) => {
   return (
     <Text
       sx={{
@@ -10,7 +14,7 @@ const Price: React.FC = ({ children }) => {
         fontSize: 1,
       }}
     >
-      {children}
+      {value}
     </Text>
   );
 };

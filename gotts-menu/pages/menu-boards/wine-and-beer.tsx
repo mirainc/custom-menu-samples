@@ -36,7 +36,7 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
 
       <header>
         <Heading1>
-          Wine <Text color="textPrimary">&</Text> Beer
+          Wine <Text color="textSecondary">&</Text> Beer
         </Heading1>
       </header>
 

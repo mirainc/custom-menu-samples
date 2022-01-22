@@ -4,13 +4,13 @@ import { Item, Modifier, Size } from "../types";
 import Price from "./Price";
 
 interface Sizes {
-  sizes: Size[];
+  value: Size[];
 }
 
-const Sizes: React.FC<Sizes> = ({ sizes }) => {
+const Sizes: React.FC<Sizes> = ({ value }) => {
   return (
     <Flex as="ul" sx={{ listStylePosition: "inside", padding: 0 }}>
-      {sizes.map((x) => {
+      {value.map((x) => {
         return (
           <li
             key={x.id}
@@ -21,7 +21,7 @@ const Sizes: React.FC<Sizes> = ({ sizes }) => {
               },
             }}
           >
-            <Price>{x.price}</Price> <Text sx={{ fontSize: 0 }}>{x.name}</Text>
+            <Price value={x.price} /> <Text sx={{ fontSize: 0 }}>{x.name}</Text>
           </li>
         );
       })}

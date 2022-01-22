@@ -7,7 +7,7 @@ interface GroupProps {
 
 const Group: React.FC<GroupProps> = ({ children, heading }) => {
   return (
-    <Box as="section" mb={4} mx={1}>
+    <Box as="section" mb={4}>
       <Heading variant="h2">{heading}</Heading>
       {children}
     </Box>

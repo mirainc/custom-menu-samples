@@ -4,12 +4,12 @@ import Head from "next/head";
 import { Grid, Text, Divider } from "theme-ui";
 
 import Item1 from "../../components/Item1";
-import SubGroup from "../../components/SubGroup";
 import { MenuData } from "../../types";
-import MenuItem2 from "../../components/Item2";
+import Item2 from "../../components/Item2";
 import Column from "../../components/Column";
 import Group from "../../components/Group";
 import Heading1 from "../../components/Heading1";
+import SubGroup1 from "../../components/SubGroup1";
 
 export interface JuicesProps {
   data: MenuData;
@@ -40,7 +40,7 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
 
       <header>
         <Heading1>
-          Eats <Text color="textPrimary">&</Text> Drinks
+          Eats <Text color="textSecondary">&</Text> Drinks
         </Heading1>
       </header>
 
@@ -75,7 +75,7 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
           <Group heading={beverages.name}>
             {beverages.groups.map(
               ({ id, name, modifiers, items, sizes, price }) => (
-                <SubGroup
+                <SubGroup1
                   key={id}
                   name={name}
                   items={items}
@@ -87,7 +87,7 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
             )}
 
             {beverages.items.map(({ id, name, sizes, price }) => (
-              <MenuItem2 key={id} name={name} sizes={sizes} price={price} />
+              <Item2 key={id} name={name} sizes={sizes} price={price} />
             ))}
           </Group>
 
