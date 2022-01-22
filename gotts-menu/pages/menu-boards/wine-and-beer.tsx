@@ -50,7 +50,7 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
         </Column>
         <Column>
           <Group heading={beer.name}>
-            {wine.groups.map(({ id, name, items }) => (
+            {beer.groups.map(({ id, name, items }) => (
               <SubGroup2 key={id} name={name} items={items} />
             ))}
           </Group>

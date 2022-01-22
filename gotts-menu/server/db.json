@@ -148,13 +148,15 @@
             {
               "id": "sparkling",
               "name": "sparkling",
-              "price": 33,
+
               "items": [
                 {
                   "id": "blanc-de-blancs",
-                  "name": "Blanc de Blancs",
-                  "winery": "Schrambsberg",
-                  "location": "Napa Valley"
+                  "type": "Blanc de Blancs",
+                  "name": "Schrambsberg",
+                  "location": "Napa Valley",
+                  "price": 33,
+                  "volume": "375ml"
                 }
               ]
             },
@@ -168,9 +170,13 @@
               "items": [
                 {
                   "id": "rosé",
-                  "name": "Rosé",
-                  "winery": "Bieler Père et Fils",
-                  "location": "Provence, France"
+                  "type": "Rosé",
+                  "name": "Bieler Père et Fils",
+                  "location": "Provence, France",
+                  "sizes": [
+                    { "id": "glass", "name": "Glass", "price": "8" },
+                    { "id": "bottle", "name": "Bottle", "price": "32" }
+                  ]
                 }
               ]
             },
@@ -180,8 +186,8 @@
               "items": [
                 {
                   "id": "pinot-grigio",
-                  "name": "Pinot Grigio",
-                  "winery": "Seaglass",
+                  "type": "Pinot Grigio",
+                  "name": "Seaglass",
                   "location": "Santa Barbara County",
                   "sizes": [
                     { "id": "glass", "name": "Glass", "price": "7" },
@@ -190,8 +196,8 @@
                 },
                 {
                   "id": "sauvignon-blanc",
-                  "name": "Sauvignon Blanc",
-                  "winery": "Daisy",
+                  "type": "Sauvignon Blanc",
+                  "name": "Daisy",
                   "location": "California",
                   "sizes": [
                     { "id": "glass", "name": "Glass", "price": "8" },
@@ -200,8 +206,8 @@
                 },
                 {
                   "id": "chardonnay",
-                  "name": "Chardonnay",
-                  "winery": "Napa Cellars",
+                  "type": "Chardonnay",
+                  "name": "Napa Cellars",
                   "location": "Napa Valley",
                   "sizes": [
                     { "id": "glass", "name": "Glass", "price": "8" },
@@ -216,36 +222,36 @@
               "items": [
                 {
                   "id": "sauvignon-blanc-1",
-                  "name": "Sauvignon Blanc",
-                  "winery": "Round Pond",
+                  "type": "Sauvignon Blanc",
+                  "name": "Round Pond",
                   "location": "Napa Valley",
                   "price": "23"
                 },
                 {
                   "id": "sauvignon-blanc-2",
-                  "name": "Sauvignon Blanc",
-                  "winery": "Frog's Leap",
+                  "type": "Sauvignon Blanc",
+                  "name": "Frog's Leap",
                   "location": "Napa Valley",
                   "price": "23"
                 },
                 {
                   "id": "sauvignon-blanc-3",
-                  "name": "Sauvignon Blanc",
-                  "winery": "Duckhorn",
+                  "type": "Sauvignon Blanc",
+                  "name": "Duckhorn",
                   "location": "Napa Valley",
                   "price": "25"
                 },
                 {
                   "id": "chardonnay-1",
-                  "name": "Chardonnay",
-                  "winery": "Rombauer",
+                  "type": "Chardonnay",
+                  "name": "Rombauer",
                   "location": "Napa Valley",
                   "price": "30"
                 },
                 {
                   "id": "chardonnay-2",
-                  "name": "Chardonnay",
-                  "winery": "Cakebread",
+                  "type": "Chardonnay",
+                  "name": "Cakebread",
                   "location": "Napa Valley",
                   "price": "35"
                 }
@@ -257,8 +263,8 @@
               "items": [
                 {
                   "id": "pinot-noir",
-                  "name": "Pinot Noir",
-                  "winery": "The Pinot Project",
+                  "type": "Pinot Noir",
+                  "name": "The Pinot Project",
                   "location": "California",
                   "sizes": [
                     { "id": "glass", "name": "Glass", "price": "9" },
@@ -267,8 +273,8 @@
                 },
                 {
                   "id": "cabernet-blend",
-                  "name": "Cabernet Blend",
-                  "winery": "Charles & Charles",
+                  "type": "Cabernet Blend",
+                  "name": "Charles & Charles",
                   "location": "Washington",
                   "sizes": [
                     { "id": "glass", "name": "Glass", "price": "8" },
@@ -277,8 +283,8 @@
                 },
                 {
                   "id": "cabernet-sauvignon",
-                  "name": "Cabernet Sauvignon",
-                  "winery": "Raymond Vineyard",
+                  "type": "Cabernet Sauvignon",
+                  "name": "Raymond Vineyard",
                   "location": "Napa Valley",
                   "sizes": [
                     { "id": "glass", "name": "Glass", "price": "12" },
@@ -287,8 +293,8 @@
                 },
                 {
                   "id": "zinfandel",
-                  "name": "Zinfandel",
-                  "winery": "Turley",
+                  "type": "Zinfandel",
+                  "name": "Turley",
                   "location": "California",
                   "sizes": [
                     { "id": "glass", "name": "Glass", "price": "13" },
@@ -303,36 +309,36 @@
               "items": [
                 {
                   "id": "zinfandel",
-                  "name": "Zinfandel",
-                  "winery": "Seghesio",
+                  "type": "Zinfandel",
+                  "name": "Seghesio",
                   "location": "Sonoma Country",
                   "price": 23
                 },
                 {
                   "id": "cabernet-franc",
-                  "name": "Cabernet Franc",
-                  "winery": "Lang & Reed",
+                  "type": "Cabernet Franc",
+                  "name": "Lang & Reed",
                   "location": "North Coast",
                   "price": 23
                 },
                 {
                   "id": "pinot-noir",
-                  "name": "Pinot Noir",
-                  "winery": "Melville",
+                  "type": "Pinot Noir",
+                  "name": "Melville",
                   "location": "Santa Rita Hills",
                   "price": 42
                 },
                 {
                   "id": "cabernet-sauvigno-1",
-                  "name": "Cabernet Sauvignon",
-                  "winery": "Long Meadow Ranch",
+                  "type": "Cabernet Sauvignon",
+                  "name": "Long Meadow Ranch",
                   "location": "Napa Valley",
                   "price": 42
                 },
                 {
                   "id": "cabernet-sauvignon-2",
-                  "name": "Cabernet Sauvignon",
-                  "winery": "Shafer",
+                  "type": "Cabernet Sauvignon",
+                  "name": "Shafer",
                   "location": "Napa Valley",
                   "price": 79
                 }
@@ -351,49 +357,49 @@
                 {
                   "id": "pliny-the-older",
                   "name": "Pliny the Elder",
-                  "alcohol-percentage": 8,
+                  "abv": "8%",
                   "price": "10"
                 },
                 {
                   "id": "dogfish-head-90-minute-ipa",
                   "name": "Dogfish Head 90 Minute IPA",
-                  "alcohol-percentage": 9,
+                  "abv": "9%",
                   "price": 9
                 },
                 {
                   "id": "bear-republic-thru-the-haze-ipa",
                   "name": "Bear Republic Thru the Haza IPA",
-                  "alcohol-percentage": 6.4,
+                  "abv": "6.4%",
                   "price": 8
                 },
                 {
                   "id": "fort-point-KSA",
                   "name": "Fort Point KSA",
-                  "alcohol-percentage": 4.6,
+                  "abv": "4.6%",
                   "price": 8
                 },
                 {
                   "id": "lagunitas-ipa",
                   "name": "Lagunitas IPA",
-                  "alcohol-percentage": 6.2,
+                  "abv": "6.2%",
                   "price": 7
                 },
                 {
                   "id": "anchor-steam",
                   "name": "Anchor Steam",
-                  "alcohol-percentage": 4.9,
+                  "abv": "4.9%",
                   "price": 7
                 },
                 {
                   "id": "trumer-pilsner",
                   "name": "Trumer Pilsner",
-                  "alcohol-percentage": 4.9,
+                  "abv": "4.9%",
                   "price": 7
                 },
                 {
                   "id": "modelo-especial",
                   "name": "Modelo Especial",
-                  "alcohol-percentage": 4.6,
+                  "abv": "4.6%",
                   "price": 6
                 },
                 {
@@ -410,31 +416,31 @@
                 {
                   "id": "miller-lite",
                   "name": "Miller Lite",
-                  "alcohol-percentage": 4.2,
+                  "abv": "4.2%",
                   "price": 4.5
                 },
                 {
                   "id": "corona",
                   "name": "Corona",
-                  "alcohol-percentage": 4.6,
+                  "abv": "4.6%",
                   "price": 5
                 },
                 {
                   "id": "fat-tire-amber-ale",
                   "name": "Fat Tire Amber Ale",
-                  "alcohol-percentage": 5.2,
+                  "abv": "5.2%",
                   "price": 5.5
                 },
                 {
                   "id": "stone-delicious-gluten-reduced-IPA",
                   "name": "Stone Delicious Gluten-Reduced IPA",
-                  "alcohol-percentage": 7.7,
+                  "abv": "7.7%",
                   "price": 5.5
                 },
                 {
                   "id": "einstök-icelandic-white-ale",
                   "name": "Einstök Icelandic White Ale",
-                  "alcohol-percentage": 7.7,
+                  "abv": "7.7%",
                   "price": 5.5
                 }
               ]
@@ -446,49 +452,49 @@
                 {
                   "id": "pabst-blue-ribbon",
                   "name": "Pabst Blue Ribbon",
-                  "alcohol-percentage": 4.7,
+                  "abv": "4.7%",
                   "price": 4
                 },
                 {
                   "id": "blue-moon-belgian-style-wheat-ale",
                   "name": "Blue Moon Belgian-Style Wheat Ale",
-                  "alcohol-percentage": 5.4,
+                  "abv": "5.4%",
                   "price": 5
                 },
                 {
                   "id": "firestone-walker-805-blonde-ale",
-                  "name": "Blue Moon Belgian-Style Wheat Ale",
-                  "alcohol-percentage": 5.4,
+                  "name": "Firestone Walker 805 Blonde Ale",
+                  "abv": "5.4%",
                   "price": 5
                 },
                 {
                   "id": "sierra-nevada-pale-ale",
                   "name": "Sierra Nevada Pale Ale",
-                  "alcohol-percentage": 5.6,
+                  "abv": "5.6%",
                   "price": 5
                 },
                 {
                   "id": "montucky-cold-snack",
                   "name": "Montucky Cold Snack, 16 oz.",
-                  "alcohol-percentage": 4.1,
+                  "abv": "4.1%",
                   "price": 6
                 },
                 {
                   "id": "white-claw-hard-seltzer",
                   "name": "White Claw Hard Seltzer",
-                  "alcohol-percentage": 5.0,
+                  "abv": "5.0%",
                   "price": 6
                 },
                 {
                   "id": "athletic-brewing-company-upside-dawn",
                   "name": "Athletic Brewing Company Upside Dawn",
-                  "alcohol-percentage": "(Non-Alcoholic)",
+                  "abv": "Non-Alcoholic",
                   "price": 6
                 },
                 {
                   "id": "golden-state-cider-mighty-dry",
-                  "name": "Athletic Brewing Company Upside Dawn",
-                  "alcohol-percentage": "(Non-Alcoholic)",
+                  "name": "Golden State Cider Mighty Dry, 16oz",
+                  "abv": "6.3%",
                   "price": 7.5
                 }
               ]
