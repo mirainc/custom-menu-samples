@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Box, Grid, Heading, Text, Divider } from "theme-ui";
+import { Grid, Text, Divider } from "theme-ui";
 
 import Item1 from "../../components/Item1";
 import SubGroup from "../../components/SubGroup";

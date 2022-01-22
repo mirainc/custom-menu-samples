@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Box, Flex, Grid, Heading, Text } from "theme-ui";
 import { Item } from "../../types";
+import Price from "../Price";
 
 interface SubGroup2 {
   name: string;
@@ -9,7 +10,7 @@ interface SubGroup2 {
 
 const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
   return (
-    <Box mb={4}>
+    <Box mb={4} as="section">
       <Box>
         <Heading variant="h3">{name}</Heading>
       </Box>
@@ -29,32 +30,15 @@ const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
                 </Text>
               </Box>
               <Box sx={{ display: "flex", justifyContent: "end" }}>
-                {price && (
-                  <Text
-                    sx={{
-                      fontWeight: "bold",
-                      fontFamily: "heading",
-                      fontSize: 1,
-                    }}
-                  >
-                    {price}
-                  </Text>
-                )}
+                {price && <Price>{price}</Price>}
                 {sizes && (
                   <Flex>
                     {sizes.map((x, i) => {
                       return (
-                        <Text
-                          key={x.id}
-                          sx={{
-                            fontWeight: "bold",
-                            fontFamily: "heading",
-                            fontSize: 1,
-                          }}
-                        >
+                        <Price key={x.id}>
                           <Text>{x.price}</Text>
                           {i === 0 ? "/" : ""}
-                        </Text>
+                        </Price>
                       );
                     })}
                   </Flex>

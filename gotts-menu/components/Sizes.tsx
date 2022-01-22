@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Box, Flex, Grid, Heading, Text } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
+import Price from "./Price";
 
 interface Sizes {
   sizes: Size[];
@@ -20,16 +21,7 @@ const Sizes: React.FC<Sizes> = ({ sizes }) => {
               },
             }}
           >
-            <Text
-              sx={{
-                fontWeight: "bold",
-                fontFamily: "heading",
-                fontSize: 1,
-              }}
-            >
-              {x.price}
-            </Text>{" "}
-            <Text sx={{ fontSize: 0 }}>{x.name}</Text>
+            <Price>{x.price}</Price> <Text sx={{ fontSize: 0 }}>{x.name}</Text>
           </li>
         );
       })}

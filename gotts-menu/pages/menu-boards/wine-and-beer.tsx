@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Grid, Text } from "theme-ui";
+
 import Column from "../../components/Column";
 import Group from "../../components/Group";
 import Heading1 from "../../components/Heading1";
@@ -22,7 +23,6 @@ export const getStaticProps = async () => {
 };
 
 const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
-  console.log(data.groups);
   const wine = data.groups.find(({ id }) => id === "wine");
   const beer = data.groups.find(({ id }) => id === "beer");
 
