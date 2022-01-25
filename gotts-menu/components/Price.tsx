@@ -6,6 +6,7 @@ interface PriceProps {
 }
 
 const Price: React.FC<PriceProps> = ({ value }) => {
+  console.log({ value });
   return (
     <Text
       sx={{
@@ -14,7 +15,7 @@ const Price: React.FC<PriceProps> = ({ value }) => {
         fontSize: 1,
       }}
     >
-      {value}
+      {isNaN(value) ? value : value.toFixed(2)}
     </Text>
   );
 };

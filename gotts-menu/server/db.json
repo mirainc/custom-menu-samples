@@ -46,48 +46,48 @@
               "id": "iced-tea",
               "name": "Iced Tea",
               "sizes": [
-                { "id": "16oz", "name": "16oz", "price": "2.69" },
-                { "id": "24oz", "name": "24oz", "price": "2.99" }
+                { "id": "16oz", "name": "16oz", "price": 2.69 },
+                { "id": "24oz", "name": "24oz", "price": 2.99 }
               ]
             },
             {
               "id": "arnold-palmer",
               "name": "Arnold Palmer",
               "sizes": [
-                { "id": "16oz", "name": "16oz", "price": "2.99" },
-                { "id": "24oz", "name": "24oz", "price": "3.29" }
+                { "id": "16oz", "name": "16oz", "price": 2.99 },
+                { "id": "24oz", "name": "24oz", "price": 3.29 }
               ]
             },
             {
               "id": "house-made-lemonade",
               "name": "House-made lemonade",
               "sizes": [
-                { "id": "16oz", "name": "16oz", "price": "2.99" },
-                { "id": "24oz", "name": "24oz", "price": "3.29" }
+                { "id": "16oz", "name": "16oz", "price": 2.99 },
+                { "id": "24oz", "name": "24oz", "price": 3.29 }
               ]
             },
             {
               "id": "house-made-strawberry-lemonade",
               "name": "House-made strawberry lemonade",
               "sizes": [
-                { "id": "16oz", "name": "16oz", "price": "3.99" },
-                { "id": "24oz", "name": "24oz", "price": "4.29" }
+                { "id": "16oz", "name": "16oz", "price": 3.99 },
+                { "id": "24oz", "name": "24oz", "price": 4.29 }
               ]
             },
             {
               "id": "bernies-organic-apple-juice",
               "name": "Bernie's Organic Apple Juice",
-              "price": "3.99"
+              "price": 3.99
             },
             {
               "id": "mountain-valley-spring-water",
               "name": "Mountain Valley Spring Water",
-              "price": "3.49"
+              "price": 3.49
             },
             {
               "id": "mountain-valley-sparkling-water",
               "name": "Mountain Valley Sparkling Water",
-              "price": "3.49"
+              "price": 3.49
             }
           ],
           "groups": [
@@ -95,8 +95,8 @@
               "id": "fountain-soda",
               "name": "Fountain Soda",
               "sizes": [
-                { "id": "16oz", "name": "16oz", "price": "2.69" },
-                { "id": "24oz", "name": "24oz", "price": "2.99" }
+                { "id": "16oz", "name": "16oz", "price": 2.69 },
+                { "id": "24oz", "name": "24oz", "price": 2.99 }
               ],
               "items": [
                 {
@@ -125,8 +125,8 @@
                 }
               ],
               "modifiers": [
-                { "id": "vanilla", "name": "Vanilla", "price": "0.99" },
-                { "id": "cherry", "name": "Cherry", "price": "0.99" }
+                { "id": "vanilla", "name": "Vanilla", "price": 0.99 },
+                { "id": "cherry", "name": "Cherry", "price": 0.99 }
               ]
             },
             {
@@ -155,7 +155,7 @@
                   "type": "Blanc de Blancs",
                   "name": "Schrambsberg",
                   "location": "Napa Valley",
-                  "price": 33,
+                  "price": 33.0,
                   "volume": "375ml"
                 }
               ]
@@ -164,8 +164,8 @@
               "id": "rosé",
               "name": "Rosé",
               "sizes": [
-                { "id": "glass", "name": "Glass", "price": "8" },
-                { "id": "bottle", "name": "Bottle", "price": "32" }
+                { "id": "glass", "name": "Glass", "price": 8.0 },
+                { "id": "bottle", "name": "Bottle", "price": 32.0 }
               ],
               "items": [
                 {
@@ -174,8 +174,8 @@
                   "name": "Bieler Père et Fils",
                   "location": "Provence, France",
                   "sizes": [
-                    { "id": "glass", "name": "Glass", "price": "8" },
-                    { "id": "bottle", "name": "Bottle", "price": "32" }
+                    { "id": "glass", "name": "Glass", "price": 8.0 },
+                    { "id": "bottle", "name": "Bottle", "price": 32.0 }
                   ]
                 }
               ]
@@ -190,8 +190,8 @@
                   "name": "Seaglass",
                   "location": "Santa Barbara County",
                   "sizes": [
-                    { "id": "glass", "name": "Glass", "price": "7" },
-                    { "id": "bottle", "name": "Bottle", "price": "28" }
+                    { "id": "glass", "name": "Glass", "price": 7.0 },
+                    { "id": "bottle", "name": "Bottle", "price": 28.0 }
                   ]
                 },
                 {
@@ -200,8 +200,8 @@
                   "name": "Daisy",
                   "location": "California",
                   "sizes": [
-                    { "id": "glass", "name": "Glass", "price": "8" },
-                    { "id": "bottle", "name": "Bottle", "price": "32" }
+                    { "id": "glass", "name": "Glass", "price": 8 },
+                    { "id": "bottle", "name": "Bottle", "price": 32 }
                   ]
                 },
                 {
@@ -210,8 +210,8 @@
                   "name": "Napa Cellars",
                   "location": "Napa Valley",
                   "sizes": [
-                    { "id": "glass", "name": "Glass", "price": "8" },
-                    { "id": "bottle", "name": "Bottle", "price": "36" }
+                    { "id": "glass", "name": "Glass", "price": 8 },
+                    { "id": "bottle", "name": "Bottle", "price": 36 }
                   ]
                 }
               ]
@@ -225,35 +225,35 @@
                   "type": "Sauvignon Blanc",
                   "name": "Round Pond",
                   "location": "Napa Valley",
-                  "price": "23"
+                  "price": 23
                 },
                 {
                   "id": "sauvignon-blanc-2",
                   "type": "Sauvignon Blanc",
                   "name": "Frog's Leap",
                   "location": "Napa Valley",
-                  "price": "23"
+                  "price": 23
                 },
                 {
                   "id": "sauvignon-blanc-3",
                   "type": "Sauvignon Blanc",
                   "name": "Duckhorn",
                   "location": "Napa Valley",
-                  "price": "25"
+                  "price": 25
                 },
                 {
                   "id": "chardonnay-1",
                   "type": "Chardonnay",
                   "name": "Rombauer",
                   "location": "Napa Valley",
-                  "price": "30"
+                  "price": 30
                 },
                 {
                   "id": "chardonnay-2",
                   "type": "Chardonnay",
                   "name": "Cakebread",
                   "location": "Napa Valley",
-                  "price": "35"
+                  "price": 35
                 }
               ]
             },
@@ -267,8 +267,8 @@
                   "name": "The Pinot Project",
                   "location": "California",
                   "sizes": [
-                    { "id": "glass", "name": "Glass", "price": "9" },
-                    { "id": "bottle", "name": "Bottle", "price": "36" }
+                    { "id": "glass", "name": "Glass", "price": 9 },
+                    { "id": "bottle", "name": "Bottle", "price": 36 }
                   ]
                 },
                 {
@@ -277,8 +277,8 @@
                   "name": "Charles & Charles",
                   "location": "Washington",
                   "sizes": [
-                    { "id": "glass", "name": "Glass", "price": "8" },
-                    { "id": "bottle", "name": "Bottle", "price": "32" }
+                    { "id": "glass", "name": "Glass", "price": 8 },
+                    { "id": "bottle", "name": "Bottle", "price": 32 }
                   ]
                 },
                 {
@@ -287,8 +287,8 @@
                   "name": "Raymond Vineyard",
                   "location": "Napa Valley",
                   "sizes": [
-                    { "id": "glass", "name": "Glass", "price": "12" },
-                    { "id": "bottle", "name": "Bottle", "price": "48" }
+                    { "id": "glass", "name": "Glass", "price": 12 },
+                    { "id": "bottle", "name": "Bottle", "price": 48 }
                   ]
                 },
                 {
@@ -297,8 +297,8 @@
                   "name": "Turley",
                   "location": "California",
                   "sizes": [
-                    { "id": "glass", "name": "Glass", "price": "13" },
-                    { "id": "bottle", "name": "Bottle", "price": "52" }
+                    { "id": "glass", "name": "Glass", "price": 13 },
+                    { "id": "bottle", "name": "Bottle", "price": 52 }
                   ]
                 }
               ]
@@ -358,7 +358,7 @@
                   "id": "pliny-the-older",
                   "name": "Pliny the Elder",
                   "abv": "8%",
-                  "price": "10"
+                  "price": 10
                 },
                 {
                   "id": "dogfish-head-90-minute-ipa",
