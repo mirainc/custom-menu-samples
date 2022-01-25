@@ -1,4 +1,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    max-age = 1
+    Cache-Control = "public, max-age=1"
