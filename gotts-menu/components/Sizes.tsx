@@ -1,4 +1,3 @@
-/** @jsxImportSource theme-ui */
 import { Box, Flex, Grid, Heading, Text } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
 import Price from "./Price";

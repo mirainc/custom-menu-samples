@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "theme-ui";
+import { Heading, Text } from "theme-ui";
 import ItemLayout from "./ItemLayout";
 import Price from "./Price";
 

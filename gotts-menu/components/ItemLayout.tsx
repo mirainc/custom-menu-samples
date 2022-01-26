@@ -1,4 +1,3 @@
-/** @jsxImportSource theme-ui */
 import { Box } from "theme-ui";
 
 const ItemLayout: React.FC = ({ children }) => {

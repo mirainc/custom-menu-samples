@@ -22,11 +22,14 @@ export const theme = makeTheme({
     textSecondary: "#ba0c2f",
     background: "#fff",
     border: "#dedede",
+    red: "#ba0c2f",
+    gray: "#515251",
+    lightGray: "#999",
   },
   text: {
     h1: {
       ...heading,
-      mb: 6,
+      mb: 5,
       fontSize: 8,
       letterSpacing: ".25rem",
     },
@@ -47,7 +50,6 @@ export const theme = makeTheme({
     root: {
       fontFamily: "body",
       lineHeight: "body",
-      fontWeight: "body",
     },
     hr: {
       color: "border",

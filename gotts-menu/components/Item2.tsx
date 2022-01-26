@@ -1,4 +1,3 @@
-/** @jsxImportSource theme-ui */
 import { Box, Grid, Heading, Text } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
 import ItemLayout from "./ItemLayout";

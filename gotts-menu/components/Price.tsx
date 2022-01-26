@@ -1,4 +1,3 @@
-/** @jsxImportSource theme-ui */
 import { Text } from "theme-ui";
 
 interface PriceProps {
@@ -10,7 +9,6 @@ const Price: React.FC<PriceProps> = ({ value }) => {
   return (
     <Text
       sx={{
-        fontWeight: "bold",
         fontFamily: "heading",
         fontSize: 1,
       }}

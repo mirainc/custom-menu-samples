@@ -1,4 +1,3 @@
-/** @jsxImportSource theme-ui */
 import { Box, Heading } from "theme-ui";
 
 interface GroupProps {
