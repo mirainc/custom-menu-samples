@@ -4,7 +4,7 @@ import Divider from "./Divider";
 
 const Header: React.FC = () => {
   return (
-    <Box mb={5}>
+    <Box my={5} mx={4}>
       <Flex
         ml={5}
         mb={3}
