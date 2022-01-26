@@ -34,7 +34,7 @@ const styles = {
       height: "100%",
       right: "0",
       top: "0",
-      backgroundColor: "gray",
+      backgroundColor: "lightGray",
     },
   } as ThemeUIStyleObject,
   divider: {
@@ -42,10 +42,11 @@ const styles = {
     position: "absolute",
     width: "25%",
     height: "100%",
-    backgroundColor: "lightGray",
+    backgroundColor: "gray",
     margin: "0",
     left: "37.5%",
     border: 0,
+    zIndex: 1,
   } as ThemeUIStyleObject,
 };
 
