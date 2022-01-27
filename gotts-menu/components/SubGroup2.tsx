@@ -35,10 +35,10 @@ const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
                   <Flex>
                     {sizes.map((x, i) => {
                       return (
-                        <>
+                        <div key={x.id}>
                           <Price key={x.id} value={x.price} />
                           {i === 0 ? "/" : ""}
-                        </>
+                        </div>
                       );
                     })}
                   </Flex>
