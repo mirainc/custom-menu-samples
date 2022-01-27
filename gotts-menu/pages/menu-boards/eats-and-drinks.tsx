@@ -11,7 +11,7 @@ import Group from "../../components/Group";
 import Heading1 from "../../components/Heading1";
 import SubGroup1 from "../../components/SubGroup1";
 
-export interface JuicesProps {
+export interface EatsAndDrinksProps {
   data: MenuData;
 }
 
@@ -25,7 +25,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
+const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
   const grabAndGo = data.groups.find(({ id }) => id === "grab-and-go");
   const shakes = data.groups.find(({ id }) => id === "shakes");
   const beverages = data.groups.find(({ id }) => id === "beverages");

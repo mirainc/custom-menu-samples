@@ -8,7 +8,7 @@ import Heading1 from "../../components/Heading1";
 import SubGroup2 from "../../components/SubGroup2";
 import * as T from "../../types";
 
-export interface JuicesProps {
+export interface WineAndBeerProps {
   data: T.MenuData;
 }
 
@@ -22,7 +22,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
+const WineAndBeer: NextPage<WineAndBeerProps> = ({ data }) => {
   const wine = data.groups.find(({ id }) => id === "wine");
   const beer = data.groups.find(({ id }) => id === "beer");
 
@@ -60,4 +60,4 @@ const EatsAndDrinks: NextPage<JuicesProps> = ({ data }) => {
   );
 };
 
-export default EatsAndDrinks;
+export default WineAndBeer;
