@@ -13,7 +13,7 @@ const styles = {
   root: {
     clear: "both",
     position: "relative",
-    height: "0.35rem",
+    height: "0.5rem",
     width: "100%",
     textAlign: "center",
     ":before": {

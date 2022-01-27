@@ -1,11 +1,12 @@
-import { Box, Flex, Text } from "theme-ui";
+import { Box } from "theme-ui";
 import Image from "next/image";
 import Divider from "./Divider";
 
 const Footer: React.FC = () => {
   return (
-    <Box>
+    <Box sx={{ position: "fixed", bottom: 6, mx: 4 }}>
       <Divider />
+      <Image src="/about-footer.jpeg" alt="footer" width={1135} height={98} />
     </Box>
   );
 };
