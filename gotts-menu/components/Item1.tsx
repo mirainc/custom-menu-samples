@@ -5,7 +5,7 @@ import Price from "./Price";
 interface Item1 {
   name: string;
   description: string;
-  price: string;
+  price: number;
 }
 
 const Item1: React.FC<Item1> = ({ name, description, price }) => {

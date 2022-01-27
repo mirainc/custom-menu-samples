@@ -10,7 +10,7 @@ interface SubGroup1 {
   items: Item[];
   modifiers?: Modifier[];
   sizes: Size[];
-  price?: string;
+  price?: number;
 }
 
 const SubGroup1: React.FC<SubGroup1> = ({

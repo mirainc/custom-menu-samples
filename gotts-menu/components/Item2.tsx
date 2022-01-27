@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, Text } from "theme-ui";
+import { Box, Grid, Heading } from "theme-ui";
 import { Item, Modifier, Size } from "../types";
 import ItemLayout from "./ItemLayout";
 import Price from "./Price";
@@ -9,7 +9,7 @@ interface Item2 {
   items?: Item[];
   modifiers?: Modifier[];
   sizes?: Size[];
-  price: string;
+  price: number;
 }
 
 const Item2: React.FC<Item2> = ({ name, items, modifiers, sizes, price }) => {
