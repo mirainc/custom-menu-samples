@@ -4,7 +4,7 @@ import Divider from "./Divider";
 
 const Footer: React.FC = () => {
   return (
-    <Box sx={{ position: "fixed", bottom: 6, mx: 4 }}>
+    <Box sx={{ position: "fixed", bottom: 5, mx: 4 }}>
       <Divider />
       <Image src="/about-footer.jpeg" alt="footer" width={1135} height={98} />
     </Box>

@@ -7,7 +7,7 @@ const Header: React.FC = () => {
     <Box my={5} mx={4}>
       <Flex
         ml={5}
-        mb={3}
+        mb={4}
         sx={{
           justifyContent: "space-between",
           alignItems: "end",

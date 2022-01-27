@@ -10,7 +10,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <main sx={{ px: 5, py: 5 }}>
+      <main sx={{ px: 5, pt: 4, pb: 5 }}>
         <Component {...pageProps} />
       </main>
       <Footer />

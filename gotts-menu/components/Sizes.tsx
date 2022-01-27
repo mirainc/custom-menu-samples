@@ -1,5 +1,6 @@
-import { Box, Flex, Grid, Heading, Text } from "theme-ui";
-import { Item, Modifier, Size } from "../types";
+/** @jsxImportSource theme-ui */
+import { Flex, Text } from "theme-ui";
+import { Size } from "../types";
 import Price from "./Price";
 
 interface Sizes {

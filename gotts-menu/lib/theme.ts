@@ -29,7 +29,7 @@ export const theme = makeTheme({
   text: {
     h1: {
       ...heading,
-      mb: 5,
+      mb: 6,
       fontSize: 8,
       letterSpacing: ".25rem",
     },
