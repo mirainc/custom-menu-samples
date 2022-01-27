@@ -5,7 +5,6 @@ interface PriceProps {
 }
 
 const Price: React.FC<PriceProps> = ({ value }) => {
-  console.log({ value });
   return (
     <Text
       sx={{

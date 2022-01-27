@@ -7,8 +7,8 @@ const Column: React.FC = ({ children }) => {
         ":not(:last-child)": {
           borderRight: "1px solid",
           borderColor: "border",
-          marginRight: -32,
-          paddingRight: 32,
+          marginRight: -4,
+          paddingRight: 4,
         },
       }}
     >
