@@ -18,14 +18,9 @@ export interface Item {
   id: string;
   name: string;
   description: string;
-  winery: string;
-  location: string;
   price: number;
-  calories: string;
   sizes?: Size[];
-  type: string;
-  volume: string;
-  abv: string;
+  tags: string[];
 }
 
 export interface Size {
