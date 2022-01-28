@@ -3,38 +3,19 @@ export interface MenuData {
   groups: Group[];
 }
 
-export interface Group {
-  sizes: Size[];
+export type Item = Record;
+export type Modifier = Record;
+
+export interface Record {
   id: string;
   name: string;
   description: string;
   price: number;
   items: Item[];
   modifiers: Modifier[];
-  groups: Group[];
-}
-
-export interface Item {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  sizes?: Size[];
   tags: string[];
 }
 
-export interface Size {
-  id: string;
-  name: string;
-  price: number;
+export interface Group extends Record {
+  groups: Group[];
 }
-
-export interface ModifierGroup {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  items: Item[];
-}
-
-export type Modifier = Item;

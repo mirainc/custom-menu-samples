@@ -44,7 +44,7 @@ const SubGroup1: React.FC<SubGroup1> = ({
               );
             })}
           </ul>
-          {modifiers && (
+          {modifiers && modifiers.length > 0 && (
             <Text sx={{ fontSize: 0 }}>
               Add flavors:{" "}
               {modifiers.map((x, i) => {

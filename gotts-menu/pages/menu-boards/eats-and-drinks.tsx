@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Grid, Text, Divider } from "theme-ui";
 
 import Item1 from "../../components/Item1";
-import { MenuData } from "../../types";
+import * as T from "../../types";
 import Item2 from "../../components/Item2";
 import Column from "../../components/Column";
 import Group from "../../components/Group";
@@ -12,175 +12,40 @@ import Heading1 from "../../components/Heading1";
 import SubGroup1 from "../../components/SubGroup1";
 
 export interface EatsAndDrinksProps {
-  data: MenuData;
+  data: T.MenuData;
 }
 
 export const getStaticProps = async () => {
-  // const response = await fetch(
-  //   "http://localhost:3002/groups?id=eats-and-drinks-guid"
-  // );
-  // const data = await response.json();
-
-  const data = [
+  const response = await fetch(
+    "https://menu-api.raydiant.com/v1/groups?tags=eats-and-drinks&depth=5",
     {
-      id: "eats-and-drinks-guid",
-      name: "Eats & Drinks",
-      groups: [
-        {
-          id: "grab-and-go",
-          name: "Grab & Go",
-          items: [
-            {
-              id: "cheeseburger-box",
-              name: "Cheeseburger Box",
-              description:
-                "American cheese, lettuce, tomatoes, pickles & secret sauce on a toasted egg bun. Served with house-made chips.",
-              price: 9.99,
-            },
-            {
-              id: "chicken-sandwich-box",
-              name: "Chicken Sandwich Box",
-              description:
-                "Crispy fried chicken breast, green cabbage & cilantro slaw, red onion, dill pickles and charred jalapeño mayo on a toasted egg bun. Served with house-made chips.",
-              price: 13.99,
-            },
-          ],
-        },
-        {
-          id: "shakes",
-          name: "Shakes",
-          price: 6.99,
-          items: [
-            {
-              id: "chocolate-shake",
-              description: "Hand spun with organic chocolate ice cream & milk.",
-              name: "Chocolate Shake",
-            },
-            {
-              id: "vanilla-shake",
-              name: "Vanilla Shake",
-              description: "Hand spun with organic vanilla ice cream & milk.",
-            },
-          ],
-        },
-        {
-          id: "beverages",
-          name: "Beverages",
-          items: [
-            {
-              id: "iced-tea",
-              name: "Iced Tea",
-              sizes: [
-                { id: "16oz", name: "16oz", price: 2.69 },
-                { id: "24oz", name: "24oz", price: 2.99 },
-              ],
-            },
-            {
-              id: "arnold-palmer",
-              name: "Arnold Palmer",
-              sizes: [
-                { id: "16oz", name: "16oz", price: 2.99 },
-                { id: "24oz", name: "24oz", price: 3.29 },
-              ],
-            },
-            {
-              id: "house-made-lemonade",
-              name: "House-made lemonade",
-              sizes: [
-                { id: "16oz", name: "16oz", price: 2.99 },
-                { id: "24oz", name: "24oz", price: 3.29 },
-              ],
-            },
-            {
-              id: "house-made-strawberry-lemonade",
-              name: "House-made strawberry lemonade",
-              sizes: [
-                { id: "16oz", name: "16oz", price: 3.99 },
-                { id: "24oz", name: "24oz", price: 4.29 },
-              ],
-            },
-            {
-              id: "bernies-organic-apple-juice",
-              name: "Bernie's Organic Apple Juice",
-              price: 3.99,
-            },
-            {
-              id: "mountain-valley-spring-water",
-              name: "Mountain Valley Spring Water",
-              price: 3.49,
-            },
-            {
-              id: "mountain-valley-sparkling-water",
-              name: "Mountain Valley Sparkling Water",
-              price: 3.49,
-            },
-          ],
-          groups: [
-            {
-              id: "fountain-soda",
-              name: "Fountain Soda",
-              sizes: [
-                { id: "16oz", name: "16oz", price: 2.69 },
-                { id: "24oz", name: "24oz", price: 2.99 },
-              ],
-              items: [
-                {
-                  id: "root-beer",
-                  name: "Root Beer",
-                },
-                {
-                  id: "diet-coke",
-                  name: "Diet Coke",
-                },
-                {
-                  id: "coke",
-                  name: "Coke",
-                },
-                {
-                  id: "sprite",
-                  name: "Sprite",
-                },
-                {
-                  id: "mr-pibb",
-                  name: "Mr. Pibb",
-                },
-                {
-                  id: "orange",
-                  name: "Orange",
-                },
-              ],
-              modifiers: [
-                { id: "vanilla", name: "Vanilla", price: 0.99 },
-                { id: "cherry", name: "Cherry", price: 0.99 },
-              ],
-            },
-            {
-              id: "revive-kombucha",
-              name: "Revive Kombucha",
-              price: 5.99,
-              items: [
-                { id: "original-cola", name: "Original Cola" },
-                { id: "ginger-lime", name: "Ginger Lime" },
-                { id: "hibiscus-refresher", name: "Hibiscus Refresher" },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ];
+      headers: {
+        "X-API-Key": "4de9279071f84308a6815d92f6349db8",
+      },
+    }
+  );
+  const data = await response.json();
+  const eatsAndDrinksData = data.groups[0];
 
   return {
     props: {
-      data: data[0],
+      data: eatsAndDrinksData,
     },
   };
 };
 
 const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
-  const grabAndGo = data.groups.find(({ id }) => id === "grab-and-go");
-  const shakes = data.groups.find(({ id }) => id === "shakes");
-  const beverages = data.groups.find(({ id }) => id === "beverages");
+  // TODO: fix type
+  const getRecords = (data: T.Record[], tag: string) => {
+    const record = data.filter((x) => {
+      return x.tags.includes(tag);
+    });
+    return record;
+  };
+
+  const grabAndGo = getRecords(data.groups, "grab-and-go")[0] as T.Group;
+  const shakes = getRecords(data.groups, "shakes")[0] as T.Group;
+  const beverages = getRecords(data.groups, "beverages")[0] as T.Group;
 
   if (!grabAndGo || !shakes || !beverages) return null;
 
@@ -212,12 +77,12 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
           <Divider mb={4} />
 
           <Group heading={shakes.name}>
-            {shakes.items.map(({ id, name, description }) => (
+            {shakes.items.map(({ id, name, description, price }) => (
               <Item1
                 key={id}
                 name={name}
                 description={description}
-                price={shakes.price}
+                price={price}
               />
             ))}
           </Group>
@@ -225,8 +90,15 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
 
         <Column>
           <Group heading={beverages.name}>
-            {beverages.groups.map(
-              ({ id, name, modifiers, items, sizes, price }) => (
+            {beverages.groups.map((group) => {
+              const { id, name, items } = group;
+              const firstItem = items[0];
+
+              const price = items[0].price;
+              const sizes = getRecords(firstItem.items, "size");
+              const modifiers = getRecords(firstItem.items, "modifier");
+
+              return (
                 <SubGroup1
                   key={id}
                   name={name}
@@ -235,11 +107,11 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
                   sizes={sizes}
                   price={price}
                 />
-              )
-            )}
+              );
+            })}
 
-            {beverages.items.map(({ id, name, sizes, price }) => (
-              <Item2 key={id} name={name} sizes={sizes} price={price} />
+            {beverages.items.map(({ id, name, price }) => (
+              <Item2 key={id} name={name} sizes={[]} price={price} />
             ))}
           </Group>
 
