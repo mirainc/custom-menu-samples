@@ -90,11 +90,10 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
 
         <Column>
           <Group heading={beverages.name}>
-            {beverages.groups.map((group) => {
-              const { id, name, items } = group;
+            {beverages.groups.map(({ id, name, items }) => {
               const firstItem = items[0];
 
-              const price = items[0].price;
+              const price = firstItem.price;
               const sizes = getRecords(firstItem.items, "size");
               const modifiers = getRecords(firstItem.items, "modifier");
 
@@ -110,9 +109,13 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
               );
             })}
 
-            {beverages.items.map(({ id, name, price }) => (
-              <Item2 key={id} name={name} sizes={[]} price={price} />
-            ))}
+            {beverages.items.map((item) => {
+              const { id, name, items, price } = item;
+              const firstItem = items[0];
+              const sizes = firstItem && getRecords(items, "size");
+
+              return <Item2 key={id} name={name} sizes={sizes} price={price} />;
+            })}
           </Group>
 
           <Divider mb={4} />

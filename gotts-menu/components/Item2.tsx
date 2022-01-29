@@ -12,7 +12,7 @@ interface Item2 {
   price: number;
 }
 
-const Item2: React.FC<Item2> = ({ name, items, modifiers, sizes, price }) => {
+const Item2: React.FC<Item2> = ({ name, sizes, price }) => {
   return (
     <ItemLayout>
       <Grid columns="7fr 5fr" sx={{ alignItems: "baseline" }}>
