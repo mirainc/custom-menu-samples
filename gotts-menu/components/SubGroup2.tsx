@@ -45,7 +45,7 @@ const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
                 </Text>
               </Box>
               <Box sx={{ display: "flex", justifyContent: "end" }}>
-                {price && <Price value={price} />}
+                <Price value={price} />
                 {sizes && (
                   <Flex>
                     {sizes.map((x, i) => {

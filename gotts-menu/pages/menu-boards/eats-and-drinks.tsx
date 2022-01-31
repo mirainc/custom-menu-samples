@@ -10,6 +10,7 @@ import Column from "../../components/Column";
 import Group from "../../components/Group";
 import Heading1 from "../../components/Heading1";
 import SubGroup1 from "../../components/SubGroup1";
+import { getRecords } from "../../lib/utils";
 
 export interface EatsAndDrinksProps {
   data: T.MenuData;
@@ -35,14 +36,6 @@ export const getStaticProps = async () => {
 };
 
 const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
-  // TODO: fix type
-  const getRecords = (data: T.Record[], tag: string) => {
-    const record = data.filter((x) => {
-      return x.tags.includes(tag);
-    });
-    return record;
-  };
-
   const grabAndGo = getRecords(data.groups, "grab-and-go")[0] as T.Group;
   const shakes = getRecords(data.groups, "shakes")[0] as T.Group;
   const beverages = getRecords(data.groups, "beverages")[0] as T.Group;
