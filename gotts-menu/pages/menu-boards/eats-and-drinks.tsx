@@ -11,6 +11,7 @@ import Group from "../../components/Group";
 import Heading1 from "../../components/Heading1";
 import SubGroup1 from "../../components/SubGroup1";
 import { getRecords } from "../../lib/utils";
+import MainLayout from "../../components/MainLayout";
 
 export interface EatsAndDrinksProps {
   data: T.MenuData;
@@ -43,7 +44,7 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
   if (!grabAndGo || !shakes || !beverages) return null;
 
   return (
-    <>
+    <MainLayout>
       <Head>
         <meta name="description" content="Custom NextJS Menu App" />
       </Head>
@@ -114,7 +115,7 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
           <Divider mb={4} />
         </Column>
       </Grid>
-    </>
+    </MainLayout>
   );
 };
 
