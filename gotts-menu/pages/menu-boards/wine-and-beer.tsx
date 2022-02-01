@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { Grid, Text } from "theme-ui";
 
 import Column from "../../components/Column";
 import Group from "../../components/Group";
 import Heading1 from "../../components/Heading1";
+import MainLayout from "../../components/MainLayout";
 import SubGroup2 from "../../components/SubGroup2";
 import { getRecords } from "../../lib/utils";
 import * as T from "../../types";
@@ -33,13 +35,16 @@ export const getStaticProps = async () => {
 };
 
 const WineAndBeer: NextPage<WineAndBeerProps> = ({ data }) => {
+  const router = useRouter();
+  const { footerText } = router.query;
+
   const beer = getRecords(data.groups, "beer")[0] as T.Group;
   const wine = getRecords(data.groups, "wine")[0] as T.Group;
 
   if (!beer || !wine) return null;
 
   return (
-    <>
+    <MainLayout footerText={footerText as string}>
       <Head>
         <meta name="description" content="Custom NextJS Menu App" />
       </Head>
@@ -66,7 +71,7 @@ const WineAndBeer: NextPage<WineAndBeerProps> = ({ data }) => {
           </Group>
         </Column>
       </Grid>
-    </>
+    </MainLayout>
   );
 };
 
