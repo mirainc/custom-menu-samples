@@ -34,8 +34,9 @@ export const getStaticProps = async () => {
 
 const WineAndBeer: NextPage<WineAndBeerProps> = ({ data }) => {
   const beer = getRecords(data.groups, "beer")[0] as T.Group;
+  const wine = getRecords(data.groups, "wine")[0] as T.Group;
 
-  if (!beer) return null;
+  if (!beer || !wine) return null;
 
   return (
     <>
@@ -50,18 +51,18 @@ const WineAndBeer: NextPage<WineAndBeerProps> = ({ data }) => {
       </header>
 
       <Grid columns={2} gap={5}>
-        {/* <Column>
+        <Column>
           <Group heading={wine.name}>
             {wine.groups.map(({ id, name, items }) => (
               <SubGroup2 key={id} name={name} items={items} />
             ))}
           </Group>
-        </Column> */}
+        </Column>
         <Column>
           <Group heading={beer.name}>
-            {beer.groups.map(({ id, name, items }) => (
-              <SubGroup2 key={id} name={name} items={items} />
-            ))}
+            {beer.groups.map(({ id, name, items }) => {
+              return <SubGroup2 key={id} name={name} items={items} />;
+            })}
           </Group>
         </Column>
       </Grid>

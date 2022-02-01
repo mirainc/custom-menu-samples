@@ -5,6 +5,7 @@ export interface MenuData {
 
 export type Item = Record;
 export type Modifier = Record;
+export type Size = Record;
 
 export interface Record {
   id: string;

@@ -25,11 +25,11 @@ const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
         <Heading variant="h3">{name}</Heading>
       </Box>
       <Box>
-        {items.map(({ id, name, price, sizes, tags }) => {
+        {items.map(({ id, name, price, tags, description, items: sizes }) => {
           const location = getTagValue(tags, "location");
           const volume = getTagValue(tags, "volume");
           const abv = getTagValue(tags, "abv");
-          const type = getTagValue(tags, "type");
+          const type = description;
 
           return (
             <Grid key={id} columns="5fr 1fr" sx={{ alignItems: "baseline" }}>
@@ -45,7 +45,7 @@ const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
                 </Text>
               </Box>
               <Box sx={{ display: "flex", justifyContent: "end" }}>
-                <Price value={price} />
+                {sizes.length === 0 && <Price value={price} />}
                 {sizes && (
                   <Flex>
                     {sizes.map((x, i) => {
