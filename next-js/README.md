@@ -12,7 +12,13 @@
 
 ## Development
 
-First, run the development server:
+First, run the mock API server:
+
+```bash
+yarn start:mock-server
+```
+
+Then start the development server
 
 ```bash
 yarn dev
@@ -24,14 +30,10 @@ See [here](https://raydiant.notion.site/How-do-I-develop-an-app-487d7064eeec402f
 
 ## Builder Inputs
 
-There are three builder inputs for this project. These can be configured after creating a new app in [Raydiant's Developer portal](https://developers.raydiant.com/)
+There is one builder input for this project. Builder inputs can be configured after creating a new app in [Raydiant's Developer portal](https://developers.raydiant.com/)
 
-- Menu Board (select input) - Corresponds to a route in NextJS
+- Menu Board (select input) - Corresponds to a NextJS route
   ![Menu Board](menu-board-builder-input.png)
-- Footer Text (text input) - Corresponds to a query param
-  ![Footer Text](footer-text-builder-input.png)
-  [Code to retrieve query param](https://github.com/mirainc/custom-menu-samples/blob/79e4388df4cfdb948efaf1b7ca9c29952a927b94/gotts-menu/pages/menu-boards/wine-and-beer.tsx#L38-L39)
-  ![Footer Text Query Param](code.png)
 
 # Deployment
 
