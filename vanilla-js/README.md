@@ -6,9 +6,17 @@
 
 ## Prerequisities
 
+- Node
+- Yarn
 - Static file server like [Serve](https://www.npmjs.com/package/serve)
 
 ## Development
+
+First, run the mock API server:
+
+```bash
+yarn start:mock-server
+```
 
 Run your static file server:
 
