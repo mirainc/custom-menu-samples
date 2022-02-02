@@ -1,6 +1,6 @@
 # Gotts Custom Menu App
 
-The Gotts Custom Menu App contains several menu boards that are connected to dynamic Toast data.
+The Gotts Custom Menu App contains several menu boards that are connected to the Raydiant Menu API.
 
 **URLs**
 
