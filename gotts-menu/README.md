@@ -13,7 +13,7 @@ The Gotts Custom Menu App contains several menu boards that are connected to the
 - Node (version defined in `.nvmrc`)
 - Yarn
 
-## Developmenmt
+## Development
 
 First, run the development server:
 
@@ -21,9 +21,13 @@ First, run the development server:
 yarn dev
 ```
 
+## Adding App to Raydiant Platform
+
+See [here](https://raydiant.notion.site/How-do-I-develop-an-app-487d7064eeec402fb7d376a5f6e6eed9) for a comprehensive guide to building Raydiant apps.
+
 ## Builder Inputs
 
-There are two builder inputs for this project. These can be configured in [Raydiant's Developer portal](https://developers.raydiant.com/)
+There are two builder inputs for this project. These can be configured after creating a new app in [Raydiant's Developer portal](https://developers.raydiant.com/)
 
 - Menu Board (select input) - Corresponds to a route in NextJS
   ![Menu Board](menu-board-builder-input.png)
