@@ -17,10 +17,10 @@ export interface WineAndBeerProps {
 
 export const getStaticProps = async () => {
   const response = await fetch(
-    "https://menu-api.raydiant.com/v1/groups?tags=wine-and-beer&depth=5",
+    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=wine-and-beer&depth=5`,
     {
       headers: {
-        "X-API-Key": "4de9279071f84308a6815d92f6349db8",
+        "X-API-Key": process.env.RAYDIANT_MENU_API_KEY || "",
       },
     }
   );
