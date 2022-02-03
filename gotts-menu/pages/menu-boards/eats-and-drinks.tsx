@@ -12,12 +12,14 @@ import Heading1 from "../../components/Heading1";
 import SubGroup1 from "../../components/SubGroup1";
 import { getRecords } from "../../lib/utils";
 import MainLayout from "../../components/MainLayout";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export interface EatsAndDrinksProps {
   data: T.MenuData;
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const response = await fetch(
     `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=eats-and-drinks&depth=5`,
     {
@@ -37,9 +39,23 @@ export const getStaticProps = async () => {
 };
 
 const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
+  const router = useRouter();
+
   const grabAndGo = getRecords(data.groups, "grab-and-go")[0] as T.Group;
   const shakes = getRecords(data.groups, "shakes")[0] as T.Group;
   const beverages = getRecords(data.groups, "beverages")[0] as T.Group;
+
+  useEffect(() => {
+    const refreshData = () => {
+      router.replace(router.asPath);
+    };
+
+    const id = setInterval(() => {
+      refreshData();
+    }, 3000);
+
+    return () => clearInterval(id);
+  }, [router]);
 
   if (!grabAndGo || !shakes || !beverages) return null;
 

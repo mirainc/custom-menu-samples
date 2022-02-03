@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { Grid, Text } from "theme-ui";
 
 import Column from "../../components/Column";
@@ -15,7 +16,7 @@ export interface WineAndBeerProps {
   data: T.MenuData;
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const response = await fetch(
     `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=wine-and-beer&depth=5`,
     {
@@ -40,6 +41,18 @@ const WineAndBeer: NextPage<WineAndBeerProps> = ({ data }) => {
 
   const beer = getRecords(data.groups, "beer")[0] as T.Group;
   const wine = getRecords(data.groups, "wine")[0] as T.Group;
+
+  useEffect(() => {
+    const refreshData = () => {
+      router.replace(router.asPath);
+    };
+
+    const id = setInterval(() => {
+      refreshData();
+    }, 30000);
+
+    return () => clearInterval(id);
+  }, [router]);
 
   if (!beer || !wine) return null;
 
