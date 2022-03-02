@@ -52,7 +52,7 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
 
     const id = setInterval(() => {
       refreshData();
-    }, 3000);
+    }, 30000);
 
     return () => clearInterval(id);
   }, [router]);

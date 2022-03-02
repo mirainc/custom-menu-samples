@@ -25,10 +25,7 @@ const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
         <Heading variant="h3">{name}</Heading>
       </Box>
       <Box>
-        {items.map(({ id, name, price, tags, description, items: sizes }) => {
-          const location = getTagValue(tags, "location");
-          const volume = getTagValue(tags, "volume");
-          const abv = getTagValue(tags, "abv");
+        {items.map(({ id, name, price, description, items: sizes }) => {
           const type = description;
 
           return (
@@ -39,9 +36,6 @@ const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
                   {name && (
                     <Text sx={{ fontStyle: "normal" }}>{name}</Text>
                   )}{" "}
-                  {location && <Text>({location})</Text>}{" "}
-                  {volume && <Text>{volume}</Text>}
-                  {abv && <Text>({abv})</Text>}
                 </Text>
               </Box>
               <Box sx={{ display: "flex", justifyContent: "end" }}>
