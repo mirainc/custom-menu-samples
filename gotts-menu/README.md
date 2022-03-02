@@ -4,9 +4,9 @@ The Gotts Custom Menu App contains several menu boards that are connected to the
 
 **URLs**
 
-- Eats and Drinks Menu Board: https://gotts-menu.vercel.app/menu-boards/eats-and-drinks
-- Wine and Beer Menu Board: https://gotts-menu.vercel.app/menu-boards/wine-and-beer
-- Late Night Flyer: https://gotts-menu.vercel.app/menu-boards/flyer.jpg
+- Eats and Drinks Menu Board: https://gotts-custom-menu.vercel.app/menu-boards/eats-and-drinks
+- Wine and Beer Menu Board: https://gotts-custom-menu.vercel.app/menu-boards/wine-and-beer
+- Late Night Flyer: https://gotts-custom-menu.vercel.app/menu-boards/flyer.jpg
 
 ## Prerequisities
 
