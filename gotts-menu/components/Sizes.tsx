@@ -16,7 +16,7 @@ const Sizes: React.FC<Sizes> = ({ value }) => {
             key={x.id}
             sx={{
               marginRight: 3,
-              ":first-child": {
+              ":first-of-type": {
                 display: "block",
               },
             }}
