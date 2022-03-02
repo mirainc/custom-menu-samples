@@ -2,8 +2,8 @@
 
 **URLs**
 
-- Juices Menu Board: https://whole-foods-raydiant.vercel.app/menu-boards/juices
-- Smoothies Menu Board: https://whole-foods-raydiant.vercel.app/menu-boards/smoothies
+- Juices Menu Board: https://wholefoods.vercel.app/menu-boards/juices
+- Smoothies Menu Board: https://wholefoods.vercel.app/menu-boards/smoothies
 
 ## Prerequisities
 
