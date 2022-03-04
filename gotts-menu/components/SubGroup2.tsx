@@ -9,16 +9,6 @@ interface SubGroup2 {
 }
 
 const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
-  const getTagValue = (tags: string[], key: string) => {
-    if (!tags) return undefined;
-
-    const tag = tags.find((x) => x.includes(key));
-    if (!tag) return undefined;
-
-    const [_, value] = tag.split(":");
-    return value;
-  };
-
   return (
     <ItemLayout>
       <Box>

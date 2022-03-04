@@ -104,8 +104,8 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
               const firstItem = items[0];
 
               const price = firstItem.price;
-              const sizes = getRecords(firstItem.items, "size");
-              const modifiers = getRecords(firstItem.items, "modifier");
+              const modifiers = getRecords(items, "additional-flavour");
+              const sizes = firstItem.items;
 
               return (
                 <SubGroup1
@@ -120,9 +120,7 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
             })}
 
             {beverages.items.map((item) => {
-              const { id, name, items, price } = item;
-              const firstItem = items[0];
-              const sizes = firstItem && getRecords(items, "size");
+              const { id, name, items: sizes, price } = item;
 
               return <Item2 key={id} name={name} sizes={sizes} price={price} />;
             })}
