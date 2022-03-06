@@ -9,26 +9,13 @@ interface SubGroup2 {
 }
 
 const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
-  const getTagValue = (tags: string[], key: string) => {
-    if (!tags) return undefined;
-
-    const tag = tags.find((x) => x.includes(key));
-    if (!tag) return undefined;
-
-    const [_, value] = tag.split(":");
-    return value;
-  };
-
   return (
     <ItemLayout>
       <Box>
         <Heading variant="h3">{name}</Heading>
       </Box>
       <Box>
-        {items.map(({ id, name, price, tags, description, items: sizes }) => {
-          const location = getTagValue(tags, "location");
-          const volume = getTagValue(tags, "volume");
-          const abv = getTagValue(tags, "abv");
+        {items.map(({ id, name, price, description, items: sizes }) => {
           const type = description;
 
           return (
@@ -39,9 +26,6 @@ const SubGroup2: React.FC<SubGroup2> = ({ name, items }) => {
                   {name && (
                     <Text sx={{ fontStyle: "normal" }}>{name}</Text>
                   )}{" "}
-                  {location && <Text>({location})</Text>}{" "}
-                  {volume && <Text>{volume}</Text>}
-                  {abv && <Text>({abv})</Text>}
                 </Text>
               </Box>
               <Box sx={{ display: "flex", justifyContent: "end" }}>
