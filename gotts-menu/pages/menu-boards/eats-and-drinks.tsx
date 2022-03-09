@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { Grid, Text, Divider } from "theme-ui";
 
@@ -19,15 +19,18 @@ export interface EatsAndDrinksProps {
   data: T.MenuData;
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { query } = context;
+
   const response = await fetch(
-    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=eats-and-drinks&depth=5`,
+    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=eats-and-drinks&menus=${query.menuId}&depth=5`,
     {
       headers: {
         "X-API-Key": process.env.RAYDIANT_MENU_API_KEY || "",
       },
     }
   );
+
   const data = await response.json();
   const eatsAndDrinksData = data.groups[0];
 
