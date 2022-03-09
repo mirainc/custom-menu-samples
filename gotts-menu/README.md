@@ -4,8 +4,12 @@ The Gotts Custom Menu App contains several menu boards that are connected to the
 
 **URLs**
 
-- Eats and Drinks Menu Board: https://gotts-custom-menu.vercel.app/menu-boards/eats-and-drinks
-- Wine and Beer Menu Board: https://gotts-custom-menu.vercel.app/menu-boards/wine-and-beer
+_Note: Instructions on how to fetch available `menuIds` for a given API key are available in the "Multi-location support" section below._
+
+_Example menuId: 52d3fa1a-7405-4d8a-85fc-aa7ec736be72_
+
+- Eats and Drinks Menu Board: https://gotts-custom-menu.vercel.app/menu-boards/eats-and-drinks?menuId={menuId}
+- Wine and Beer Menu Board: https://gotts-custom-menu.vercel.app/menu-boards/wine-and-beer?menuId={menuId}
 - Late Night Flyer: https://gotts-custom-menu.vercel.app/menu-boards/flyer.jpg
 
 ## Prerequisities
@@ -27,15 +31,22 @@ See [here](https://raydiant.notion.site/How-do-I-develop-an-app-487d7064eeec402f
 
 ## Builder Inputs
 
-There are two builder inputs for this project. These can be configured after creating a new app in [Raydiant's Developer portal](https://developers.raydiant.com/)
+There are three builder inputs for this project. These can be configured after creating a new app in [Raydiant's Developer portal](https://developers.raydiant.com/)
 
-- Menu Board (select input) - Corresponds to a route in NextJS
+### 1) Location - corresponds to a query param
+
+- Input type: Select
+  ![Menu Board](location-builder-input.png)
+
+### 2) Menu Board - corresponds to a route
+
+- Input type: Select
   ![Menu Board](menu-board-builder-input.png)
 
-- Footer Text (text input) - Corresponds to a query param
+### 3) Footer Text - corresponds to a query param
+
+- Input type: Text
   ![Footer Text](footer-text-builder-input.png)
-  [Code to retrieve query param](https://github.com/mirainc/custom-menu-samples/blob/79e4388df4cfdb948efaf1b7ca9c29952a927b94/gotts-menu/pages/menu-boards/wine-and-beer.tsx#L38-L39)
-  ![Footer Text Query Param](code.png)
 
 # Deployment
 
