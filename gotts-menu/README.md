@@ -48,7 +48,26 @@ There are three builder inputs for this project. These can be configured after c
 - Input type: Text
   ![Footer Text](footer-text-builder-input.png)
 
-# Deployment
+## Multi-location/menu support
+
+A couple of additional steps are required for multi-location/menu support.
+
+1. Using your API key, make a call to https://menu-api.raydiant.com/v1/menus to retrieve the list of menus your API key has access to
+
+cURL example:
+
+```
+curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
+--header 'x-api-key: <API_KEY>'
+```
+
+2. Take note of all the `menuIds` required for your digital menu
+3. Go to the developer portal and select your app
+4. Creat a new "select" builder input
+5. Populate the "options" section with the aforementioned menuIds
+   ![Location builder input](menuIds-select.png)
+
+## Deployment
 
 CI/CD is setup to deploy our apps using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
 
