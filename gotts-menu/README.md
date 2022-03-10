@@ -50,7 +50,7 @@ There are three builder inputs for this project. These can be configured after c
 
 ## Fetching Menu Data
 
-To fetch menu data, we need to make sure we've tagged the necessary groups in Toast first. Additionally, if you have several version of your menu, e.g. different menus for different locations, you'll also need to follow the "Multi-location/menu support" guide below.
+To fetch menu data, we need to make sure we've tagged the necessary groups in Toast first. Additionally, if you have several versions of your menu, e.g. different menus for different locations, you'll also need to follow the "Multi-location/menu support" guide below.
 
 Base API URL:
 
@@ -103,6 +103,11 @@ curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
 4. Creat a new "select" builder input
 5. Populate the "options" section with the aforementioned `menuIds`
    ![Location builder input](menuIds-select.png)
+6. Confirm you are able to make an API request to fetch group data for a given menu/location
+
+```
+/v1/groups?tags=<tag>&menus=<menuId>depth=<depth>
+```
 
 ### Modifiers
 
@@ -124,7 +129,7 @@ In the example below, there's a total of three different modifiers
 In this example, flavours are `items` on the "Fountain Soda" sub-group.
 
 **Additional Flavours:**
-In this example, additional items are `items` with the addition of a `additional-flavour` tag so the frontend can filter these out from the other flavours.
+In this example, additional items are `items` on the "Fountain Soda" sub-group with the addition of a `additional-flavour` tag so the frontend can filter these out from the other flavours.
 
 ## Deployment
 
