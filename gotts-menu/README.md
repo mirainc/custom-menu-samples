@@ -111,7 +111,7 @@ curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
 
 ### Modifiers
 
-Toast modifiers aren't fully supported yet. Modifier-like behavior can be achieved through tags + items.
+While modifiers are supported (1-level deep) modifier groups aren't fully supported yet. To achieve modifier-group-like behaviour use tags + items.
 In the example below, there's a total of three different modifiers
 ![modifiers](modifiers.png)
 
