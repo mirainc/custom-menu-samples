@@ -48,7 +48,42 @@ There are three builder inputs for this project. These can be configured after c
 - Input type: Text
   ![Footer Text](footer-text-builder-input.png)
 
-## Multi-location/menu support
+## Fetching Menu Data
+
+To fetch menu data, we need to make sure we've tagged the necessary groups in Toast first. Additionally, if you have several version of your menu, e.g. different menus for different locations, you'll also need to follow the steps below for enabling multi-location support.
+
+Base API URL:
+
+```
+https://menu-api.staging.raydiant.com/v1/groups?tags=<tag>&menus=<menuId>&depth=<depth>
+```
+
+Params:
+
+`tags`: filter for tags
+
+`menus`: filter for `menuIds`
+
+`depth`: set depth for returned payload
+
+![menu data](hierachy.png)
+
+### Configuring tags
+
+Tags are the recommended way of fetching data for a particular group. Follow the steps below to add tags to your menu groups:
+
+1. Go to your Toast sandbox
+2. Select your menu (e.g Gotts Roadside - SF Ferry Building)
+3. Find all relevant groups that require tagging
+4. Add a tag to each group
+
+5. Confirm you are able to make an API request to fetch group data
+
+```
+https://menu-api.staging.raydiant.com/v1/groups?tags=<tag>&depth=<depth>
+```
+
+### Multi-location/menu support
 
 A couple of additional steps are required for multi-location/menu support.
 
