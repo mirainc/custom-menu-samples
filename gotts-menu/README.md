@@ -48,6 +48,10 @@ There are three builder inputs for this project. These can be configured after c
 - Input type: Text
   ![Footer Text](footer-text-builder-input.png)
 
+### 4) Footer Text - corresponds to a query param
+
+- Input type: Toggle
+
 ## Fetching Menu Data
 
 To fetch menu data, we need to make sure we've tagged the necessary groups in Toast first. Additionally, if you have several versions of your menu, e.g. different menus for different locations, you'll also need to follow the "Multi-location/menu support" guide below.
