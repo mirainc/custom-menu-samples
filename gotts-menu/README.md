@@ -50,7 +50,7 @@ There are three builder inputs for this project. These can be configured after c
 
 ## Fetching Menu Data
 
-To fetch menu data, we need to make sure we've tagged the necessary groups in Toast first. Additionally, if you have several version of your menu, e.g. different menus for different locations, you'll also need to follow the steps below for enabling multi-location support.
+To fetch menu data, we need to make sure we've tagged the necessary groups in Toast first. Additionally, if you have several version of your menu, e.g. different menus for different locations, you'll also need to follow the "Multi-location/menu support" guide below.
 
 Base API URL:
 
@@ -80,16 +80,16 @@ Tags are the recommended way of fetching data for a particular group. Follow the
 5. Confirm you are able to make an API request to fetch group data
 
 ```
-https://menu-api.staging.raydiant.com/v1/groups?tags=<tag>&depth=<depth>
+/v1/groups?tags=<tag>&depth=<depth>
 ```
 
 ### Multi-location/menu support
 
 A couple of additional steps are required for multi-location/menu support.
 
-1. Using your API key, make a call to https://menu-api.raydiant.com/v1/menus to retrieve the list of menus your API key has access to
+1. Using your API key, make a call to `/v1/menus` to retrieve the list of menus your API key has access to
 
-cURL example:
+**cURL example:**
 
 ```
 curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
@@ -99,7 +99,7 @@ curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
 2. Take note of all the `menuIds` required for your digital menu
 3. Go to the developer portal and select your app
 4. Creat a new "select" builder input
-5. Populate the "options" section with the aforementioned menuIds
+5. Populate the "options" section with the aforementioned `menuIds`
    ![Location builder input](menuIds-select.png)
 
 ## Deployment
