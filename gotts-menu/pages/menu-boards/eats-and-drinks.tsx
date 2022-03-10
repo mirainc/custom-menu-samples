@@ -43,6 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
   const router = useRouter();
+  const { footerText, showQRCode } = router.query;
 
   const grabAndGo = getRecords(data.groups, "grab-and-go")[0] as T.Group;
   const shakes = getRecords(data.groups, "shakes")[0] as T.Group;
@@ -63,7 +64,10 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
   if (!grabAndGo || !shakes || !beverages) return null;
 
   return (
-    <MainLayout>
+    <MainLayout
+      footerText={String(footerText)}
+      showQRCode={showQRCode === "true"}
+    >
       <Head>
         <meta name="description" content="Custom NextJS Menu App" />
       </Head>
