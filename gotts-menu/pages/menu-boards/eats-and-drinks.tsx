@@ -107,7 +107,7 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
               const firstItem = items[0];
 
               const price = firstItem.price;
-              const modifiers = getRecords(items, "additional-flavour");
+              const modifiers = getRecords(items, "additional-flavor");
               const sizes = firstItem.items;
 
               return (

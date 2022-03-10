@@ -55,7 +55,7 @@ To fetch menu data, we need to make sure we've tagged the necessary groups in To
 Base API URL:
 
 ```
-https://menu-api.staging.raydiant.com/v1/groups?tags=<tag>&menus=<menuId>&depth=<depth>
+v1/groups?tags=<tag>&menus=<menuId>&depth=<depth>
 ```
 
 Params:
@@ -79,7 +79,7 @@ Tags are the recommended way of fetching data for a particular group. Follow the
 3. Find all relevant groups that require tagging
 4. Add a tag to each group
 
-5. Confirm you are able to make an API request to fetch group data
+5. Confirm you can make an API request to fetch group data
 
 ```
 /v1/groups?tags=<tag>&depth=<depth>
@@ -103,7 +103,7 @@ curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
 4. Creat a new "select" builder input
 5. Populate the "options" section with the aforementioned `menuIds`
    ![Location builder input](menuIds-select.png)
-6. Confirm you are able to make an API request to fetch group data for a given menu/location
+6. Confirm you can make an API request to fetch group data for a given menu/location
 
 ```
 /v1/groups?tags=<tag>&menus=<menuId>depth=<depth>
@@ -111,13 +111,13 @@ curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
 
 ### Modifiers
 
-Toast modifiers aren't fully supported yet. Modifier-like behaviour can be achieved through tags + items.
+Toast modifiers aren't fully supported yet. Modifier-like behavior can be achieved through tags + items.
 In the example below, there's a total of three different modifiers
 ![modifiers](modifiers.png)
 
 1. Price sizing
-2. Flavours
-3. Additional Flavours
+2. Flavors
+3. Additional Flavors
 
 **Price Sizing:**
 
@@ -125,14 +125,14 @@ In the example below, there's a total of three different modifiers
    ![price-sizing](price-sizing-example.png)
 2. On the same item, add the `size` tag to the item
 
-**Flavours:**
-In this example, flavours are `items` on the "Fountain Soda" sub-group.
+**Flavors:**
+In this example, flavors are `items` on the "Fountain Soda" sub-group.
 
-**Additional Flavours:**
-In this example, additional items are `items` on the "Fountain Soda" sub-group with the addition of a `additional-flavour` tag so the frontend can filter these out from the other flavours.
+**Additional Flavors:**
+In this example, additional items are `items` on the "Fountain Soda" sub-group with the addition of a `additional-flavor` tag so the frontend can filter these out from the other flavors.
 
 ## Deployment
 
-CI/CD is setup to deploy our apps using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+CI/CD is set up to deploy our apps using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
