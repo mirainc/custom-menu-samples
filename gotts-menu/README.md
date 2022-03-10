@@ -68,6 +68,8 @@ Params:
 
 ![menu data](hierachy.png)
 
+> **⚠ Important:** All items in Toast must have the visibility field set to "kiosk" otherwise our API won't return the resource.
+
 ### Configuring tags
 
 Tags are the recommended way of fetching data for a particular group. Follow the steps below to add tags to your menu groups:
@@ -101,6 +103,28 @@ curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
 4. Creat a new "select" builder input
 5. Populate the "options" section with the aforementioned `menuIds`
    ![Location builder input](menuIds-select.png)
+
+### Modifiers
+
+Toast modifiers aren't fully supported yet. Modifier-like behaviour can be achieved through tags + items.
+In the example below, there's a total of three different modifiers
+![modifiers](modifiers.png)
+
+1. Price sizing
+2. Flavours
+3. Additional Flavours
+
+**Price Sizing:**
+
+1. In Toast, add price sizing to the desired menu item
+   ![price-sizing](price-sizing-example.png)
+2. On the same item, add the `size` tag to the item
+
+**Flavours:**
+In this example, flavours are `items` on the "Fountain Soda" sub-group.
+
+**Additional Flavours:**
+In this example, additional items are `items` with the addition of a `additional-flavour` tag so the frontend can filter these out from the other flavours.
 
 ## Deployment
 
