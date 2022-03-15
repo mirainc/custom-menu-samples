@@ -1,6 +1,12 @@
 # NextJS Custom Menu App
 
 **URLs**
+Localhost:
+
+- Juices Menu Board: http://localhost:3000/menu-boards/juices
+- Smoothies Menu Board: http://localhost:3000/menu-boards/smoothies
+
+Production:
 
 - Juices Menu Board: https://wholefoods.vercel.app/menu-boards/juices
 - Smoothies Menu Board: https://wholefoods.vercel.app/menu-boards/smoothies

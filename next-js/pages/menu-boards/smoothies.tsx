@@ -38,7 +38,7 @@ export const getServerSideProps = async () => {
 const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
   if (!data) return null;
 
-  const { name, items } = data;
+  const { name, items, groups } = data;
   const price = items[0].price;
 
   return (
@@ -90,20 +90,23 @@ const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
 
         <section className="w-1/3 p-12">
           <Heading2>Extras</Heading2>
-          {/* {modifierGroups.map((x) => (
-            <div key={x.id} className="mb-10 last:mb-0">
-              <Heading3>
-                {x.name} {x.price}
-              </Heading3>
-              {x.items.map((x) => (
-                <div className="mb-3 last:mb-0" key={x.id}>
-                  <ExtraItem>
-                    {x.name} adds {x.calories} Cal
-                  </ExtraItem>
-                </div>
-              ))}
-            </div>
-          ))} */}
+          {groups.map((x) => {
+            const price = x.items[0].price;
+            return (
+              <div key={x.id} className="mb-10 last:mb-0">
+                <Heading3>
+                  {x.name} ${price}
+                </Heading3>
+                {x.items.map((x) => (
+                  <div className="mb-3 last:mb-0" key={x.id}>
+                    <ExtraItem>
+                      {x.name} adds {x.calories} Cal
+                    </ExtraItem>
+                  </div>
+                ))}
+              </div>
+            );
+          })}
         </section>
       </main>
     </>
