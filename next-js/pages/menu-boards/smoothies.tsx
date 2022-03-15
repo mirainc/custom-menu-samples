@@ -63,21 +63,17 @@ const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
             </div>
           </header>
           <div className="flex flex-wrap overflow-hidden mb-14">
-            {items.map((x) => {
-              const calories = getTag(x.tags, "calories");
-
-              return (
-                <div key={x.id} className="w-1/2 my-5 px-10 overflow-hidden">
-                  <MenuItemHeading>
-                    {x.name}{" "}
-                    {calories && (
-                      <span className="text-2xl">{calories} CAL</span>
-                    )}
-                  </MenuItemHeading>
-                  <MenuItemDescription>{x.description}</MenuItemDescription>
-                </div>
-              );
-            })}
+            {items.map((x) => (
+              <div key={x.id} className="w-1/2 my-5 px-10 overflow-hidden">
+                <MenuItemHeading>
+                  {x.name}{" "}
+                  {x.calories && (
+                    <span className="text-2xl">{x.calories} CAL</span>
+                  )}
+                </MenuItemHeading>
+                <MenuItemDescription>{x.description}</MenuItemDescription>
+              </div>
+            ))}
           </div>
           <div className="absolute bottom-0 left-0 w-2/3">
             <Footnote>
