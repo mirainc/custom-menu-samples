@@ -52,7 +52,7 @@ const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
         <section className="w-2/3 mb-12">
           <header className="flex items-end px-10 mt-2">
             <Heading>
-              {name} {price}
+              {name} ${price}
             </Heading>
             <div className="mb-[52px]">
               <Subheading>

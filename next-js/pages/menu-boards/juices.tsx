@@ -85,10 +85,11 @@ const Juices: NextPage<JuicesProps> = ({ data }) => {
 
         <section className="w-1/3 p-12">
           <Heading2>Extras</Heading2>
-          {groups.map((x) => (
+          {groups.map((x) => {
+            const price = x.items[0].price;
             <div key={x.id} className="mb-10 last:mb-0">
               <Heading3>
-                {x.name} {x.price}
+                {x.name} {price}
               </Heading3>
               {x.items.map((x) => (
                 <div className="mb-3 last:mb-0" key={x.id}>
@@ -97,8 +98,8 @@ const Juices: NextPage<JuicesProps> = ({ data }) => {
                   </ExtraItem>
                 </div>
               ))}
-            </div>
-          ))}
+            </div>;
+          })}
         </section>
       </main>
     </>
