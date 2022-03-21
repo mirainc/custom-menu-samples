@@ -6,7 +6,15 @@ The Gotts Custom Menu App contains several menu boards that are connected to the
 
 _Note: Instructions on how to fetch available `menuIds` for a given API key are available in the "Multi-location support" section below._
 
-_Example menuId: 52d3fa1a-7405-4d8a-85fc-aa7ec736be72_
+_Example menuId: 20e5c762-f2df-483e-9ed0-404562d7efd3_
+
+**Localhost**
+
+- Eats and Drinks Menu Board: http://localhost:3000/menu-boards/eats-and-drinks?menuId={menuId}
+- Wine and Beer Menu Board: http://localhost:3000/menu-boards/wine-and-beer?menuId={menuId}
+- Late Night Flyer: http://localhost:3000/menu-boards/flyer.jpg
+
+**Production**
 
 - Eats and Drinks Menu Board: https://gotts-custom-menu.vercel.app/menu-boards/eats-and-drinks?menuId={menuId}
 - Wine and Beer Menu Board: https://gotts-custom-menu.vercel.app/menu-boards/wine-and-beer?menuId={menuId}
@@ -134,6 +142,47 @@ In this example, flavors are `items` on the "Fountain Soda" sub-group.
 
 **Additional Flavors:**
 In this example, additional items are `items` on the "Fountain Soda" sub-group with the addition of a `additional-flavor` tag so the frontend can filter these out from the other flavors.
+
+## Offline playback
+
+To enable offline playback support, ensure your web server returns a `max-age` value greater than 0 in the `Cache-Control` headers. E.g. `max-age=1`.
+
+## Responsive Notes
+
+The example menus have target resolutions set to `1080x1920`. To support both 1080p and 4K additional code is required.
+
+There are two methods to achieve this behaviour:
+
+1. **Fluid style**
+
+   Instead of using pixel values for UI elements and fonts, `vw` units can be used so that UI elements scale to a variety of viewport widths.
+   Below is an example of a helper function that can be used to achieve the aforementioned behaviour.
+
+```js
+// Converts pixels to viewport units to make the layouts scale proportionally to screen width.
+
+// Use snippet below for 1080p mockups
+
+// Landscape
+export const vw1920 = (num) => `${(num / 1920) * 100}vw`;
+// Portrait
+export const vw1080 = (num) => `${(num / 1080) * 100}vw`;
+
+// Use snippet below for 4k mockups
+
+// Landscape
+export const vw3840 = (num) => `${(num / 3840) * 100}vw`;
+// Portrait
+export const vw2160 = (num) => `${(num / 2160) * 100}vw`;
+```
+
+2. **Target specific viewports (non-fluid)**
+
+   If you only intend to support 1080p and 4k, media queries can be used to target those specific viewports.
+
+   With CSS this can be achieved by modifying the root font-size for 1080p and 4k resolutions. With this method, you only need to change the font-size in a single place.
+
+   With Theme-UI you can create separate themes for 1080p and 4k targets (e.g. `4kTheme` and `1080pTheme`). Responsive code would then intelligently handle switching between these themes depending on the targer resolution.
 
 ## Deployment
 
