@@ -96,7 +96,10 @@ const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
                 {x.items.map((x) => (
                   <div className="mb-3 last:mb-0" key={x.id}>
                     <ExtraItem>
-                      {x.name} adds {x.calories || getTag(x.tags, "calories")}{" "}
+                      {x.name} adds{" "}
+                      {x.calories === null
+                        ? getTag(x.tags, "calories")
+                        : x.calories}{" "}
                       Cal
                     </ExtraItem>
                   </div>

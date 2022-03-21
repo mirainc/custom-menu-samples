@@ -9,6 +9,7 @@ import MenuItemDescription from "../../components/MenuItemDescription";
 import MenuItemHeading from "../../components/MenuItemHeading";
 import Subheading from "../../components/Subheading";
 import { MenuData } from "../../types";
+import { getTag } from "../../utils";
 
 export interface JuicesProps {
   data: MenuData;
@@ -87,18 +88,24 @@ const Juices: NextPage<JuicesProps> = ({ data }) => {
           <Heading2>Extras</Heading2>
           {groups.map((x) => {
             const price = x.items[0].price;
-            <div key={x.id} className="mb-10 last:mb-0">
-              <Heading3>
-                {x.name} {price}
-              </Heading3>
-              {x.items.map((x) => (
-                <div className="mb-3 last:mb-0" key={x.id}>
-                  <ExtraItem>
-                    {x.name} adds {x.calories} Cal
-                  </ExtraItem>
-                </div>
-              ))}
-            </div>;
+            return (
+              <div key={x.id} className="mb-10 last:mb-0">
+                <Heading3>
+                  {x.name} ${price}
+                </Heading3>
+                {x.items.map((x) => (
+                  <div className="mb-3 last:mb-0" key={x.id}>
+                    <ExtraItem>
+                      {x.name} adds{" "}
+                      {x.calories === null
+                        ? getTag(x.tags, "calories")
+                        : x.calories}{" "}
+                      Cal
+                    </ExtraItem>
+                  </div>
+                ))}
+              </div>
+            );
           })}
         </section>
       </main>

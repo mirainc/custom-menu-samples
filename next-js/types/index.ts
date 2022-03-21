@@ -11,7 +11,7 @@ export interface Record {
   id: string;
   name: string;
   description: string;
-  calories: string;
+  calories: number;
   price: string;
   tags: Tag[];
   items: Record[];
