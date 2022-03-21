@@ -17,7 +17,7 @@ export interface JuicesProps {
 
 export const getServerSideProps = async () => {
   const response = await fetch(
-    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=juices&menus8f581515-0d1d-4662-82af-787dd9b21c90=&depth=5`,
+    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=juices&menus${process.env.RAYDIANT_MENU_ID}=&depth=5`,
     {
       headers: {
         "X-API-Key": process.env.RAYDIANT_MENU_API_KEY || "",
