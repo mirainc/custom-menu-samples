@@ -1,29 +1,19 @@
 export interface MenuData {
   id: string;
-  groups: Group[];
+  name: string;
+  description: string;
+  items: Record[];
+  groups: Record[];
 }
 
-export interface Group {
+export type Tag = string;
+export interface Record {
   id: string;
   name: string;
   description: string;
+  calories: number;
   price: string;
-  items: Item[];
-  modifierGroups: ModifierGroup[];
-}
-
-export interface Item {
-  id: string;
-  name: string;
-  description: string;
-  price: string;
-  calories: string;
-}
-
-export interface ModifierGroup {
-  id: string;
-  name: string;
-  description: string;
-  price: string;
-  items: Item[];
+  tags: Tag[];
+  items: Record[];
+  groups: Record[];
 }
