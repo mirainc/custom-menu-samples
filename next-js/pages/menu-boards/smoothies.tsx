@@ -10,14 +10,18 @@ import Heading3 from "../../components/Heading3";
 import ExtraItem from "../../components/ExtraItem";
 import Footnote from "../../components/Footnote";
 import { getTag } from "../../utils";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export interface SmoothiesProps {
   data: MenuData;
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { query } = context;
+
   const response = await fetch(
-    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=smoothies&menus${process.env.RAYDIANT_MENU_ID}=&depth=5`,
+    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=smoothies&menus${query.menuId}=&depth=5`,
     {
       headers: {
         "X-API-Key": process.env.RAYDIANT_MENU_API_KEY || "",
@@ -36,6 +40,20 @@ export const getServerSideProps = async () => {
 };
 
 const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const refreshData = () => {
+      router.replace(router.asPath);
+    };
+
+    const id = setInterval(() => {
+      refreshData();
+    }, 30000);
+
+    return () => clearInterval(id);
+  }, [router]);
+
   if (!data) return null;
 
   const { name, items, groups } = data;
