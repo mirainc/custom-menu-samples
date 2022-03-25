@@ -75,8 +75,15 @@ const renderIcedColdbrewMenuItems = (data) => {
     icedColdbrewContent;
 };
 
-const fetchData = async (menuId) => {
-  const response = await fetch(`http://localhost:3001/menus/${menuId}`);
+const fetchData = async () => {
+  const response = await fetch(
+    `https://menu-api.staging.raydiant.com/v1/groups`,
+    {
+      headers: {
+        "X-API-Key": "c5162983-2a4e-4d8c-a93f-22ad0090058b" || "",
+      },
+    }
+  );
   const data = await response.json();
   return data;
 };
@@ -88,7 +95,6 @@ const getQueryParams = () => {
 };
 
 const main = async () => {
-  const menuId = "main-menu-guid";
   const espressoAndCoffeeGroupId = "espresso-and-coffee-guid";
   const icedColdbrewGroupId = "iced-coldbrew-guid";
 
