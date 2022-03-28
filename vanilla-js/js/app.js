@@ -2,7 +2,9 @@ const renderEspressoAndCoffeeMenuItems = (data) => {
   const renderMenuItem = ({ name, price, calories }) =>
     `<div class="item">
       <div class="title">${name}</div>
-      <div class="subtitle">LARGE | ${price} | ${calories} CAL</div>
+      <div class="subtitle">LARGE | ${formatPrice(
+        price
+      )} | ${calories} CAL</div>
     </div>`;
 
   const minColumn1Items = 0;
@@ -30,13 +32,12 @@ const renderEspressoAndCoffeeModifiers = (data) => {
   const renderModifier = (item) => {
     const { name, price } = item;
     const calories = item.calories || getTag(item.tags, "calories");
-    console.log(calories);
 
     return `<div>
       <div class="modifier-group h2">${name}</div>
       <div class="modifier-description">
         Blonde or Signature
-        <div class="modifier-details">$${price} ${
+        <div class="modifier-details">$${formatPrice(price)} ${
       calories ? `| ${calories} Cal` : ""
     }</div>
       </div>
@@ -57,7 +58,7 @@ const renderIcedColdbrewMenuItems = (data) => {
       </div>
       <div class="item-description">
         <div class="title">${name}</div>
-        <div class="subtitle">$${price} | ${calories} CAL</div>
+        <div class="subtitle">${formatPrice(price)} | ${calories} CAL</div>
       </div>
     </div>
   `;

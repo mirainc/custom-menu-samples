@@ -53,7 +53,6 @@ const main = async () => {
   renderEspressoAndCoffeeModifiers(espressoAndCoffeeModifiers.items);
 
   const icedColdbrewData = getRecord(groupsTemp, icedColdbrewGroupTag);
-  console.log(icedColdbrewData);
   document.querySelector("#iced-coldbrew-heading").innerHTML =
     icedColdbrewData.name;
   renderIcedColdbrewMenuItems(icedColdbrewData.items);
