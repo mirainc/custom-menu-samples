@@ -34,11 +34,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   );
 
   const data = await response.json();
-  const eatsAndDrinksData = data.groups[0];
 
   return {
     props: {
-      data: eatsAndDrinksData,
+      data,
     },
   };
 };
@@ -67,7 +66,7 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
 
   return (
     <MainLayout
-      footerText={String(footerText)}
+      footerText={footerText as string | undefined}
       showQRCode={showQRCode === "true"}
     >
       <Head>
