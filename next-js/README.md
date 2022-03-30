@@ -3,7 +3,7 @@
 **URLs**
 _Note: Instructions on how to fetch `menuIds` for a given API key are available in the "Multi-location support" section below._
 
-_Example menuId: 438948bc-a0fe-4bec-ac0b-70b061a67349_
+_Example menuId: 5ffd5ad4-d853-48cd-a19b-421490314676_
 
 Localhost:
 
