@@ -2,7 +2,15 @@
 
 **URLs**
 
-- Main Menu Board: https://custom-menu-app-1.netlify.app
+**Localhost**
+
+- Main Menu Board: https://custom-menu-app-1.netlify.app?espressoAndCoffeeSubheading=<espressoAndCoffeeSubheading>&espressoAndCoffeeBottomText=<espressoAndCoffeeBottomText>&
+  footnote=<footnote>
+
+**Production**
+
+- Main Menu Board: http://localhost:3000?espressoAndCoffeeSubheading=<espressoAndCoffeeSubheading>&espressoAndCoffeeBottomText=<espressoAndCoffeeBottomText>&
+  footnote=<footnote>
 
 ## Prerequisities
 
@@ -11,12 +19,6 @@
 - Static file server like [Serve](https://www.npmjs.com/package/serve)
 
 ## Development
-
-First, run the mock API server:
-
-```bash
-yarn start:mock-server
-```
 
 Run your static file server:
 
