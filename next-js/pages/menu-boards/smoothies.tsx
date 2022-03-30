@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;
 
   const response = await fetch(
-    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=smoothies&menus${query.menuId}=&depth=5`,
+    `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=smoothies&menus=${query.menuId}&depth=5`,
     {
       headers: {
         "X-API-Key": process.env.RAYDIANT_MENU_API_KEY || "",

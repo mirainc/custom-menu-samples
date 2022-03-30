@@ -20,7 +20,9 @@ export interface EatsAndDrinksProps {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { query } = context;
+  const { query, res } = context;
+
+  res.setHeader("Cache-Control", "public, max-age=1");
 
   const response = await fetch(
     `${process.env.RAYDIANT_MENU_API_URL}/v1/groups?tags=eats-and-drinks&menus=${query.menuId}&depth=5`,
