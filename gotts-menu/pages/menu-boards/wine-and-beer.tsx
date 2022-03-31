@@ -63,7 +63,7 @@ const WineAndBeer: NextPage<WineAndBeerProps> = ({ data }) => {
 
   return (
     <MainLayout
-      footerText={String(footerText)}
+      footerText={footerText as string | undefined}
       showQRCode={showQRCode === "true"}
     >
       <Head>

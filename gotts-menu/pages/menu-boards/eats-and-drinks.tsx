@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import { Grid, Text, Divider } from "theme-ui";
+import { Grid, Text, Divider, Box, Paragraph } from "theme-ui";
 
 import Item1 from "../../components/Item1";
 import * as T from "../../types";
@@ -34,11 +34,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   );
 
   const data = await response.json();
-  const eatsAndDrinksData = data.groups[0];
 
   return {
     props: {
-      data: eatsAndDrinksData,
+      data,
     },
   };
 };
@@ -67,7 +66,7 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
 
   return (
     <MainLayout
-      footerText={String(footerText)}
+      footerText={footerText as string | undefined}
       showQRCode={showQRCode === "true"}
     >
       <Head>
@@ -105,6 +104,13 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
               />
             ))}
           </Group>
+
+          <Box as="section" mb={4}>
+            <Paragraph sx={{ fontSize: 0 }}>Wine corkage $5.00</Paragraph>
+            <Paragraph sx={{ fontSize: 0 }}>
+              Vintages are available upon request.
+            </Paragraph>
+          </Box>
         </Column>
 
         <Column>

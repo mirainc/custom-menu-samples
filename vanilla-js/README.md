@@ -2,7 +2,19 @@
 
 **URLs**
 
-- Main Menu Board: https://custom-menu-app-1.netlify.app
+_Note: Instructions on how to fetch `menuIds` for a given API key are available in the "Multi-location support" section below._
+
+_Example menuId: 3404a063-2bbe-4473-bb1b-cac3c7e1d14e_
+
+**Localhost**
+
+- Main Menu Board: http://localhost:3000?espressoAndCoffeeSubheading=<espressoAndCoffeeSubheading>&espressoAndCoffeeBottomText=<espressoAndCoffeeBottomText>&
+  footnote=<footnote>&menuId={menuId}
+
+**Production**
+
+- Main Menu Board: https://custom-menu-app-1.netlify.app?espressoAndCoffeeSubheading=<espressoAndCoffeeSubheading>&espressoAndCoffeeBottomText=<espressoAndCoffeeBottomText>&
+  footnote=<footnote>&menuId={menuId}
 
 ## Prerequisities
 
@@ -11,12 +23,6 @@
 - Static file server like [Serve](https://www.npmjs.com/package/serve)
 
 ## Development
-
-First, run the mock API server:
-
-```bash
-yarn start:mock-server
-```
 
 Run your static file server:
 
@@ -42,6 +48,29 @@ There are three builder inputs for this project. These can be configured after c
   ![Subheading](espresso-and-coffee-subheading-builder-input.png)
 
 [Code to retrieve query param](https://github.com/mirainc/custom-menu-samples/blob/8ae608baa41ffefbfc8cc63d0f0abc8011f97726/vanilla-js/js/scripts.js#L84-L88)
+
+## Multi-location/menu support
+
+A couple of additional steps are required for multi-location/menu support.
+
+1. Using your API key, make a call to `/v1/menus` to retrieve the list of menus your API key has access to
+
+**cURL example:**
+
+```
+curl --location --request GET 'https://menu-api.raydiant.com/v1/menus' \
+--header 'x-api-key: <API_KEY>'
+```
+
+2. Take note of all the `menuIds` required for your digital menu
+3. Go to the developer portal and select your app
+4. Creat a new "select" builder input
+5. Populate the "options" section with the aforementioned `menuIds`
+6. Confirm you can make an API request to fetch group data for a given menu/location
+
+```
+/v1/groups?tags=<tag>&menus=<menuId>depth=<depth>
+```
 
 # Deployment
 
