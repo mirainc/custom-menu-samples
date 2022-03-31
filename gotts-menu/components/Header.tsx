@@ -20,6 +20,7 @@ const Header: React.FC = () => {
             fontSize: 0,
             textTransform: "uppercase",
             fontWeight: 600,
+            color: "red",
           }}
         >
           Serving the california roadside{" "}
