@@ -4,7 +4,7 @@ The Gotts Custom Menu App contains several menu boards that are connected to the
 
 **URLs**
 
-_Note: Instructions on how to fetch available `menuIds` for a given API key are available in the "Multi-location support" section below._
+_Note: Instructions on how to fetch `menuIds` for a given API key are available in the "Multi-location support" section below._
 
 _Example menuId: 20e5c762-f2df-483e-9ed0-404562d7efd3_
 
