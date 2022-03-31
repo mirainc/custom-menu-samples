@@ -10,6 +10,9 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    minimumCacheTTL: 1,
+  },
 };
 
 module.exports = nextConfig;
