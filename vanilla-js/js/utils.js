@@ -24,11 +24,3 @@ const formatPrice = (number) => {
 
   return priceFormatted;
 };
-
-const getCalories = (data, tag) => {
-  const record = data.find((x) => {
-    return x.tags.includes(tag);
-  });
-
-  return record;
-};
