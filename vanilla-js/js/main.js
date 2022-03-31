@@ -1,9 +1,9 @@
 const fetchData = async () => {
   const response = await fetch(
-    `https://menu-api.staging.raydiant.com/v1/groups?depth=5`,
+    `https://menu-api.raydiant.com/v1/groups?menus=3404a063-2bbe-4473-bb1b-cac3c7e1d14e&depth=5`,
     {
       headers: {
-        "X-API-Key": "c5162983-2a4e-4d8c-a93f-22ad0090058b" || "",
+        "X-API-Key": "9f164045-6f80-4131-9550-1a34118c901d" || "",
       },
     }
   );
