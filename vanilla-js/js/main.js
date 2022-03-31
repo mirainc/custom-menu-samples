@@ -1,6 +1,9 @@
 const fetchData = async () => {
+  const { menuId } = getQueryParams();
+
+  console.log({ menuId });
   const response = await fetch(
-    `https://menu-api.raydiant.com/v1/groups?menus=3404a063-2bbe-4473-bb1b-cac3c7e1d14e&depth=5`,
+    `https://menu-api.raydiant.com/v1/groups?menus=${menuId}&depth=5`,
     {
       headers: {
         "X-API-Key": "9f164045-6f80-4131-9550-1a34118c901d" || "",
