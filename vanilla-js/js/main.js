@@ -47,7 +47,6 @@ const main = async () => {
     espressoAndCoffeeGroupTag
   );
   const espressoAndCoffeeItems = espressoAndCoffeeData.items;
-  // replace with Tags
   const espressoAndCoffeeModifiers = espressoAndCoffeeData.groups[0];
 
   document.querySelector("#espresso-and-coffee-heading").innerHTML =
