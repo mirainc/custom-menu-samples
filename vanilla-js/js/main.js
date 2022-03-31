@@ -1,7 +1,6 @@
 const fetchData = async () => {
   const { menuId } = getQueryParams();
 
-  console.log({ menuId });
   const response = await fetch(
     `https://menu-api.raydiant.com/v1/groups?menus=${menuId}&depth=5`,
     {
@@ -22,8 +21,7 @@ const getQueryParams = () => {
 
 const main = async () => {
   const espressoAndCoffeeGroupTag = "espresso-and-coffee";
-  const icedColdbrewGroupTag = "iced-coldbrew";
-  const modifiersTag = "extras";
+  const icedColdbrewGroupTag = "iced-cold-brew";
 
   const data = await fetchData();
   if (!data) return;
@@ -31,21 +29,7 @@ const main = async () => {
   const { groups } = data;
   if (!groups) return;
 
-  const groupsTemp = groups.map((g) => {
-    const nameToTagMap = {
-      "Espresso & Coffee": ["espresso-and-coffee"],
-      "Iced Cold Brew": ["iced-coldbrew"],
-    };
-    return {
-      ...g,
-      tags: nameToTagMap[g.name],
-    };
-  });
-
-  const espressoAndCoffeeData = getRecord(
-    groupsTemp,
-    espressoAndCoffeeGroupTag
-  );
+  const espressoAndCoffeeData = getRecord(groups, espressoAndCoffeeGroupTag);
   const espressoAndCoffeeItems = espressoAndCoffeeData.items;
   const espressoAndCoffeeModifiers = espressoAndCoffeeData.groups[0];
 
@@ -54,7 +38,7 @@ const main = async () => {
   renderEspressoAndCoffeeMenuItems(espressoAndCoffeeItems);
   renderEspressoAndCoffeeModifiers(espressoAndCoffeeModifiers.items);
 
-  const icedColdbrewData = getRecord(groupsTemp, icedColdbrewGroupTag);
+  const icedColdbrewData = getRecord(groups, icedColdbrewGroupTag);
   document.querySelector("#iced-coldbrew-heading").innerHTML =
     icedColdbrewData.name;
   renderIcedColdbrewMenuItems(icedColdbrewData.items);
