@@ -10,8 +10,19 @@ const nextConfig = {
       },
     ];
   },
-  images: {
-    minimumCacheTTL: 1,
+  async headers() {
+    return [
+      {
+        source: "/:all*(svg|jpg|png)",
+        locale: false,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=1",
+          },
+        ],
+      },
+    ];
   },
 };
 
