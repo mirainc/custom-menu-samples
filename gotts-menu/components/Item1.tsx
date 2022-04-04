@@ -6,13 +6,27 @@ interface Item1 {
   name: string;
   description: string;
   price: number;
+  inStock: boolean;
 }
 
-const Item1: React.FC<Item1> = ({ name, description, price }) => {
+const Item1: React.FC<Item1> = ({ name, description, price, inStock }) => {
   return (
     <ItemLayout>
-      <Heading variant="h3">{name}</Heading>
-      <Text sx={{ fontSize: 1 }}>{description}</Text> <Price value={price} />
+      <Heading
+        variant="h3"
+        sx={{ textDecoration: inStock ? "none" : "line-through" }}
+      >
+        {name}
+      </Heading>
+      <Text
+        sx={{
+          fontSize: 1,
+          textDecoration: inStock ? "none" : "line-through",
+        }}
+      >
+        {description}
+      </Text>{" "}
+      <Price value={price} />
     </ItemLayout>
   );
 };

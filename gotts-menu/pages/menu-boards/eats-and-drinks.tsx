@@ -82,25 +82,29 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
       <Grid columns={2} gap={5}>
         <Column>
           <Group heading={grabAndGo.name}>
-            {grabAndGo.items.map(({ id, name, description, price }) => (
-              <Item1
-                key={id}
-                name={name}
-                description={description}
-                price={price}
-              />
-            ))}
+            {grabAndGo.items.map(
+              ({ id, name, description, price, inStock }) => (
+                <Item1
+                  key={id}
+                  name={name}
+                  description={description}
+                  price={price}
+                  inStock={inStock}
+                />
+              )
+            )}
           </Group>
 
           <Divider mb={4} />
 
           <Group heading={shakes.name}>
-            {shakes.items.map(({ id, name, description, price }) => (
+            {shakes.items.map(({ id, name, description, price, inStock }) => (
               <Item1
                 key={id}
                 name={name}
                 description={description}
                 price={price}
+                inStock={inStock}
               />
             ))}
           </Group>
@@ -135,9 +139,17 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
             })}
 
             {beverages.items.map((item) => {
-              const { id, name, items: sizes, price } = item;
+              const { id, name, items: sizes, price, inStock } = item;
 
-              return <Item2 key={id} name={name} sizes={sizes} price={price} />;
+              return (
+                <Item2
+                  key={id}
+                  name={name}
+                  sizes={sizes}
+                  price={price}
+                  inStock={inStock}
+                />
+              );
             })}
           </Group>
 
