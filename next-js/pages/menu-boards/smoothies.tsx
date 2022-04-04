@@ -84,7 +84,9 @@ const Smoothies: NextPage<SmoothiesProps> = ({ data }) => {
             {items.map((x) => (
               <div key={x.id} className="w-1/2 my-5 px-10 overflow-hidden">
                 <MenuItemHeading>
-                  {x.name}{" "}
+                  <span className={x.inStock ? "" : "line-through"}>
+                    {x.name}
+                  </span>{" "}
                   {x.calories && (
                     <span className="text-2xl">{x.calories} CAL</span>
                   )}
