@@ -13,6 +13,7 @@ export interface Record {
   description: string;
   calories: number;
   price: string;
+  inStock: boolean;
   tags: Tag[];
   items: Record[];
   groups: Record[];

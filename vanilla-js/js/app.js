@@ -1,7 +1,7 @@
 const renderEspressoAndCoffeeMenuItems = (data) => {
-  const renderMenuItem = ({ name, price, calories }) =>
+  const renderMenuItem = ({ name, price, calories, inStock }) =>
     `<div class="item">
-      <div class="title">${name}</div>
+      <div class="title${inStock ? "" : " out-of-stock"}">${name}</div>
       <div class="subtitle">LARGE | ${formatPrice(
         price
       )} | ${calories} CAL</div>
@@ -51,13 +51,13 @@ const renderEspressoAndCoffeeModifiers = (data) => {
 };
 
 const renderIcedColdbrewMenuItems = (data) => {
-  const renderItem = ({ name, price, calories }) => `
+  const renderItem = ({ name, price, calories, inStock }) => `
     <div class="item-with-image">
       <div class="item-image-container">
         <img src="drink.png" alt="" />
       </div>
       <div class="item-description">
-        <div class="title">${name}</div>
+        <div class="title${inStock ? "" : " out-of-stock"}">${name}</div>
         <div class="subtitle">${formatPrice(price)} | ${calories} CAL</div>
       </div>
     </div>

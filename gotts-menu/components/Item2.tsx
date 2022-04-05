@@ -10,14 +10,20 @@ interface Item2 {
   modifiers?: Modifier[];
   sizes?: Size[];
   price: number;
+  inStock: boolean;
 }
 
-const Item2: React.FC<Item2> = ({ name, sizes, price }) => {
+const Item2: React.FC<Item2> = ({ name, sizes, price, inStock }) => {
   return (
     <ItemLayout>
       <Grid columns="7fr 5fr" sx={{ alignItems: "baseline" }}>
         <Box>
-          <Heading variant="h3">{name}</Heading>
+          <Heading
+            variant="h3"
+            sx={{ textDecoration: inStock ? "none" : "line-through" }}
+          >
+            {name}
+          </Heading>
         </Box>
         <Box>
           {sizes && <Sizes value={sizes} />}

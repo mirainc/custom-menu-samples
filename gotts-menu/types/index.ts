@@ -15,6 +15,7 @@ export interface Record {
   items: Item[];
   modifiers: Modifier[];
   tags: string[];
+  inStock: boolean;
 }
 
 export interface Group extends Record {

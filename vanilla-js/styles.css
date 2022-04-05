@@ -54,6 +54,10 @@ h2,
   letter-spacing: 1.2px;
 }
 
+.title.out-of-stock {
+  text-decoration: line-through;
+}
+
 .subtitle {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 300;
