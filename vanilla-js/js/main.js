@@ -19,11 +19,10 @@ const getQueryParams = () => {
   return params;
 };
 
-const main = async () => {
+const render = (data) => {
   const espressoAndCoffeeGroupTag = "espresso-and-coffee";
   const icedColdbrewGroupTag = "iced-cold-brew";
 
-  const data = await fetchData();
   if (!data) return;
 
   const { groups } = data;
@@ -59,6 +58,17 @@ const main = async () => {
     document.querySelector("#espresso-and-coffee-bottom-text").innerHTML =
       espressoAndCoffeeBottomText;
   }
+};
+
+const main = async () => {
+  let data = await fetchData();
+
+  setInterval(async () => {
+    data = await fetchData();
+    render(data);
+  }, 30000);
+
+  render(data);
 };
 
 main();
