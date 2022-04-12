@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ text, showQRCode }) => {
           </Paragraph>
         </Box>
       ) : (
-        <Image src="/about-footer.jpeg" alt="footer" width={1135} height={98} />
+        <Image src="/about-footer.jpg" alt="footer" width={1135} height={98} />
       )}
     </Box>
   );

@@ -5,6 +5,7 @@ interface PriceProps {
 }
 
 const Price: React.FC<PriceProps> = ({ value }) => {
+  // Consider using tags instead of `value` to render "A.Q" text.
   if (!value) {
     return <Text sx={styles.root}>A.Q</Text>;
   }
