@@ -147,6 +147,43 @@ In this example, additional items are `items` on the "Fountain Soda" sub-group w
 
 To enable offline playback support, ensure your web server returns a `max-age` value greater than 0 in the `Cache-Control` headers. E.g. `max-age=1`.
 
+With NextJS these headers must be applied to the page and static assets.
+
+**NextJS Page:**
+
+```ts
+// pages/my-page.tsx
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { query, res } = context;
+
+  res.setHeader("Cache-Control", "public, max-age=1");
+  ...
+```
+
+**NextJS config:**
+
+```ts
+// next.config.js
+const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/:all*(svg|jpg|png)",
+        locale: false,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=1",
+          },
+        ],
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;
+```
+
 ## Responsive Notes
 
 The example menus have target resolutions set to `1080x1920`. To support both 1080p and 4K additional code is required.
