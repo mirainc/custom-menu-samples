@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import { Grid, Text, Divider, Box, Paragraph } from "theme-ui";
+import { Grid, Text, Divider } from "theme-ui";
 
 import Item1 from "../../components/Item1";
 import * as T from "../../types";
@@ -108,13 +108,6 @@ const EatsAndDrinks: NextPage<EatsAndDrinksProps> = ({ data }) => {
               />
             ))}
           </Group>
-
-          <Box as="section" mb={4}>
-            <Paragraph sx={{ fontSize: 0 }}>Wine corkage $5.00</Paragraph>
-            <Paragraph sx={{ fontSize: 0 }}>
-              Vintages are available upon request.
-            </Paragraph>
-          </Box>
         </Column>
 
         <Column>

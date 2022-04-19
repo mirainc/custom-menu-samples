@@ -2,7 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { Grid, Text } from "theme-ui";
+import { Box, Grid, Paragraph, Text } from "theme-ui";
 
 import Column from "../../components/Column";
 import Group from "../../components/Group";
@@ -83,6 +83,13 @@ const WineAndBeer: NextPage<WineAndBeerProps> = ({ data }) => {
               <SubGroup2 key={id} name={name} items={items} />
             ))}
           </Group>
+
+          <Box as="section" mb={4}>
+            <Paragraph sx={{ fontSize: 0 }}>Wine corkage $5.00</Paragraph>
+            <Paragraph sx={{ fontSize: 0 }}>
+              Vintages are available upon request.
+            </Paragraph>
+          </Box>
         </Column>
         <Column>
           <Group heading={beer.name}>
