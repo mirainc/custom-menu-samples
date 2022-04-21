@@ -51,10 +51,19 @@ const renderEspressoAndCoffeeModifiers = (data) => {
 };
 
 const renderIcedColdbrewMenuItems = (data) => {
-  const renderItem = ({ name, price, calories, inStock }) => `
+  const renderItem = ({ name, price, calories, inStock, tags }) => {
+    const itemId = getTag(tags, "id");
+
+    const tagImageMap = {
+      regular: "cold-brew.webp",
+      "salted-caramel": "cold-brew-salted-caramel.webp",
+      milk: "cold-brew-milk.webp",
+    };
+
+    return `
     <div class="item-with-image">
       <div class="item-image-container">
-        <img src="drink.png" alt="" />
+        <img src=${tagImageMap[itemId]} alt="" />
       </div>
       <div class="item-description">
         <div class="title${inStock ? "" : " out-of-stock"}">${name}</div>
@@ -62,6 +71,7 @@ const renderIcedColdbrewMenuItems = (data) => {
       </div>
     </div>
   `;
+  };
 
   const icedColdbrewContent = data.slice(0, 3).map(renderItem).join("");
 
