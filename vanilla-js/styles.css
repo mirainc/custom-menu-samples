@@ -1,7 +1,7 @@
 /* Variables */
 :root {
   --spacing-unit: 16px;
-  --bg: #1c3d36;
+  --bg: #1f3933;
   --text-primary: #fff;
   --font-size-base: 22px;
   --font-size-xs: 14px;
@@ -181,11 +181,11 @@ body {
 }
 
 .item-image-container {
-  width: 170px;
+  width: 220px;
   margin-right: calc(var(--spacing-unit) * 5.875);
 }
 
 .item-image-container img {
-  width: 170px;
+  width: 220px;
   margin-bottom: -18px;
 }
