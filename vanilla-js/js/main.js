@@ -46,16 +46,16 @@ const render = (data) => {
     getQueryParams();
 
   if (footnote) {
-    document.querySelector("#footnote").innerHTML = footnote;
+    document.querySelector("#footnote").innerText = footnote;
   }
 
   if (espressoAndCoffeeSubheading) {
-    document.querySelector("#espresso-and-coffee-subheading").innerHTML =
+    document.querySelector("#espresso-and-coffee-subheading").innerText =
       espressoAndCoffeeSubheading;
   }
 
   if (espressoAndCoffeeBottomText) {
-    document.querySelector("#espresso-and-coffee-bottom-text").innerHTML =
+    document.querySelector("#espresso-and-coffee-bottom-text").innerText =
       espressoAndCoffeeBottomText;
   }
 };
