@@ -15,6 +15,7 @@ import { getTag } from "../../utils";
 
 export interface JuicesProps {
   data: MenuData;
+  footnote: string;
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -35,12 +36,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       data: juicesData,
+      footnote: query.footnote,
     },
   };
 };
 
-const Juices: NextPage<JuicesProps> = ({ data }) => {
+const Juices: NextPage<JuicesProps> = ({ data, footnote }) => {
   const router = useRouter();
+
+  console.log(JSON.stringify(footnote));
 
   useEffect(() => {
     const refreshData = () => {
@@ -96,11 +100,7 @@ const Juices: NextPage<JuicesProps> = ({ data }) => {
             ))}
           </div>
           <div className="absolute bottom-0 left-0 w-2/3">
-            <Footnote>
-              Additional nutrition information available upon request. <br />{" "}
-              2,000 calories a day is used for general nutrition advice, but
-              calorie needs vary.
-            </Footnote>
+            <Footnote>{footnote}</Footnote>
           </div>
         </section>
 
