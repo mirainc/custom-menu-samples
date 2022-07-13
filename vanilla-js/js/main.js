@@ -46,7 +46,7 @@ const render = (data) => {
     getQueryParams();
 
   if (footnote) {
-    document.querySelector("#footnote").innerHTML = footnote;
+    document.querySelector("#footnote").innerText = footnote;
   }
 
   if (espressoAndCoffeeSubheading) {
