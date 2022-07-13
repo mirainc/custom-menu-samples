@@ -50,12 +50,12 @@ const render = (data) => {
   }
 
   if (espressoAndCoffeeSubheading) {
-    document.querySelector("#espresso-and-coffee-subheading").innerText =
+    document.querySelector("#espresso-and-coffee-subheading").innerHTML =
       espressoAndCoffeeSubheading;
   }
 
   if (espressoAndCoffeeBottomText) {
-    document.querySelector("#espresso-and-coffee-bottom-text").innerText =
+    document.querySelector("#espresso-and-coffee-bottom-text").innerHTML =
       espressoAndCoffeeBottomText;
   }
 };
